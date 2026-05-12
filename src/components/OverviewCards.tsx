@@ -1,5 +1,6 @@
 import Image from "next/image";
 import { loadContent, type CardsData } from "@/lib/content";
+import { asset } from "@/lib/asset";
 import { Markdown } from "./Markdown";
 
 export function OverviewCards() {
@@ -14,7 +15,7 @@ export function OverviewCards() {
           >
             <div className="relative w-full aspect-[3/2]">
               <Image
-                src={c.image}
+                src={asset(c.image)}
                 alt={c.alt}
                 fill
                 sizes="(max-width: 768px) 100vw, 33vw"

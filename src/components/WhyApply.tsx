@@ -1,5 +1,6 @@
 import Image from "next/image";
 import { loadContent, type WhyApplyData } from "@/lib/content";
+import { asset } from "@/lib/asset";
 import { Markdown } from "./Markdown";
 
 export function WhyApply() {
@@ -9,7 +10,7 @@ export function WhyApply() {
       <div className="max-w-[1280px] mx-auto grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-16 items-center">
         <div className="relative aspect-[4/3] w-full rounded-sm overflow-hidden">
           <Image
-            src={data.image}
+            src={asset(data.image)}
             alt={data.alt}
             fill
             sizes="(max-width: 768px) 100vw, 50vw"

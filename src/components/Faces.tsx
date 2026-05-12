@@ -1,5 +1,6 @@
 import Image from "next/image";
 import { loadContent, type FacesData } from "@/lib/content";
+import { asset } from "@/lib/asset";
 
 export function Faces() {
   const { data } = loadContent<FacesData>("faces");
@@ -14,7 +15,7 @@ export function Faces() {
             <figure key={p.name} className="flex flex-col items-center text-center max-w-[260px]">
               <div className="relative w-44 h-44 md:w-56 md:h-56 rounded-full overflow-hidden">
                 <Image
-                  src={p.image}
+                  src={asset(p.image)}
                   alt={p.alt}
                   fill
                   sizes="(max-width: 768px) 176px, 224px"

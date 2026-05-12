@@ -1,12 +1,13 @@
 import Image from "next/image";
 import { loadContent, type HeroData } from "@/lib/content";
+import { asset } from "@/lib/asset";
 
 export function Hero() {
   const { data } = loadContent<HeroData>("hero");
   return (
     <header className="relative w-full h-screen min-h-[700px] text-white overflow-hidden">
       <Image
-        src={data.backgroundImage}
+        src={asset(data.backgroundImage)}
         alt={data.backgroundAlt}
         fill
         priority
