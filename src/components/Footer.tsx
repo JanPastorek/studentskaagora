@@ -6,7 +6,7 @@ export function Footer() {
 
   return (
     <footer className="bg-agora-blue text-white py-8 border-t border-white/10">
-      <div className="max-w-7xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-6">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 flex flex-col md:flex-row justify-between items-center gap-4 md:gap-6 text-center md:text-left">
         <a href="#">
           <img src={asset(data.logo.src)} alt={data.logo.alt} className="h-10 w-auto" />
         </a>

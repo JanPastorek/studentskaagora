@@ -8,9 +8,9 @@ export function Apply() {
   const mailto = `mailto:${data.applicationEmail}?subject=${encodeURIComponent(data.applicationEmailSubject)}`;
 
   return (
-    <section id="prihlasenie" className="bg-agora-cream pb-24">
+    <section id="prihlasenie" className="bg-agora-cream pb-16 lg:pb-24">
       <div className="max-w-7xl mx-auto px-6">
-        <Reveal className="bg-agora-blue rounded-[2rem] p-10 md:p-14 text-white relative overflow-hidden shadow-xl flex flex-col md:flex-row justify-between">
+        <Reveal className="bg-agora-blue rounded-2xl md:rounded-[2rem] p-8 md:p-12 lg:p-14 text-white relative overflow-hidden shadow-xl flex flex-col md:flex-row justify-between">
           <img
             src={asset("/sun2.svg")}
             alt=""
@@ -19,11 +19,11 @@ export function Apply() {
           />
 
           <div className="w-full md:w-3/5 relative z-10">
-            <h2 className="font-serif text-5xl md:text-6xl font-bold mb-6">
+            <h2 className="font-serif text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-5 md:mb-6">
               {data.headingMain}
               <span className="text-agora-yellow">{data.headingYellow}</span>
             </h2>
-            <p className="text-sm font-light text-gray-200 leading-relaxed mb-8 max-w-lg">
+            <p className="text-sm font-light text-gray-200 leading-relaxed mb-6 md:mb-8 max-w-lg">
               {data.description}
             </p>
 
@@ -40,13 +40,13 @@ export function Apply() {
 
             <a
               href={mailto}
-              className="inline-flex items-center justify-center gap-3 bg-agora-yellow text-agora-blue font-semibold px-8 py-3.5 rounded hover:bg-yellow-400 hover:gap-4 transition-all shadow-md"
+              className="inline-flex items-center justify-center gap-3 bg-agora-yellow text-agora-blue font-semibold px-8 py-3.5 rounded hover:bg-yellow-400 hover:gap-4 transition-all shadow-md w-full sm:w-auto"
             >
               {data.applicationLabel} <ArrowRight size={16} />
             </a>
           </div>
 
-          <div className="w-full md:w-2/5 mt-16 md:mt-auto relative z-10 flex flex-col justify-end items-start md:items-end">
+          <div className="w-full md:w-2/5 mt-8 md:mt-auto relative z-10 flex flex-col justify-end items-start md:items-end">
             <div className="w-full border-t border-white/20 mb-4 md:max-w-[300px]" />
             <div className="flex items-start gap-4">
               <Mail size={24} className="mt-1 shrink-0" />

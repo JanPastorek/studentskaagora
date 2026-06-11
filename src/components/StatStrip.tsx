@@ -14,13 +14,13 @@ export function StatStrip() {
 
   return (
     <section className="bg-agora-cream border-b border-gray-300 relative z-20">
-      <div className="max-w-7xl mx-auto px-6 py-12">
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 divide-y sm:divide-y-0 sm:divide-x divide-gray-300">
+      <div className="max-w-7xl mx-auto px-6 py-10 md:py-12">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
           {data.stats.map((stat, i) => {
             const Icon = ICONS[i] ?? MapPin;
             const bgClass = ICON_BG[stat.iconColor] ?? "bg-agora-blue";
             return (
-              <Reveal key={stat.heading} delay={i * 100} className="flex items-start gap-4 pt-6 sm:pt-0 sm:pl-8 first:pl-0">
+              <Reveal key={stat.heading} delay={i * 100} className="flex items-start gap-4 border-b sm:border-b-0 lg:border-l lg:first:border-l-0 border-gray-200 pb-6 sm:pb-0 lg:pl-8 lg:first:pl-0 last:border-b-0">
                 <div className={`flex-shrink-0 w-12 h-12 ${bgClass} rounded-full flex items-center justify-center text-white`}>
                   <Icon size={20} />
                 </div>

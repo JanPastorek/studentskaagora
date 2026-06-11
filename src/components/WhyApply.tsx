@@ -8,22 +8,22 @@ export function WhyApply() {
   const { data, body } = loadContent<WhyApplyData>("why-apply");
 
   return (
-    <section className="bg-agora-cream pb-16">
+    <section className="bg-agora-cream pb-12 lg:pb-16">
       <div className="max-w-7xl mx-auto px-6">
-        <Reveal className="bg-agora-box-cream rounded-lg p-10 md:p-16 flex flex-col md:flex-row relative overflow-hidden shadow-sm">
+        <Reveal className="bg-agora-box-cream rounded-lg p-8 md:p-12 lg:p-16 flex flex-col md:flex-row relative overflow-hidden shadow-sm">
           <div className="w-full md:w-2/3 relative z-10">
-            <h2 className="font-serif text-4xl md:text-5xl font-bold mb-8">
+            <h2 className="font-serif text-3xl sm:text-4xl md:text-5xl font-bold mb-6 md:mb-8">
               <span className="text-agora-blue">{data.headingBlue} </span>
               <span className="text-agora-orange">{data.headingOrange}</span>
             </h2>
 
-            <ul className="space-y-4 mb-8">
+            <ul className="space-y-3 md:space-y-4 mb-8">
               {data.points.map((point) => (
-                <li key={point} className="flex items-center gap-4">
-                  <div className="w-6 h-6 rounded-full bg-agora-yellow flex items-center justify-center shrink-0">
+                <li key={point} className="flex items-start gap-4">
+                  <div className="w-6 h-6 rounded-full bg-agora-yellow flex items-center justify-center shrink-0 mt-0.5">
                     <Check size={10} className="text-agora-blue" strokeWidth={3} />
                   </div>
-                  <span className="text-gray-800 font-medium">{point}</span>
+                  <span className="text-gray-800 font-medium leading-snug">{point}</span>
                 </li>
               ))}
             </ul>

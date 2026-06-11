@@ -8,9 +8,9 @@ export function NavbarClient({ data }: { data: NavData }) {
   const [open, setOpen] = useState(false);
 
   return (
-    <header className="w-full max-w-7xl mx-auto px-6 py-6 flex justify-between items-center relative z-30">
+    <header className="w-full max-w-7xl mx-auto px-4 sm:px-6 py-4 sm:py-6 flex justify-between items-center relative z-30">
       <a href="#">
-        <img src={asset(data.logo.src)} alt={data.logo.alt} className="h-12 w-auto" />
+        <img src={asset(data.logo.src)} alt={data.logo.alt} className="h-9 sm:h-12 w-auto" />
       </a>
 
       <div className="flex items-center gap-4 md:gap-8">

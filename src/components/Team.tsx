@@ -18,10 +18,10 @@ export function Team() {
   const { data } = loadContent<TeamData>("team");
 
   return (
-    <section id="tim" className="bg-agora-cream py-16">
+    <section id="tim" className="bg-agora-cream py-12 lg:py-16">
       <div className="max-w-7xl mx-auto px-6">
         <Reveal>
-          <h2 className="font-serif text-5xl md:text-6xl font-bold mb-12">
+          <h2 className="font-serif text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-8 md:mb-12">
             <span className="text-agora-blue">{data.headingBlue} </span>
             <span className="text-agora-orange">{data.headingOrange}</span>
           </h2>
@@ -35,7 +35,7 @@ export function Team() {
               <Reveal
                 key={person.name}
                 delay={i * 100}
-                className="bg-agora-box-cream rounded-lg p-8 text-center relative overflow-hidden shadow-sm hover:shadow-lg hover:-translate-y-1 transition-all duration-300"
+                className="bg-agora-box-cream rounded-lg p-6 lg:p-8 text-center relative overflow-hidden shadow-sm hover:shadow-lg hover:-translate-y-1 transition-all duration-300"
               >
                 <div className="w-32 h-32 mx-auto relative mb-6">
                   <div className={`absolute w-full h-full ${accentBg} rounded-full ${accentOffset}`} />
