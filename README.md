@@ -1,155 +1,134 @@
-# AI Website Cloner Template
+# Ako upravovať web
 
-<a href="https://github.com/JCodesMore/ai-website-cloner-template/blob/master/LICENSE"><img src="https://img.shields.io/badge/license-MIT-blue" alt="MIT License" /></a> <a href="https://github.com/JCodesMore/ai-website-cloner-template/stargazers"><img src="https://img.shields.io/github/stars/JCodesMore/ai-website-cloner-template?style=flat" alt="Stars" /></a> <a href="https://discord.gg/hrTSX5yTpB"><img src="https://img.shields.io/discord/1400896964597383279?label=discord" alt="Discord" /></a>
+Nepotrebuješ vedieť programovať. Všetok text a obrázky sú v dvoch priečinkoch:
 
-A reusable template for reverse-engineering any website into a clean, modern Next.js codebase using AI coding agents. 
+- `content/` — textový obsah (jeden súbor na sekciu)
+- `public/images/` — obrázky
 
-**Recommended: [Claude Code](https://docs.anthropic.com/en/docs/claude-code) with Opus 4.7 for best results** — but works with a variety of AI coding agents.
+Po každej zmene na GitHube sa web automaticky prebuduje a je živý do ~2 minút.
 
-Point it at a URL, run `/clone-website`, and your AI agent will inspect the site, extract design tokens and assets, write component specs, and dispatch parallel builders to reconstruct every section.
+---
 
-## Demo
+## Súbory obsahu
 
-[![Watch the demo](docs/design-references/comparison.png)](https://youtu.be/O669pVZ_qr0)
+| Súbor | Čo upravuje |
+|---|---|
+| `content/nav.md` | Logo, navigačné odkazy |
+| `content/hero.md` | Úvodná sekcia (nadpis, podnadpis, tlačidlo, citát) |
+| `content/stats.md` | Štyri fakty pod hero sekciou (kde, pre koho, čo ťa čaká, školné) |
+| `content/about.md` | Sekcia „Prečo Agora?" |
+| `content/topics.md` | 10 téma tutoriálov (flipovacie karty) |
+| `content/team.md` | Tváre Agory (fotky, mená, roly) |
+| `content/why-apply.md` | Prečo sa prihlásiť (zoznam s fajkami) |
+| `content/apply.md` | Prihláška (deadline, email, tlačidlo) |
+| `content/footer.md` | Pätička (logo, copyright, odkazy) |
 
-> Click the image above to watch the full demo on YouTube.
+---
 
-## Quick Start
+## Ako upravovať text
 
-1. **Clone this repository**
-   ```bash
-   git clone https://github.com/JCodesMore/ai-website-cloner-template.git my-clone
-   cd my-clone
-   ```
-2. **Install dependencies**
-   ```bash
-   npm install
-   ```
-3. **Start your AI agent** — Claude Code recommended:
-   ```bash
-   claude --chrome
-   ```
-4. **Run the skill**:
-   ```
-   /clone-website <target-url1> [<target-url2> ...]
-   ```
-5. **Customize** (optional) — after the base clone is built, modify as needed
+1. Otvor priečinok `content/` na GitHube.
+2. Klikni na súbor sekcie, ktorú chceš zmeniť.
+3. Klikni na ikonu ceruzky (✏️) vpravo hore.
+4. Uprav text.
+5. Dole napíš poznámku, napr. „zmena termínu", klikni **Commit changes**.
+6. Počkaj ~2 minúty. Web sa sám aktualizuje.
 
-> Using a different agent? Open `AGENTS.md` for project instructions — most agents pick it up automatically.
+### Formátovanie textu
 
-## Supported Platforms
+- `**tučný text**` → **tučný text**
+- `*kurzíva*` → *kurzíva*
+- Prázdny riadok = nový odsek
+- `[text odkazu](https://example.com)` = klikateľný odkaz
 
-| Agent                                                         | Status                     |
-| ------------------------------------------------------------- | -------------------------- |
-| [Claude Code](https://docs.anthropic.com/en/docs/claude-code) | **Recommended** — Opus 4.7 |
-| [Codex CLI](https://github.com/openai/codex)                  | Supported                  |
-| [OpenCode](https://opencode.ai/)                              | Supported                  |
-| [GitHub Copilot](https://github.com/features/copilot)         | Supported                  |
-| [Cursor](https://cursor.com/)                                 | Supported                  |
-| [Windsurf](https://codeium.com/windsurf)                      | Supported                  |
-| [Gemini CLI](https://github.com/google-gemini/gemini-cli)     | Supported                  |
-| [Cline](https://github.com/cline/cline)                       | Supported                  |
-| [Roo Code](https://github.com/RooCodeInc/Roo-Code)            | Supported                  |
-| [Continue](https://continue.dev/)                             | Supported                  |
-| [Amazon Q](https://aws.amazon.com/q/developer/)               | Supported                  |
-| [Augment Code](https://www.augmentcode.com/)                  | Supported                  |
-| [Aider](https://aider.chat/)                                  | Supported                  |
+Časti medzi `---` znakmi na začiatku súboru (tzv. „frontmatter") sú nastavenia. Zachovaj štruktúru a meň len text za dvojbodkou:
 
-## Prerequisites
-
-- [Node.js](https://nodejs.org/) 24+
-- An AI coding agent (see [Supported Platforms](#supported-platforms))
-
-## Tech Stack
-
-- **Next.js 16** — App Router, React 19, TypeScript strict
-- **shadcn/ui** — Radix primitives + Tailwind CSS v4
-- **Tailwind CSS v4** — oklch design tokens
-- **Lucide React** — default icons (replaced by extracted SVGs during cloning)
-
-## How It Works
-
-The `/clone-website` skill runs a multi-phase pipeline:
-
-1. **Reconnaissance** — screenshots, design token extraction, interaction sweep (scroll, click, hover, responsive)
-2. **Foundation** — updates fonts, colors, globals, downloads all assets
-3. **Component Specs** — writes detailed spec files (`docs/research/components/`) with exact computed CSS values, states, behaviors, and content
-4. **Parallel Build** — dispatches builder agents in git worktrees, one per section/component
-5. **Assembly & QA** — merges worktrees, wires up the page, runs visual diff against the original
-
-Each builder agent receives the full component specification inline — exact `getComputedStyle()` values, interaction models, multi-state content, responsive breakpoints, and asset paths. No guessing.
-
-## Use Cases
-
-- **Platform migration** — rebuild a site you own from WordPress/Webflow/Squarespace into a modern Next.js codebase
-- **Lost source code** — your site is live but the repo is gone, the developer left, or the stack is legacy. Get the code back in a modern format
-- **Learning** — deconstruct how production sites achieve specific layouts, animations, and responsive behavior by working with real code
-
-## Not Intended For
-
-- **Phishing or impersonation** — this project must not be used for deceptive purposes, impersonation, or any activity that breaks the law.
-- **Passing off someone's design as your own** — logos, brand assets, and original copy belong to their owners.
-- **Violating terms of service** — some sites explicitly prohibit scraping or reproduction. Check first.
-
-## Project Structure
-
-```
-src/
-  app/              # Next.js routes
-  components/       # React components
-    ui/             # shadcn/ui primitives
-    icons.tsx       # Extracted SVG icons
-  lib/utils.ts      # cn() utility
-  types/            # TypeScript interfaces
-  hooks/            # Custom React hooks
-public/
-  images/           # Downloaded images from target
-  videos/           # Downloaded videos from target
-  seo/              # Favicons, OG images
-docs/
-  research/         # Extraction output & component specs
-  design-references/ # Screenshots
-scripts/
-  sync-agent-rules.sh  # Regenerate agent instruction files
-  sync-skills.mjs      # Regenerate /clone-website for all platforms
-AGENTS.md           # Agent instructions (single source of truth)
-CLAUDE.md           # Claude Code config (imports AGENTS.md)
-GEMINI.md           # Gemini CLI config (imports AGENTS.md)
+```yaml
+---
+deadline: 18. október 2025    ← zmeň toto
+fee: "100 €"                  ← zmeň toto
+---
 ```
 
-## Commands
+---
 
-```bash
-npm run dev    # Start dev server
-npm run build  # Production build
-npm run lint   # ESLint check
-npm run typecheck # TypeScript check
-npm run check  # Run lint + typecheck + build
+## Zmena obrázka
+
+1. **Nahraj nový obrázok:** otvor `public/images/` → **Add file** → **Upload files** → pretiahni obrázok → **Commit changes**.
+   - Použi malé písmená bez medzier: `andrej-2025.jpg`, nie `Andrej 2025.JPG`.
+   - JPG alebo PNG, ideálne pod 2 MB.
+2. **Odkazuj na nový obrázok** v príslušnom `.md` súbore:
+
+   ```yaml
+   image: /images/andrej-2025.jpg
+   ```
+
+3. Ulož (commit). Web sa aktualizuje do ~2 minút.
+
+### Obrázky, ktoré treba pridať
+
+Tieto obrázky zatiaľ nie sú v repozitári — nahraj ich do `public/images/`:
+
+| Súbor | Sekcia |
+|---|---|
+| `hero-statue.png` | Socha/ilustrácia v hero sekcii |
+| `preco-agora.png` | Obrázok v sekcii „Prečo Agora?" |
+| `preco-sa-prihlasit.png` | Obrázok v sekcii „Prečo sa prihlásiť?" |
+
+---
+
+## Úprava tímu
+
+Otvor `content/team.md`. Každý člen vyzerá takto:
+
+```yaml
+- name: Mgr. Ján Pastorek
+  role: Tútor a akademický tím
+  image: /images/jan.png
+  accentColor: orange   # modrá farba pozadia: blue, orange, yellow
 ```
 
-### If using docker
+Hodnoty `accentColor`: `blue`, `orange`, `yellow`.
 
-```bash
-docker compose up app --build # build and run the app
-docker compose up dev --build # run the app in dev mode on port 3001
+Ak chceš **pridať** člena, skopíruj blok, vlož ho pod ostatných, zmeň polia. Nezabudni nahrať fotku do `public/images/`.
+
+Ak chceš **odobrať** člena, vymaž jeho riadky (od `- name:` po koniec bloku).
+
+**Odsadenie (medzery) je dôležité** — zachovaj rovnaké ako ostatné záznamy.
+
+---
+
+## Úprava tém (flip karty)
+
+Otvor `content/topics.md`. Každá téma:
+
+```yaml
+- name: Existencia
+  question: Čo znamená žiť naplno?
+  bgFront: card-cream    # farba prednej strany karty
+  textFront: dark
+  bgBack: blue           # farba zadnej strany karty
+  textBack: white
 ```
 
-## Updating for Other Platforms
+Dostupné farby: `card-cream`, `blue`, `yellow`, `orange-dark`.
 
-Two source-of-truth files power all platform support. Edit the source, then run the sync script:
+---
 
-| What                   | Source of truth                         | Sync command                       |
-| ---------------------- | --------------------------------------- | ---------------------------------- |
-| Project instructions   | `AGENTS.md`                             | `bash scripts/sync-agent-rules.sh` |
-| `/clone-website` skill | `.claude/skills/clone-website/SKILL.md` | `node scripts/sync-skills.mjs`     |
+## Aktualizácia prihlášky
 
-Each script regenerates the platform-specific copies automatically. Agents that read the source files natively need no regeneration.
+Otvor `content/apply.md`. Zmeň `deadline`, `fee`, `applicationEmail` v hornej časti.
 
+---
 
-## Star History
+## Keď niečo nevyzerá dobre
 
-[![Star History Chart](https://api.star-history.com/svg?repos=JCodesMore/ai-website-cloner-template&type=Date)](https://star-history.com/#JCodesMore/ai-website-cloner-template&Date)
+1. Otvor záložku **Actions** na GitHube.
+2. Červená ❌ = chyba pri buildovaní.
+3. Klikni na ňu a pozri chybu. Bežné príčiny:
+   - Chýba `---` na začiatku `.md` súboru.
+   - Nesprávne odsadenie v YAML zozname.
+   - Obrázok, ktorý neexistuje v `public/images/`.
+4. Oprav súbor, commit. Build sa zopakuje.
 
-## License
-
-MIT
+Ak si stratený/á — v histórii commitov môžeš kliknúť na starší commit a zrevertovať zmenu.
