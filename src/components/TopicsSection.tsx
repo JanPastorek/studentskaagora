@@ -35,15 +35,15 @@ export function TopicsSection() {
               <Reveal key={topic.name} delay={(i % 5) * 60} className="flip-card group aspect-square [perspective:1000px]">
                 <div className="flip-inner relative w-full h-full transition-transform duration-500 [transform-style:preserve-3d] group-hover:[transform:rotateY(180deg)]">
                   <div className={`absolute inset-0 [backface-visibility:hidden] ${frontBg} ${frontText} p-4 sm:p-5 flex flex-col border-t-[3px] border-black/10`}>
-                    <span className="font-serif text-[0.65rem] italic opacity-40 self-end">{ROMAN[i] ?? i + 1}.</span>
+                    <span className="font-serif text-xs sm:text-sm italic opacity-50 self-end">{ROMAN[i] ?? i + 1}.</span>
                     <div className="mt-auto">
                       <h3 className="font-serif text-base sm:text-xl font-semibold leading-tight mb-2">{topic.name}</h3>
-                      <p className="font-serif text-[0.65rem] sm:text-xs italic leading-snug opacity-55 hidden sm:block">{topic.question}</p>
+                      <p className="font-serif text-xs sm:text-sm italic leading-snug opacity-60 hidden sm:block">{topic.question}</p>
                     </div>
                   </div>
                   <div className={`flip-back absolute inset-0 [backface-visibility:hidden] [transform:rotateY(180deg)] ${backBg} ${backText} p-4 sm:p-6 flex flex-col justify-between`}>
-                    <span className="font-serif text-xs italic opacity-50 self-end">{ROMAN[i] ?? i + 1}.</span>
-                    <p className="font-serif text-sm sm:text-base italic leading-relaxed text-center">{topic.question}</p>
+                    <span className="font-serif text-sm italic opacity-50 self-end">{ROMAN[i] ?? i + 1}.</span>
+                    <p className="font-serif text-sm sm:text-lg italic leading-relaxed text-center">{topic.question}</p>
                   </div>
                 </div>
               </Reveal>

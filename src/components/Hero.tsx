@@ -28,9 +28,6 @@ export function Hero() {
 
       <div className="flex-1 w-full max-w-7xl mx-auto px-6 pt-6 md:pt-10 lg:pt-12 flex flex-col lg:flex-row items-stretch relative z-10">
         <Reveal className="w-full lg:w-[45%] pr-0 lg:pr-8 pb-8 lg:pb-14 flex flex-col justify-center">
-          <span className="text-agora-orange text-[0.65rem] font-bold tracking-[0.25em] uppercase mb-4 md:mb-6 block">
-            — {data.tagline} —
-          </span>
           <h2 className="font-serif text-3xl sm:text-4xl md:text-5xl lg:text-[3.4rem] font-semibold leading-[1.12] mb-5 md:mb-6">
             {lines.map((line, i) => (
               <span key={i}>
@@ -42,7 +39,7 @@ export function Hero() {
           <p className="font-serif text-sm sm:text-base md:text-lg italic text-gray-300 mb-5 max-w-md leading-relaxed">
             {data.subtitle}
           </p>
-          <p className="text-[0.7rem] sm:text-xs tracking-[0.15em] text-gray-400 uppercase mb-7 md:mb-9">{data.details}</p>
+          <p className="text-xs sm:text-sm tracking-[0.12em] text-gray-400 uppercase mb-7 md:mb-9">{data.details}</p>
           <a
             href={data.button.href}
             className="inline-flex items-center justify-center gap-3 bg-agora-orange text-white font-semibold px-8 py-3.5 rounded hover:bg-orange-700 hover:gap-4 transition-all mb-10 md:mb-12 w-full sm:w-auto sm:self-start tracking-wide"
@@ -63,7 +60,7 @@ export function Hero() {
           <img
             src={asset(data.heroImage)}
             alt={data.heroImageAlt}
-            className="relative z-10 w-4/5 sm:w-2/3 max-h-[320px] sm:max-h-[400px] lg:w-[130%] lg:max-w-none lg:max-h-none lg:shrink-0 object-contain object-bottom"
+            className="relative z-10 w-4/5 sm:w-2/3 max-h-[300px] sm:max-h-[380px] lg:w-auto lg:max-w-[520px] lg:max-h-none object-contain object-bottom"
           />
         </Reveal>
       </div>

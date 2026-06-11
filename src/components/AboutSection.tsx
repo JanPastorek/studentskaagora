@@ -25,7 +25,7 @@ export function AboutSection() {
           <img
             src={asset(data.image)}
             alt={data.imageAlt}
-            className="w-full max-w-[420px] lg:max-w-[480px] h-auto"
+            className="w-full max-w-[320px] h-auto"
           />
         </Reveal>
       </div>

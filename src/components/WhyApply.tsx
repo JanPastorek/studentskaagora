@@ -38,7 +38,7 @@ export function WhyApply() {
             )}
           </div>
 
-          <div className="hidden md:block absolute right-16 top-1/2 -translate-y-1/2 w-[300px] opacity-90 z-0">
+          <div className="hidden md:block absolute right-16 top-1/2 -translate-y-1/2 w-[200px] opacity-90 z-0">
             <img src={asset(data.image)} alt={data.imageAlt} className="w-full h-auto" />
           </div>
         </Reveal>
