@@ -1,9 +1,12 @@
 ---
-heading: PREČO SA PRIHLÁSIŤ?
-image: /images/atenska-skola.png
-alt: The School of Athens by Raphael
+headingBlue: "Prečo sa"
+headingOrange: "prihlásiť?"
+image: /images/preco-sa-prihlasit.png
+imageAlt: Antický stĺp s bodkami
+points:
+  - Malá skupina a osobný prístup
+  - Veľké texty a veľké otázky
+  - Diskusia, argumentácia a kritické myslenie
+  - Komunita ľudí, ktorí sa nechcú prestať pýtať
 ---
-
-Ak hľadáš viac než len prednášky a skúšky, Študentská Agora je priestor pre teba. V malých skupinách sa stretneš s **akademikmi a spoluštudentmi**, ktorí majú **chuť premýšľať do hĺbky**. Spoločne budeme **čítať texty, ktoré formovali našu civilizáciu a diskutovať o myšlienkach**, ktoré hýbu svetom.
-
-Agora ti dá niečo, čo bežná výučba často neponúka: **slobodu myslieť nahlas, pýtať sa a spochybňovať**. Naučíš sa lepšie vyjadrovať, argumentovať a hľadať hlbšie súvislosti. Študentská Agora je pre každého, kto sa **nechce prestať pýtať.**
+Ak hľadáš viac než len prednášky, kredity a skúšky, Študentská Agora je miesto, kde sa učíš myslieť nahlas, pýtať sa do hĺbky a formulovať vlastný názor.

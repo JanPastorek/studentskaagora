@@ -1,24 +1,65 @@
 ---
-heading: TÉMY TUTORIÁLOV
+headingBlue: "Témy"
+headingOrange: "tutoriálov"
 topics:
   - name: Existencia
-    sub: Existencializmus už od Augustína
-  - name: Morálna odolnosť
-    sub: Viac ako stoický pokoj
+    question: Čo znamená žiť naplno?
+    bgFront: card-cream
+    textFront: dark
+    bgBack: blue
+    textBack: white
+  - name: "Morálna odolnosť"
+    question: "Ako zostať pevný, keď svet tlačí?"
+    bgFront: blue
+    textFront: white
+    bgBack: yellow
+    textBack: dark
   - name: Technológie
-    sub: "Kto stvoril koho: my ich, či oni nás?"
+    question: Tvoríme ich my, alebo ony pretvárajú nás?
+    bgFront: card-cream
+    textFront: dark
+    bgBack: blue
+    textBack: white
   - name: Smrť
-    sub: Filozofia ako umenie dobrej smrti
+    question: Dá sa naučiť dobre zomierať – a lepšie žiť?
+    bgFront: orange-dark
+    textFront: white
+    bgBack: card-cream
+    textBack: dark
   - name: Charakter
-    sub: Aristoteles, cnosti a zacielený život
+    question: Akým človekom sa stávaš?
+    bgFront: yellow
+    textFront: dark
+    bgBack: blue
+    textBack: white
   - name: Duša
-    sub: Človek ako oživený stroj?
+    question: Sme viac než telo a algoritmus?
+    bgFront: orange-dark
+    textFront: white
+    bgBack: card-cream
+    textBack: dark
   - name: Filozofia
-    sub: Príbeh, ktorý sa niekdy neskončí
+    question: Prečo sa príbeh myslenia nikdy nekončí?
+    bgFront: card-cream
+    textFront: dark
+    bgBack: blue
+    textBack: white
   - name: Spravodlivosť
-    sub: Platón, štát a človek
+    question: Čo dlží človek štátu – a štát človeku?
+    bgFront: blue
+    textFront: white
+    bgBack: yellow
+    textBack: dark
   - name: Autenticita
-    sub: Ako nežiť život niekoho iného
+    question: Ako nežiť život niekoho iného?
+    bgFront: yellow
+    textFront: dark
+    bgBack: blue
+    textBack: white
   - name: Boh
-    sub: 'Nietzscheho: "Boh je mŕtvy!"'
+    question: Čo zostane, keď sa rozpadnú istoty?
+    bgFront: card-cream
+    textFront: dark
+    bgBack: orange-dark
+    textBack: white
 ---

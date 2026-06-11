@@ -1,21 +1,23 @@
 import { Hero } from "@/components/Hero";
-import { OverviewCards } from "@/components/OverviewCards";
-import { TopicsList } from "@/components/TopicsList";
-import { WhyAgora } from "@/components/WhyAgora";
-import { Faces } from "@/components/Faces";
+import { StatStrip } from "@/components/StatStrip";
+import { AboutSection } from "@/components/AboutSection";
+import { TopicsSection } from "@/components/TopicsSection";
+import { Team } from "@/components/Team";
 import { WhyApply } from "@/components/WhyApply";
 import { Apply } from "@/components/Apply";
+import { Footer } from "@/components/Footer";
 
 export default function HomePage() {
   return (
-    <main className="w-full">
+    <>
       <Hero />
-      <OverviewCards />
-      <TopicsList />
-      <WhyAgora />
-      <Faces />
+      <StatStrip />
+      <AboutSection />
+      <TopicsSection />
+      <Team />
       <WhyApply />
       <Apply />
-    </main>
+      <Footer />
+    </>
   );
 }

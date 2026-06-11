@@ -16,25 +16,91 @@ export function loadContent<T = Record<string, unknown>>(slug: string): ContentF
   return { data: parsed.data as T, body: parsed.content.trim() };
 }
 
-export type HeroData = {
-  title: string;
-  subtitle: string;
-  button: { label: string; href: string };
-  backgroundImage: string;
-  backgroundAlt: string;
+export type NavLink = { label: string; href: string };
+export type NavData = {
+  logo: { src: string; alt: string };
+  links: NavLink[];
+  cta: { label: string; href: string };
 };
 
-export type Card = { title: string; image: string; alt: string; body: string };
-export type CardsData = { cards: Card[] };
+export type HeroData = {
+  tagline: string;
+  titleLine1: string;
+  titleLine2: string;
+  titleLine3: string;
+  titleOrangeWords: string[];
+  subtitle: string;
+  details: string;
+  button: { label: string; href: string };
+  heroImage: string;
+  heroImageAlt: string;
+  quote: string;
+  quoteOrangeWords: string[];
+};
 
-export type Topic = { name: string; sub: string };
-export type TopicsData = { heading: string; topics: Topic[] };
+export type Stat = {
+  heading: string;
+  text?: string;
+  price?: string;
+  iconColor: string;
+};
+export type StatsData = { stats: Stat[] };
 
-export type Person = { name: string; role: string; image: string; alt: string };
-export type FacesData = { heading: string; people: Person[] };
+export type AboutData = {
+  headingBlue: string;
+  headingOrange: string;
+  image: string;
+  imageAlt: string;
+};
 
-export type SimpleHeadingData = { heading: string };
+export type FlipTopic = {
+  name: string;
+  question: string;
+  bgFront: string;
+  textFront: string;
+  bgBack: string;
+  textBack: string;
+};
+export type TopicsData = {
+  headingBlue: string;
+  headingOrange: string;
+  topics: FlipTopic[];
+};
 
-export type WhyApplyData = { heading: string; image: string; alt: string };
+export type TeamMember = {
+  name: string;
+  role: string;
+  image: string;
+  accentColor: string;
+};
+export type TeamData = {
+  headingBlue: string;
+  headingOrange: string;
+  people: TeamMember[];
+};
 
-export type ApplyData = { heading: string; deadline: string; email: string };
+export type WhyApplyData = {
+  headingBlue: string;
+  headingOrange: string;
+  image: string;
+  imageAlt: string;
+  points: string[];
+};
+
+export type ApplyData = {
+  headingMain: string;
+  headingYellow: string;
+  description: string;
+  deadline: string;
+  fee: string;
+  applicationEmail: string;
+  applicationEmailSubject: string;
+  applicationLabel: string;
+  contactLabel: string;
+};
+
+export type FooterData = {
+  logo: { src: string; alt: string };
+  copyright: string;
+  links: NavLink[];
+};
