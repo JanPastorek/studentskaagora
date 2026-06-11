@@ -1,7 +1,7 @@
 ---
 headingBlue: "Prečo"
 headingOrange: "Agora?"
-image: /images/preco-agora.png
+image: /images/preco_agora.png
 imageAlt: Zošit s kresbou stĺpa a textom na oranžovom kruhu
 ---
 Študentská Agora je priestor pre mladých ľudí, ktorí sa nechcú uspokojiť s povrchnými odpoveďami. Nadväzuje na odkaz Komenského College a prináša nový priestor pre myslenie, diskusiu a rast pod záštitou Pravidelnej dávky.

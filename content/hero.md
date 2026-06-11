@@ -11,7 +11,7 @@ details: "Bratislava • október 2025 – máj 2026 • Kapacita: 20 účastní
 button:
   label: Prihlás sa
   href: "#prihlasenie"
-heroImage: /images/hero-statue.png
+heroImage: /images/hero_image.png
 heroImageAlt: Socha Dávida so žltým kruhom a antickým stĺpom
 quote: "Idey menia svet. Otázky menia nás."
 quoteOrangeWords:

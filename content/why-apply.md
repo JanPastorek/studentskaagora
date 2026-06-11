@@ -1,7 +1,7 @@
 ---
 headingBlue: "Prečo sa"
 headingOrange: "prihlásiť?"
-image: /images/preco-sa-prihlasit.png
+image: /images/preco_sa_prihlasit.png
 imageAlt: Antický stĺp s bodkami
 points:
   - Malá skupina a osobný prístup
