@@ -19,22 +19,27 @@ export function Apply() {
           />
 
           <div className="w-full md:w-3/5 relative z-10">
-            <h2 className="font-serif text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-5 md:mb-6">
+            <div className="flex items-center gap-3 mb-5">
+              <div className="h-px w-8 bg-white/30" />
+              <div className="w-1 h-1 rounded-full bg-white/30" />
+              <div className="h-px w-8 bg-white/30" />
+            </div>
+            <h2 className="font-serif text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-semibold mb-5 md:mb-6">
               {data.headingMain}
-              <span className="text-agora-yellow">{data.headingYellow}</span>
+              <span className="text-agora-yellow italic">{data.headingYellow}</span>
             </h2>
-            <p className="text-sm font-light text-gray-200 leading-relaxed mb-6 md:mb-8 max-w-lg">
+            <p className="font-serif italic text-sm text-gray-300 leading-relaxed mb-7 md:mb-8 max-w-lg">
               {data.description}
             </p>
 
-            <div className="space-y-4 mb-8">
-              <div className="flex items-center gap-4">
-                <Calendar size={20} />
-                <span className="font-light tracking-wide">Deadline prihlásenia: {data.deadline}</span>
+            <div className="space-y-3 mb-8 font-serif">
+              <div className="flex items-baseline gap-3">
+                <span className="text-agora-yellow text-base leading-none">—</span>
+                <span className="text-sm text-gray-200">Deadline prihlásenia: <span className="text-white">{data.deadline}</span></span>
               </div>
-              <div className="flex items-center gap-4">
-                <Euro size={20} />
-                <span className="font-light tracking-wide">Ročné školné: {data.fee}</span>
+              <div className="flex items-baseline gap-3">
+                <span className="text-agora-yellow text-base leading-none">—</span>
+                <span className="text-sm text-gray-200">Ročné školné: <span className="text-white font-semibold">{data.fee}</span></span>
               </div>
             </div>
 

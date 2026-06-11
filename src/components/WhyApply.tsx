@@ -12,24 +12,27 @@ export function WhyApply() {
       <div className="max-w-7xl mx-auto px-6">
         <Reveal className="bg-agora-box-cream rounded-lg p-8 md:p-12 lg:p-16 flex flex-col md:flex-row relative overflow-hidden shadow-sm">
           <div className="w-full md:w-2/3 relative z-10">
-            <h2 className="font-serif text-3xl sm:text-4xl md:text-5xl font-bold mb-6 md:mb-8">
+            <div className="flex items-center gap-3 mb-5">
+              <div className="h-px w-8 bg-agora-orange/50" />
+              <div className="w-1 h-1 rounded-full bg-agora-orange/50" />
+              <div className="h-px w-8 bg-agora-orange/50" />
+            </div>
+            <h2 className="font-serif text-3xl sm:text-4xl md:text-5xl font-semibold mb-6 md:mb-8">
               <span className="text-agora-blue">{data.headingBlue} </span>
-              <span className="text-agora-orange">{data.headingOrange}</span>
+              <span className="text-agora-orange italic">{data.headingOrange}</span>
             </h2>
 
             <ul className="space-y-3 md:space-y-4 mb-8">
               {data.points.map((point) => (
                 <li key={point} className="flex items-start gap-4">
-                  <div className="w-6 h-6 rounded-full bg-agora-yellow flex items-center justify-center shrink-0 mt-0.5">
-                    <Check size={10} className="text-agora-blue" strokeWidth={3} />
-                  </div>
-                  <span className="text-gray-800 font-medium leading-snug">{point}</span>
+                  <span className="font-serif text-agora-orange text-lg leading-tight mt-0.5 shrink-0">—</span>
+                  <span className="text-gray-800 leading-snug">{point}</span>
                 </li>
               ))}
             </ul>
 
             {body && (
-              <Markdown className="text-sm font-light leading-relaxed text-gray-700 max-w-lg">
+              <Markdown className="text-sm italic leading-relaxed text-gray-600 max-w-lg">
                 {body}
               </Markdown>
             )}

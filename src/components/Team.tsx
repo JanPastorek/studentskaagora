@@ -21,9 +21,14 @@ export function Team() {
     <section id="tim" className="bg-agora-cream py-12 lg:py-16">
       <div className="max-w-7xl mx-auto px-6">
         <Reveal>
-          <h2 className="font-serif text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-8 md:mb-12">
+          <div className="flex items-center gap-3 mb-5">
+            <div className="h-px w-8 bg-agora-orange/50" />
+            <div className="w-1 h-1 rounded-full bg-agora-orange/50" />
+            <div className="h-px w-8 bg-agora-orange/50" />
+          </div>
+          <h2 className="font-serif text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-semibold mb-8 md:mb-12">
             <span className="text-agora-blue">{data.headingBlue} </span>
-            <span className="text-agora-orange">{data.headingOrange}</span>
+            <span className="text-agora-orange italic">{data.headingOrange}</span>
           </h2>
         </Reveal>
 
@@ -48,8 +53,8 @@ export function Team() {
                     className="relative z-10 w-full h-full object-cover rounded-full"
                   />
                 </div>
-                <h3 className="font-serif font-bold text-[17px] mb-1 text-gray-900">{person.name}</h3>
-                <p className="text-xs text-gray-600 font-light">{person.role}</p>
+                <h3 className="font-serif font-semibold text-[17px] mb-1 text-gray-900">{person.name}</h3>
+                <p className="font-serif italic text-xs text-gray-500">{person.role}</p>
               </Reveal>
             );
           })}
