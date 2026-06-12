@@ -28,18 +28,18 @@ export function Apply() {
               {data.headingMain}
               <span className="text-agora-yellow italic">{data.headingYellow}</span>
             </h2>
-            <p className="font-serif italic text-sm text-gray-300 leading-relaxed mb-7 md:mb-8 max-w-lg">
+            <p className="font-serif italic text-base text-gray-300 leading-relaxed mb-7 md:mb-8 max-w-lg">
               {data.description}
             </p>
 
             <div className="space-y-3 mb-8 font-serif">
               <div className="flex items-baseline gap-3">
                 <span className="text-agora-yellow text-base leading-none">—</span>
-                <span className="text-sm text-gray-200">Deadline prihlásenia: <span className="text-white">{data.deadline}</span></span>
+                <span className="text-base text-gray-200">Deadline prihlásenia: <span className="text-white">{data.deadline}</span></span>
               </div>
               <div className="flex items-baseline gap-3">
                 <span className="text-agora-yellow text-base leading-none">—</span>
-                <span className="text-sm text-gray-200">Ročné školné: <span className="text-white font-semibold">{data.fee}</span></span>
+                <span className="text-base text-gray-200">Ročné školné: <span className="text-white font-semibold">{data.fee}</span></span>
               </div>
             </div>
 
@@ -56,10 +56,10 @@ export function Apply() {
             <div className="flex items-start gap-4">
               <Mail size={24} className="mt-1 shrink-0" />
               <div>
-                <p className="text-sm font-light mb-1">{data.contactLabel}</p>
+                <p className="text-base mb-1">{data.contactLabel}</p>
                 <a
                   href={`mailto:${data.applicationEmail}`}
-                  className="text-agora-yellow hover:underline text-sm font-medium break-all"
+                  className="text-agora-yellow hover:underline text-base font-medium break-all"
                 >
                   {data.applicationEmail}
                 </a>

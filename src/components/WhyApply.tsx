@@ -32,7 +32,7 @@ export function WhyApply() {
             </ul>
 
             {body && (
-              <Markdown className="text-sm italic leading-relaxed text-gray-600 max-w-lg">
+              <Markdown className="text-base italic leading-relaxed text-gray-600 max-w-lg">
                 {body}
               </Markdown>
             )}

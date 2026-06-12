@@ -34,16 +34,16 @@ export function TopicsSection() {
             return (
               <Reveal key={topic.name} delay={(i % 5) * 60} className="flip-card group aspect-square [perspective:1000px]">
                 <div className="flip-inner relative w-full h-full transition-transform duration-500 [transform-style:preserve-3d] group-hover:[transform:rotateY(180deg)]">
-                  <div className={`absolute inset-0 [backface-visibility:hidden] ${frontBg} ${frontText} p-4 sm:p-5 flex flex-col border-t-[3px] border-black/10`}>
-                    <span className="font-serif text-xs sm:text-sm italic opacity-50 self-end">{ROMAN[i] ?? i + 1}.</span>
+                  <div className={`absolute inset-0 [backface-visibility:hidden] ${frontBg} ${frontText} p-5 sm:p-6 flex flex-col border-t-[3px] border-black/10`}>
+                    <span className="font-serif text-sm sm:text-base italic opacity-60 self-end">{ROMAN[i] ?? i + 1}.</span>
                     <div className="mt-auto">
-                      <h3 className="font-serif text-base sm:text-xl font-semibold leading-tight mb-2">{topic.name}</h3>
-                      <p className="font-serif text-xs sm:text-sm italic leading-snug opacity-60 hidden sm:block">{topic.question}</p>
+                      <h3 className="font-serif text-xl sm:text-2xl font-semibold leading-tight mb-3">{topic.name}</h3>
+                      <p className="font-serif text-sm sm:text-base italic leading-snug opacity-70">{topic.question}</p>
                     </div>
                   </div>
-                  <div className={`flip-back absolute inset-0 [backface-visibility:hidden] [transform:rotateY(180deg)] ${backBg} ${backText} p-4 sm:p-6 flex flex-col justify-between`}>
-                    <span className="font-serif text-sm italic opacity-50 self-end">{ROMAN[i] ?? i + 1}.</span>
-                    <p className="font-serif text-sm sm:text-lg italic leading-relaxed text-center">{topic.question}</p>
+                  <div className={`flip-back absolute inset-0 [backface-visibility:hidden] [transform:rotateY(180deg)] ${backBg} ${backText} p-5 sm:p-6 flex flex-col justify-between`}>
+                    <span className="font-serif text-base italic opacity-55 self-end">{ROMAN[i] ?? i + 1}.</span>
+                    <p className="font-serif text-base sm:text-xl italic leading-relaxed text-center">{topic.question}</p>
                   </div>
                 </div>
               </Reveal>

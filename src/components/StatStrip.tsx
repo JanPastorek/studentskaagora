@@ -26,7 +26,7 @@ export function StatStrip() {
                   <Icon size={17} strokeWidth={1.5} />
                 </div>
                 <div>
-                  <dt className="text-xs font-bold tracking-[0.18em] uppercase text-agora-orange mb-2">
+                  <dt className="text-sm font-bold tracking-[0.15em] uppercase text-agora-orange mb-2">
                     {stat.heading}
                   </dt>
                   {stat.price ? (
