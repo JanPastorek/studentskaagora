@@ -1,13 +1,12 @@
-﻿---
-headingBlue: "PreÄo sa"
-headingOrange: "prihlÃ¡siÅ¥?"
-image: /images/hero-books.png
-imageAlt: AntickÃ½ stÄºp s bodkami
-points:
-  - MalÃ¡ skupina a osobnÃ½ prÃ­stup
-  - VeÄ¾kÃ© texty a veÄ¾kÃ© otÃ¡zky
-  - Diskusia, argumentÃ¡cia a kritickÃ© myslenie
-  - Komunita Ä¾udÃ­, ktorÃ­ sa nechcÃº prestaÅ¥ pÃ½taÅ¥
 ---
-Ak hÄ¾adÃ¡Å¡ viac neÅ¾ len prednÃ¡Å¡ky, kredity a skÃºÅ¡ky, Å tudentskÃ¡ Agora je miesto, kde sa uÄÃ­Å¡ myslieÅ¥ nahlas, pÃ½taÅ¥ sa do hÄºbky a formulovaÅ¥ vlastnÃ½ nÃ¡zor.
-
+headingBlue: "Prečo sa"
+headingOrange: "prihlásiť?"
+image: /images/hero-books.png
+imageAlt: Stohy kníh v knižnici
+points:
+  - Malá skupina a osobný prístup
+  - Veľké texty a veľké otázky
+  - Diskusia, argumentácia a kritické myslenie
+  - Komunita ľudí, ktorí sa nechcú prestať pýtať
+---
+Ak hľadáš viac než len prednášky, kredity a skúšky, Študentská Agora je miesto, kde sa učíš myslieť nahlas, pýtať sa do hĺbky a formulovať vlastný názor.

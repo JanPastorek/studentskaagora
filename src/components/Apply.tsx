@@ -8,7 +8,7 @@ export function Apply() {
   const mailto = `mailto:${data.applicationEmail}?subject=${encodeURIComponent(data.applicationEmailSubject)}`;
 
   return (
-    <section id="prihlasenie" className="bg-agora-cream pb-16 lg:pb-24">
+    <section id="prihlasenie" className="bg-agora-cream pt-12 md:pt-16 pb-16 lg:pb-24">
       <div className="max-w-7xl mx-auto px-6">
         <Reveal className="bg-agora-blue rounded-2xl md:rounded-[2rem] p-8 md:p-12 lg:p-14 text-white relative overflow-hidden shadow-xl flex flex-col md:flex-row justify-between">
           <img
