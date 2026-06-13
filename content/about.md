@@ -1,11 +1,12 @@
----
-headingBlue: "Prečo"
+﻿---
+headingBlue: "PreÄo"
 headingOrange: "Agora?"
-image: /images/preco_agora.png
-imageAlt: Zošit s kresbou stĺpa a textom na oranžovom kruhu
+image: /images/books.avif
+imageAlt: ZoÅ¡it s kresbou stÄºpa a textom na oranÅ¾ovom kruhu
 ---
-Študentská Agora je priestor pre mladých ľudí, ktorí sa nechcú uspokojiť s povrchnými odpoveďami. Nadväzuje na odkaz Komenského College a prináša nový priestor pre myslenie, diskusiu a rast pod záštitou Pravidelnej dávky.
+Å tudentskÃ¡ Agora je priestor pre mladÃ½ch Ä¾udÃ­, ktorÃ­ sa nechcÃº uspokojiÅ¥ s povrchnÃ½mi odpoveÄami. NadvÃ¤zuje na odkaz KomenskÃ©ho College a prinÃ¡Å¡a novÃ½ priestor pre myslenie, diskusiu a rast pod zÃ¡Å¡titou Pravidelnej dÃ¡vky.
 
-V malej skupine budeš čítať veľké texty, diskutovať o zásadných otázkach a učiť sa myslieť slobodne, presne a s rešpektom k druhým.
+V malej skupine budeÅ¡ ÄÃ­taÅ¥ veÄ¾kÃ© texty, diskutovaÅ¥ o zÃ¡sadnÃ½ch otÃ¡zkach a uÄiÅ¥ sa myslieÅ¥ slobodne, presne a s reÅ¡pektom k druhÃ½m.
 
-Agora dopĺňa univerzitné štúdium o to, čo v ňom často chýba: hĺbku, komunitu, osobný prístup a čas pýtať sa.
+Agora dopÄºÅˆa univerzitnÃ© Å¡tÃºdium o to, Äo v Åˆom Äasto chÃ½ba: hÄºbku, komunitu, osobnÃ½ prÃ­stup a Äas pÃ½taÅ¥ sa.
+

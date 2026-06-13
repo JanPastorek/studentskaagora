@@ -1,4 +1,3 @@
-import { Check } from "lucide-react";
 import { loadContent, type WhyApplyData } from "@/lib/content";
 import { asset } from "@/lib/asset";
 import { Reveal } from "./Reveal";
@@ -38,8 +37,14 @@ export function WhyApply() {
             )}
           </div>
 
-          <div className="hidden md:block absolute right-16 top-1/2 -translate-y-1/2 w-[200px] opacity-90 z-0">
-            <img src={asset(data.image)} alt={data.imageAlt} className="w-full h-auto" />
+          {/* Books photo: fills the right half, fades left into the card background */}
+          <div className="hidden md:block absolute inset-y-0 right-0 w-[45%] z-0 overflow-hidden">
+            <img
+              src={asset(data.image)}
+              alt={data.imageAlt}
+              className="w-full h-full object-cover object-center"
+              style={{ maskImage: "linear-gradient(to right, transparent 0%, rgba(0,0,0,0.4) 25%, rgba(0,0,0,0.85) 55%, black 80%)" }}
+            />
           </div>
         </Reveal>
       </div>

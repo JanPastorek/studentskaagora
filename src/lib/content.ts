@@ -42,6 +42,7 @@ export type Stat = {
   heading: string;
   text?: string;
   price?: string;
+  priceUnit?: string;
   iconColor: string;
 };
 export type StatsData = { stats: Stat[] };
@@ -103,4 +104,10 @@ export type FooterData = {
   logo: { src: string; alt: string };
   copyright: string;
   links: NavLink[];
+};
+
+export type TestimonialsData = {
+  backgroundImage: string;
+  backgroundAlt: string;
+  quotes: { text: string }[];
 };
