@@ -6,10 +6,10 @@ cards:
     body: |
       **Bratislava**, Svoradov
 
-      Október 2025 - Máj 2026
+      Október 2026 - Máj 2027
 
       **Deadline prihlásenia:**
-      18. október
+      4. október
 
   - title: PRE KOHO?
     image: /images/students.jpg
@@ -17,19 +17,19 @@ cards:
     body: |
       Program je pre **študentov**
       a **mladých pracujúcich**
-      do 26 rokov
+     
 
-      Maximálne **20 účastníkov**
+  
 
   - title: ČO ŤA ČAKÁ?
     image: /images/party.png
     alt: Welcome party
     body: |
       **10 tutoriálov**
-
+    **3 semináre**
       Welcome party & events
 
       Vytlačené skriptá
 
-      **Ročné školné:** 100 €
+      **Ročné školné:** 179€ early bird 149€
 ---
