@@ -25,7 +25,7 @@ cards:
     image: /images/party.png
     alt: Welcome party
     body: |
-      **10 tutoriálov**
+    **10 tutoriálov**
     **3 semináre**
       Welcome party & events
 
