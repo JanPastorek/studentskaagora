@@ -24,7 +24,7 @@ people:
     accentColor: orange
   - name: Michal Fronc
     role: Tútor
-    image: /images/jan.png
+    image: 
     accentColor: orange
   - name: Ema Rybárová
     role: Koordinátorka programu a marketing
@@ -32,6 +32,6 @@ people:
     accentColor: orange
   - name: Elena
     role: Partnerstvá a rozvoj programu
-    image: /images/jan.png
+    image: 
     accentColor: orange
 ---
