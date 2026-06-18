@@ -1,4 +1,3 @@
----
 heading: TVÁRE AGORY
 people:
   - name: Mgr. Andrej Sňahničan
