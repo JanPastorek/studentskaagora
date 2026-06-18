@@ -17,7 +17,7 @@ people:
     role: Tútor a akademický tím
     image: /images/jan.png
     alt: Ján
-     - name: Samuel Prílepok
+    - name: Samuel Prílepok
     role: Metodik a tútor
     image: /images/andrej.jpeg
     alt: Samuel
