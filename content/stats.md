@@ -1,19 +1,15 @@
 ﻿---
 stats:
   - heading: Kde a kedy?
-    text: "Bratislava, Svoradov\nOktóber 2025 – máj 2026"
+    text: "Bratislava, Svoradov\nOktóber 2026 – máj 2027"
     iconColor: blue
   - heading: Pre koho?
-    text: Pre študentov a mladých pracujúcich do 26 rokov
+    text: Pre študentov a mladých pracujúcich
     iconColor: orange
   - heading: Čo ťa čaká?
-    text: "10 tutoriálov • diskusie • komunitné eventy • vytlačené skriptá"
+    text: "10 tutoriálov • 3 semináre • diskusie • komunitné eventy • vytlačené skriptá"
     iconColor: yellow
-  - heading: Veľkosť skupiny
-    price: "4"
-    priceUnit: " ľudia na tutoriál"
-    iconColor: orange
   - heading: Ročné školné
-    price: "100 €"
+    price: "179 €, early bird 149 €"
     iconColor: blue
 ---
