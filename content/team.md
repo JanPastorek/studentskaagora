@@ -28,7 +28,7 @@ people:
     accentColor: orange
   - name: Ema Rybárová
     role: Koordinátorka programu a marketing
-    image: /images/jan.png
+    image: /images/ema.png.jpg
     accentColor: orange
   - name: Elena
     role: Partnerstvá a rozvoj programu
