@@ -3,7 +3,7 @@ cards:
   - title: KDE A KEDY?
     image: /images/studovna.jpg
     alt: Library reading room
-    body: |
+    body:
       **Bratislava**, Svoradov
 
       Október 2026 - Máj 2027
@@ -25,8 +25,8 @@ cards:
     image: /images/party.png
     alt: Welcome party
     body: |
-    **10 tutoriálov**
-    **3 semináre**
+     **10 tutoriálov**
+     **3 semináre**
       Welcome party & events
 
       Vytlačené skriptá
