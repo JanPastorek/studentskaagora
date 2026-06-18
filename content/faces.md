@@ -20,6 +20,10 @@ people:
     role: Metodik a tútor
     image: /images/andrej.jpeg
     alt: Samuel
+  - name: Michal Fronc
+    role: Tútor
+    image: /images/andrej.jpeg
+    alt: Samuel
  - name: Ema Rybárová
     role: Koordinátorka programu a marketing
     image: /images/andrej.jpeg
