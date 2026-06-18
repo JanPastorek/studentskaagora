@@ -14,7 +14,7 @@ cards:
   - title: PRE KOHO?
     image: /images/students.jpg
     alt: Students in discussion
-    body: |
+    body:
       Program je pre **študentov**
       a **mladých pracujúcich**
     
