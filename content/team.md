@@ -3,7 +3,7 @@ headingBlue: "Tváre"
 headingOrange: "Agory"
 people:
   - name: Mgr. Andrej Šnahničan
-    role: Projektový manažér a tútor
+    role: Riaditeľ programu a tútor
     image: /images/andrej.jpeg
     accentColor: yellow
   - name: Mária Kolesárová, PhD.
@@ -11,11 +11,27 @@ people:
     image: /images/maria.jpg
     accentColor: orange
   - name: Jakub Betinský, MA, MPhil
-    role: Riaditeľ Pravidelnej dávky
+    role: Akademický tím
     image: /images/jakub.png
     accentColor: blue
   - name: Mgr. Ján Pastorek
     role: Tútor a akademický tím
+    image: /images/jan.png
+    accentColor: orange
+  - name: Samuel Prílepok
+    role: Metodik a tútor
+    image: /images/jan.png
+    accentColor: orange
+  - name: Michal Fronc
+    role: Tútor
+    image: /images/jan.png
+    accentColor: orange
+  - name: Ema Rybárová
+    role: Koordinátorka programu a marketing
+    image: /images/jan.png
+    accentColor: orange
+  - name: Elena
+    role: Partnerstvá a rozvoj programu
     image: /images/jan.png
     accentColor: orange
 ---
