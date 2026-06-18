@@ -6,8 +6,8 @@ titleLine3: "Pýtaj sa hlbšie."
 titleOrangeWords:
   - slobodne.
   - hlbšie.
-subtitle: Ročný program pre študentov a mladých pracujúcich, ktorí chcú rozumieť sebe, svetu a ideám, ktoré ho formujú.
-details: "Bratislava • október 2025 – máj 2026 • Kapacita: 20 účastníkov"
+subtitle: Ročný program filozofie pre študentov a mladých pracujúcich, ktorí chcú rozumieť sebe, svetu a ideám, ktoré ho formujú.
+details: "Bratislava • október 2026 – máj 2027"
 button:
   label: Prihlás sa
   href: "#prihlasenie"
