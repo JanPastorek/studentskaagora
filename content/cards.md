@@ -3,7 +3,7 @@ cards:
   - title: KDE A KEDY?
     image: /images/studovna.jpg
     alt: Library reading room
-    body:
+    body: |
       **Bratislava**, Svoradov
 
       Október 2026 - Máj 2027
