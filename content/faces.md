@@ -12,7 +12,7 @@ people:
   - name: Jakub Betinský MA, MPhil
     role: Akademický tím
     image: /images/jakub.png
-    alt:Jakub
+    alt: Jakub
   - name: Mgr. Ján Pastorek
     role: Tútor a akademický tím
     image: /images/jan.png
