@@ -17,7 +17,7 @@ cards:
     body: |
       Program je pre **študentov**
       a **mladých pracujúcich**
-     
+    
 
   
 
