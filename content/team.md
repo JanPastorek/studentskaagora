@@ -20,7 +20,7 @@ people:
     accentColor: orange
   - name: Samuel Prílepok
     role: Metodik a tútor
-    image: /images/samuel.png
+    image: /images/samuel.jpeg
     accentColor: orange
   - name: Michal Fronc
     role: Tútor
