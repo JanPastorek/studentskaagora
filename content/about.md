@@ -4,8 +4,9 @@ headingOrange: "Agora?"
 image: /images/preco_agora.png
 imageAlt: Zošit s kresbou stĺpa a textom na oranžovom kruhu
 ---
-Študentská Agora je priestor pre mladých ľudí, ktorí sa nechcú uspokojiť s povrchnými odpoveďami. Prináša nový priestor pre myslenie, diskusiu a rast.
+Študentská Agora je priestor pre mladých ľudí, ktorí si kladú veľké otázky a nechcú sa uspokojiť s povrchnými odpoveďami. Prináša nový priestor pre diskusiu a rast s cieľom podporiť kritické, analytické a slobodné myslenie. 
 
-V malej skupine budeš čítať veľké texty, diskutovať o zásadných otázkach a učiť sa myslieť slobodne, presne a s rešpektom k druhým.
+V malej interdisciplinárnej skupine čítame texty veľkých autorov starovekej i modernej filozofie, diskutujeme o zásadných otázkach,  podporujeme schopnosť počúvať druhých a učíme sa rozvíjať svoje myslenie v otvorenom dialógu.
 
-Agora dopĺňa univerzitné štúdium o to, čo v ňom často chýba: hĺbku, komunitu, osobný prístup a čas pýtať sa.
+Prostredníctvom osobného prístupu a spoločného hľadania nových perspektív účastníci prehlbujú schopnosť myslieť a zažívajú rozvoj, ktorý presahuje bežný rámec univerzitného štúdia.
+
