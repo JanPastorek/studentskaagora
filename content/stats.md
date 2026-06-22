@@ -10,6 +10,6 @@ stats:
     text: "10 tutoriálov • 3 semináre • diskusie • komunitné eventy"
     iconColor: yellow
   - heading: Ročné školné
-    price: "early bird 149 €"
+    price: "early bird 149 € (plná cena 179€)"
     iconColor: blue
 ---
