@@ -44,7 +44,9 @@ export function Apply() {
             </div>
 
             <a
-              href={mailto}
+               href="https://forms.gle/6tNFfgJc7aF7uJGq6"
+               target="_blank"
+               rel="noopener noreferrer"
               className="inline-flex items-center justify-center gap-3 bg-agora-yellow text-agora-blue font-semibold px-8 py-3.5 rounded hover:bg-yellow-400 hover:gap-4 transition-all shadow-md w-full sm:w-auto"
             >
               {data.applicationLabel} <ArrowRight size={16} />
