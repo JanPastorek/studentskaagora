@@ -3,7 +3,6 @@ headingBlue: "Témy"
 headingOrange: "tutoriálov"
 topics:
   - name: Existencia
-    question: Čo znamená žiť naplno?
     bgFront: card-cream
     textFront: dark
     bgBack: blue
