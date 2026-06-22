@@ -9,4 +9,4 @@ points:
   - Diskusia, argumentácia a kritické myslenie
   - Komunita ľudí, ktorí sa nechcú prestať pýtať
 ---
-Ak hľadáš viac než len prednášky, kredity a skúšky, Študentská Agora je miesto, kde sa učíš myslieť nahlas, pýtať sa do hĺbky a formulovať vlastný názor.
+Ak sa zaujímaš o otázky fungovania sveta a človeka, Študentská Agora je miesto, kde sa učíš myslieť nahlas, pýtať sa do hĺbky a formulovať vlastný názor.
