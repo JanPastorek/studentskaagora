@@ -16,7 +16,7 @@ const ASSETS = [
   ['https://cdn.prod.website-files.com/68d2523906ad7d62ec557e5c/68d2537cdf7226d2d0a312fc_Jakub.png', 'images/jakub.png'],
   ['https://cdn.prod.website-files.com/68d2523906ad7d62ec557e5c/68d2537cdf7226d2d0a312f1_jan.png', 'images/jan.png'],
   // school of athens
-  ['https://cdn.prod.website-files.com/68d2523906ad7d62ec557e5c/68d662ac7617349da38f084d_atenskaSkolaPozadie.png', 'images/atenskaskola.jpg'],
+  ['images/atenskaskola.jpg'],
 ];
 
 mkdirSync('public/images', { recursive: true });
