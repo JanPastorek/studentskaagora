@@ -18,7 +18,7 @@ people:
     role: Tútor a akademický tím
     image: /images/jan.png
     accentColor: orange
-  - name: Samuel Prílepok
+  - name: Mgr. Samuel Prílepok
     role: Metodik a tútor
     image: /images/samuel.jpeg
     accentColor: orange
