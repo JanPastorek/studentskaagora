@@ -3,7 +3,7 @@ import { loadContent, type ApplyData } from "@/lib/content";
 import { asset } from "@/lib/asset";
 import { Reveal } from "./Reveal";
 
-export function Apply(https://forms.gle/6tNFfgJc7aF7uJGq6) {
+export function Apply() {
   const { data } = loadContent<ApplyData>("apply");
   const mailto = `mailto:${data.applicationEmail}?subject=${encodeURIComponent(data.applicationEmailSubject)}`;
 
