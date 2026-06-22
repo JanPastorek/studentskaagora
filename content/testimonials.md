@@ -1,5 +1,5 @@
 ---
-backgroundImage: /images/atenska-skola.png
+backgroundImage: /images/atenskaskola.jpg
 backgroundAlt: Rafaelova maľba Aténska škola
 quotes:
   - text: "Agora mi dala slobodu v myslení, pochopenie pre iné názory, spomalenie v tejto rýchlej dobe a neskutočne skvelú komunitu inšpiratívnych ľudí."
