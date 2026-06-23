@@ -1,4 +1,4 @@
----
+
 headingBlue: "Tváre"
 headingOrange: "Agory"
 people:
@@ -36,7 +36,7 @@ people:
     accentColor: blue
   - name: Ing.Mgr. Marián Janík, PhD.
     role: Akademický tím
-    image: /images/
+    image: /images/marian.jpg
     accentColor: orange  
 
     
