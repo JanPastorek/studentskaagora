@@ -1,3 +1,4 @@
+---
 headingBlue: "Tváre"
 headingOrange: "Agory"
 people:
@@ -5,9 +6,9 @@ people:
     role: Riaditeľ programu a tútor
     image: /images/andrej.jpeg
     accentColor: yellow
-  - name: Elena
+  - name: Elena Jančišinová
     role: Partnerstvá a rozvoj programu
-    image: 
+    image: /images/elena.jpg
     accentColor: orange
   - name: Ema Rybárová
     role: Koordinátorka programu a marketing
