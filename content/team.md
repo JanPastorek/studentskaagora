@@ -17,13 +17,13 @@ people:
     role: Tútor a akademický tím
     image: /images/jan.png
     accentColor: orange
- - name: Mgr. Samuel Prílepok
+  - name: Mgr. Samuel Prílepok
     role: Metodik a tútor
     image: /images/samuel.jpeg
     accentColor: orange
- - name: Michal Fronc
+  - name: Michal Fronc
     role: Tútor
-    image: 
+    image: /images/
     accentColor: orange    
   - name: Mária Kolesárová, PhD.
     role: Tútorka a akademický tím
