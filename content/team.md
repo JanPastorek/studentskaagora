@@ -23,7 +23,7 @@ people:
     accentColor: orange
   - name: Michal Fronc
     role: Tútor
-    image: /images/
+    image: /images/samuel.jpeg
     accentColor: orange    
   - name: Mária Kolesárová, PhD.
     role: Tútorka a akademický tím
