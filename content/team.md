@@ -5,7 +5,7 @@ people:
     role: Riaditeľ programu a tútor
     image: /images/andrej.jpeg
     accentColor: yellow
-  - name: Elena Jančišinová
+  - name: Mgr. Elena Jančišinová
     role: Partnerstvá a rozvoj programu
     image: /images/elena.jpg
     accentColor: orange
