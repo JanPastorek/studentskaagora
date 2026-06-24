@@ -1,5 +1,5 @@
 const TUTORS = [
-  "Tomáš Akvinský", "Platón", "Augustin", "Roger Scruton", "Alister McGrath", "Marian Kuna", "Daniel Kahneman", "Marcus Aurelius", "Jordan B. Peterson", "Friedrich Nietzsche", "Byung-Chul Han", "Philippa Foot", "Jan Sokol", "Peter Singer", "Thomas Nagel"
+ "Platón", "Roger Scruton", "Alister McGrath", "Tomáš Akvinský", "Marian Kuna", "Daniel Kahneman", "Marcus Aurelius", "Jordan B. Peterson", "Friedrich Nietzsche", "Byung-Chul Han", "Augustin", "Philippa Foot", "Jan Sokol", "Peter Singer", "Thomas Nagel"
   
 ];
 
