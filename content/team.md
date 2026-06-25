@@ -1,3 +1,4 @@
+---
 headingBlue: "Tváre"
 headingOrange: "Agory"
 people:
