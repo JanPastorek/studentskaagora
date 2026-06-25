@@ -33,8 +33,4 @@ people:
     role: Akademický tím
     image: /images/jakub.png
     accentColor: blue
-   
-
-    
-
 ---
