@@ -22,7 +22,7 @@ people:
     role: Metodik a tútor
     image: /images/samuel.jpeg
     accentColor: orange
-  - name: Michal Fronc
+  - name: Michal Fronc, BA
     role: Tútor
     image: /images/Michal.jpeg
     accentColor: yellow    
