@@ -12,7 +12,7 @@ people:
     accentColor: orange
   - name: Ema Rybárová
     role: Koordinátorka programu a marketing
-    image: /images/ema.png.jpg
+    image: /images/ema.png
     accentColor: yellow
   - name: Mgr. Ján Pastorek
     role: Tútor a akademický tím
