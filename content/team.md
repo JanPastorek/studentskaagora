@@ -29,9 +29,9 @@ people:
   - name: Mária Kolesárová, PhD.
     role: Tútorka a akademický tím
     image: /images/maria.jpg
-    accentColor: orange
+    accentColor: blue
   - name: Jakub Betinský, MA, MPhil
     role: Akademický tím
     image: /images/jakub.png
-    accentColor: blue
+    accentColor: orange
 ---
