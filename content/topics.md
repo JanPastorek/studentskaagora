@@ -2,62 +2,62 @@
 headingBlue: "Témy"
 headingOrange: "tutoriálov"
 topics:
-  - name: Existencia
-    question: "Čo znamená žiť naplno?"
+  - name: "Utrpenie a zmysel existencie"
+    question:  
     bgFront: card-cream
     textFront: dark
     bgBack: blue
     textBack: white
-  - name: "Morálna odolnosť"
-    question: "Ako zostať pevný, keď svet tlačí?"
+  - name: "Veda a myslenie"
+    question:  
     bgFront: blue
     textFront: white
     bgBack: yellow
     textBack: dark
-  - name: Technológie
-    question: Tvoríme ich my, alebo ony pretvárajú nás?
+  - name: Ťarcha existencie
+    question:  
     bgFront: card-cream
     textFront: dark
     bgBack: blue
     textBack: white
-  - name: Smrť
-    question: Dá sa naučiť dobre zomierať – a lepšie žiť?
+  - name: Povaha reality
+    question:  
     bgFront: orange-dark
     textFront: white
     bgBack: card-cream
     textBack: dark
-  - name: Charakter
-    question: Akým človekom sa stávaš?
+  - name: Cieľ života
+    question:  
     bgFront: yellow
     textFront: dark
     bgBack: blue
     textBack: white
-  - name: Duša
-    question: Sme viac než telo a algoritmus?
+  - name: Vedomie
+    question: 
     bgFront: orange-dark
     textFront: white
     bgBack: card-cream
     textBack: dark
-  - name: Filozofia
-    question: Prečo sa príbeh myslenia nikdy nekončí?
+  - name: Sloboda
+    question:  
     bgFront: card-cream
     textFront: dark
     bgBack: blue
     textBack: white
-  - name: Spravodlivosť
-    question: Čo dlží človek štátu – a štát človeku?
+  - name: Informácia a technológie
+    question: 
     bgFront: blue
     textFront: white
     bgBack: yellow
     textBack: dark
-  - name: Autenticita
-    question: Ako nežiť život niekoho iného?
+  - name: Osoba
+    question: 
     bgFront: yellow
     textFront: dark
     bgBack: blue
     textBack: white
-  - name: Boh
-    question: Čo zostane, keď sa rozpadnú istoty?
+  - name: AI a emergencia
+    question: 
     bgFront: card-cream
     textFront: dark
     bgBack: orange-dark
