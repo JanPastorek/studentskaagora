@@ -12,7 +12,7 @@ stats:
   - heading: Ročné školné
     price: "179 €"
     iconColor: blue
-  - heading: Early bird
+  - heading: Early bird (do 31.8.)
     price: "149 €"
     iconColor: blue
 ---
