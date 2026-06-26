@@ -17,7 +17,7 @@ people:
   - name: Mgr. Ján Pastorek
     role: Tútor a akademický tím
     image: /images/jan.png
-    accentColor: orange
+    accentColor: blue
   - name: Mgr. Samuel Prílepok
     role: Metodik a tútor
     image: /images/samuel.jpeg
@@ -25,7 +25,7 @@ people:
   - name: Michal Fronc
     role: Tútor
     image: /images/michal.jpeg
-    accentColor: orange    
+    accentColor: yellow    
   - name: Mária Kolesárová, PhD.
     role: Tútorka a akademický tím
     image: /images/maria.jpg
