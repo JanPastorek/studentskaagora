@@ -1,7 +1,6 @@
 import { MapPin, Users, BookOpen, Euro, GraduationCap } from "lucide-react";
 import { loadContent, type StatsData } from "@/lib/content";
 import { Reveal } from "./Reveal";
-import { CountUp } from "./CountUp";
 
 const ICONS = [MapPin, Users, BookOpen, GraduationCap, Euro];
 
@@ -21,8 +20,6 @@ export function StatStrip() {
           {data.stats.map((stat, i) => {
             const Icon = ICONS[i] ?? MapPin;
             const ringStyle = RING_STYLE[stat.iconColor] ?? RING_STYLE.blue;
-            const numericPrice = stat.price ? parseFloat(stat.price.replace(/[^0-9.]/g, "")) : null;
-            const hasCountUp = numericPrice !== null && !isNaN(numericPrice);
             return (
               <Reveal key={stat.heading} delay={i * 80} className="flex items-start gap-4 lg:px-6 lg:first:pl-0 lg:last:pr-0">
                 <div className={`flex-shrink-0 w-11 h-11 rounded-full border-2 ${ringStyle} flex items-center justify-center`}>
@@ -34,19 +31,9 @@ export function StatStrip() {
                   </dt>
                   {stat.price !== undefined ? (
                     <dd className="font-serif text-4xl font-semibold text-agora-blue leading-none">
-                      {hasCountUp ? (
-                        <>
-                          <CountUp value={numericPrice!} />
-                          {stat.priceUnit ? (
-                            <span className="text-lg font-normal ml-1">{stat.priceUnit}</span>
-                          ) : (
-                            <span className="text-xl font-normal ml-1">
-                              {stat.price!.replace(/[0-9.]/g, "").trim()}
-                            </span>
-                          )}
-                        </>
-                      ) : (
-                        stat.price
+                      {stat.price}
+                      {stat.priceUnit && (
+                        <span className="text-lg font-normal ml-1">{stat.priceUnit}</span>
                       )}
                     </dd>
                   ) : (

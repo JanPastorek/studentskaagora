@@ -1,10 +1,14 @@
 import type { Metadata } from "next";
 import "./globals.css";
+import { asset } from "@/lib/asset";
 
 export const metadata: Metadata = {
   title: "Študentská Agora",
   description:
     "Študentská Agora — priestor pre myslenie, diskusiu a rast. Tutoriály z filozofie, vedy a spoločnosti pre študentov a mladých pracujúcich do 26 rokov.",
+  icons: {
+    icon: asset("/favicon.svg"),
+  },
 };
 
 export default function RootLayout({
