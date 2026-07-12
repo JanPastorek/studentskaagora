@@ -13,5 +13,5 @@ links:
     href: "#prihlasenie"
 cta:
   label: Prihlás sa
-  href: "#prihlasenie"
+  href: "https://forms.gle/6tNFfgJc7aF7uJGq6"
 ---
