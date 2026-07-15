@@ -1,7 +1,7 @@
 ---
 headingBlue: "Prečo sa"
 headingOrange: "prihlásiť?"
-image: /images/hero-books.png
+image: /images/whyapply_selfie.png
 imageAlt: Stohy kníh v knižnici
 points:
   - Malá skupina a osobný prístup
