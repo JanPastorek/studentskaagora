@@ -40,7 +40,7 @@ export function WhyApply() {
           {/* Books photo: fills the right half, fades left into the card background */}
           <div className="hidden md:block absolute inset-y-0 right-0 w-[45%] z-0 overflow-hidden">
             <img
-              src="/images/hero-books.jpg"
+              src="/images/whyapply_selfie.jpg"
               alt="Foto študenti"
               className="w-full h-full object-cover object-center"
               style={{ maskImage: "linear-gradient(to right, transparent 0%, rgba(0,0,0,0.4) 25%, rgba(0,0,0,0.85) 55%, black 80%)" }}
