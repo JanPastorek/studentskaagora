@@ -6,6 +6,7 @@ import { TopicsSection } from "@/components/TopicsSection";
 import { Team } from "@/components/Team";
 import { WhyApply } from "@/components/WhyApply";
 import { TestimonialsSection } from "@/components/TestimonialsSection";
+import { FaqSection } from "@/components/FaqSection";
 import { Apply } from "@/components/Apply";
 import { Footer } from "@/components/Footer";
 
@@ -20,6 +21,7 @@ export default function HomePage() {
       <Team />
       <WhyApply />
       <TestimonialsSection />
+      <FaqSection />
       <Apply />
       <Footer />
     </>

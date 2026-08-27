@@ -16,7 +16,12 @@ export function StatStrip() {
   return (
     <section className="bg-agora-cream border-y border-[#d6c9b8]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 py-10 md:py-12">
-        <dl className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-y-8 gap-x-0 sm:divide-x-0 lg:divide-x divide-[#d6c9b8]">
+        {/*
+          Plain divs, not <dl>/<dt>/<dd>: each item mixes an icon in with the
+          heading/value, which the HTML spec doesn't allow inside a <dl> (an
+          automated accessibility audit flagged the old markup for this).
+        */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-y-8 gap-x-0 sm:divide-x-0 lg:divide-x divide-[#d6c9b8]">
           {data.stats.map((stat, i) => {
             const Icon = ICONS[i] ?? MapPin;
             const ringStyle = RING_STYLE[stat.iconColor] ?? RING_STYLE.blue;
@@ -26,24 +31,24 @@ export function StatStrip() {
                   <Icon size={17} strokeWidth={1.5} />
                 </div>
                 <div>
-                  <dt className="text-sm font-bold tracking-[0.15em] uppercase text-agora-orange mb-2">
+                  <div className="text-sm font-bold tracking-[0.15em] uppercase text-agora-orange mb-2">
                     {stat.heading}
-                  </dt>
+                  </div>
                   {stat.price !== undefined ? (
-                    <dd className="font-serif text-4xl font-semibold text-agora-blue leading-none">
+                    <div className="font-serif text-4xl font-semibold text-agora-blue leading-none">
                       {stat.price}
                       {stat.priceUnit && (
                         <span className="text-lg font-normal ml-1">{stat.priceUnit}</span>
                       )}
-                    </dd>
+                    </div>
                   ) : (
-                    <dd className="font-serif text-base text-gray-700 leading-relaxed whitespace-pre-line">{stat.text}</dd>
+                    <div className="font-serif text-base text-gray-700 leading-relaxed whitespace-pre-line">{stat.text}</div>
                   )}
                 </div>
               </Reveal>
             );
           })}
-        </dl>
+        </div>
       </div>
     </section>
   );

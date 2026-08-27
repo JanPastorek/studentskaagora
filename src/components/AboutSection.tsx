@@ -25,6 +25,10 @@ export function AboutSection() {
           <img
             src={asset(data.image)}
             alt={data.imageAlt}
+            width={700}
+            height={590}
+            loading="lazy"
+            decoding="async"
             className="w-full max-w-[320px] h-auto"
           />
         </Reveal>

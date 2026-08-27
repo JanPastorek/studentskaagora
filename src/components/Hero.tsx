@@ -60,6 +60,11 @@ export function Hero() {
           <img
             src={asset(data.heroImage)}
             alt={data.heroImageAlt}
+            width={514}
+            height={432}
+            fetchPriority="high"
+            loading="eager"
+            decoding="async"
             className="relative z-10 w-4/5 sm:w-2/3 max-h-[300px] sm:max-h-[380px] lg:w-auto lg:max-w-[520px] lg:max-h-none object-contain object-bottom"
           />
         </Reveal>

@@ -9,6 +9,8 @@ links:
     href: "#temy"
   - label: Tím
     href: "#tim"
+  - label: FAQ
+    href: "#faq"
   - label: Prihlásenie
     href: "#prihlasenie"
 cta:

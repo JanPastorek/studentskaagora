@@ -10,6 +10,13 @@ links:
     href: "#temy"
   - label: Tím
     href: "#tim"
+  - label: FAQ
+    href: "#faq"
   - label: Prihlásenie
     href: "#prihlasenie"
+social:
+  - label: Instagram
+    href: "https://www.instagram.com/studentskaagora/"
+  - label: LinkedIn
+    href: "https://www.linkedin.com/company/%C5%A1tudentsk%C3%A1-agora/posts/?feedView=all"
 ---

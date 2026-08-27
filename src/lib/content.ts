@@ -100,14 +100,23 @@ export type ApplyData = {
   contactLabel: string;
 };
 
+export type SocialLink = { label: string; href: string };
 export type FooterData = {
   logo: { src: string; alt: string };
   copyright: string;
   links: NavLink[];
+  social?: SocialLink[];
 };
 
 export type TestimonialsData = {
   backgroundImage: string;
   backgroundAlt: string;
   quotes: { text: string }[];
+};
+
+export type FaqItem = { question: string; answer: string };
+export type FaqData = {
+  headingBlue: string;
+  headingOrange: string;
+  items: FaqItem[];
 };

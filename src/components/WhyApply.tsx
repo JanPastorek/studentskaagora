@@ -42,6 +42,10 @@ export function WhyApply() {
             <img
               src="/images/whyapply_selfie.jpg"
               alt="Foto študenti"
+              width={1200}
+              height={900}
+              loading="lazy"
+              decoding="async"
               className="w-full h-full object-cover object-center"
               style={{ maskImage: "linear-gradient(to right, transparent 0%, rgba(0,0,0,0.4) 25%, rgba(0,0,0,0.85) 55%, black 80%)" }}
             />

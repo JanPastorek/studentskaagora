@@ -36,7 +36,7 @@ export function NavbarClient({ data }: { data: NavData }) {
           aria-label="Otvoriť menu"
           aria-expanded={open}
           onClick={() => setOpen((v) => !v)}
-          className="md:hidden w-10 h-10 flex items-center justify-center text-xl hover:text-agora-yellow transition-colors"
+          className="md:hidden w-11 h-11 flex items-center justify-center text-xl hover:text-agora-yellow transition-colors"
         >
           {open ? <X size={20} /> : <Menu size={20} />}
         </button>

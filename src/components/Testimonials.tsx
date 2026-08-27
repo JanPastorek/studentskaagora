@@ -31,6 +31,10 @@ export function Testimonials({ data }: { data: TestimonialsData }) {
         <img
           src={asset(data.backgroundImage)}
           alt={data.backgroundAlt}
+          width={1280}
+          height={993}
+          loading="lazy"
+          decoding="async"
           className="w-full h-full object-cover object-center"
         />
         <div className="absolute inset-0 bg-agora-blue/80" />
@@ -65,7 +69,7 @@ export function Testimonials({ data }: { data: TestimonialsData }) {
             type="button"
             aria-label="Predchádzajúci"
             onClick={prev}
-            className="w-10 h-10 rounded-full border border-white/30 flex items-center justify-center hover:border-agora-orange hover:text-agora-orange transition-colors"
+            className="w-11 h-11 rounded-full border border-white/30 flex items-center justify-center hover:border-agora-orange hover:text-agora-orange transition-colors"
           >
             <ChevronLeft size={18} />
           </button>
@@ -88,7 +92,7 @@ export function Testimonials({ data }: { data: TestimonialsData }) {
             type="button"
             aria-label="Nasledujúci"
             onClick={next}
-            className="w-10 h-10 rounded-full border border-white/30 flex items-center justify-center hover:border-agora-orange hover:text-agora-orange transition-colors"
+            className="w-11 h-11 rounded-full border border-white/30 flex items-center justify-center hover:border-agora-orange hover:text-agora-orange transition-colors"
           >
             <ChevronRight size={18} />
           </button>

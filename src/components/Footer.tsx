@@ -1,5 +1,15 @@
 import { loadContent, type FooterData } from "@/lib/content";
 import { asset } from "@/lib/asset";
+import { InstagramIcon, LinkedInIcon, FacebookIcon } from "./icons";
+
+// Maps a social link's `label` (set in content/footer.md) to an icon —
+// add a new label/icon pair here if a new platform is ever added.
+// (lucide-react dropped brand/logo icons, so these are small inline SVGs — see src/components/icons.tsx)
+const SOCIAL_ICONS: Record<string, typeof InstagramIcon> = {
+  Instagram: InstagramIcon,
+  LinkedIn: LinkedInIcon,
+  Facebook: FacebookIcon,
+};
 
 export function Footer() {
   const { data } = loadContent<FooterData>("footer");
@@ -22,6 +32,24 @@ export function Footer() {
             ))}
           </ul>
         </nav>
+
+        <div className="flex items-center gap-4">
+          {data.social?.map((s) => {
+            const Icon = SOCIAL_ICONS[s.label] ?? InstagramIcon;
+            return (
+              <a
+                key={s.href}
+                href={s.href}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label={s.label}
+                className="w-9 h-9 flex items-center justify-center rounded-full border border-white/25 hover:border-agora-yellow hover:text-agora-yellow transition-colors"
+              >
+                <Icon size={16} strokeWidth={1.75} />
+              </a>
+            );
+          })}
+        </div>
 
         <div className="text-xs text-gray-300 font-light">{data.copyright}</div>
       </div>

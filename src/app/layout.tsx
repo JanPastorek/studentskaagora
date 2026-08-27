@@ -1,6 +1,10 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import { asset } from "@/lib/asset";
+import { FontStylesheet } from "@/components/FontStylesheet";
+
+const FONT_HREF =
+  "https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Lora:ital,wght@0,400;0,600;0,700;1,400&display=swap";
 
 export const metadata: Metadata = {
   title: "Študentská Agora",
@@ -21,10 +25,7 @@ export default function RootLayout({
       <head>
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="" />
-        <link
-          rel="stylesheet"
-          href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Lora:ital,wght@0,400;0,600;0,700;1,400&display=swap"
-        />
+        <FontStylesheet href={FONT_HREF} />
       </head>
       <body>{children}</body>
     </html>
