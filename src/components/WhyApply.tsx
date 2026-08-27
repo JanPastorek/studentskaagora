@@ -40,7 +40,7 @@ export function WhyApply() {
           {/* Books photo: fills the right half, fades left into the card background */}
           <div className="hidden md:block absolute inset-y-0 right-0 w-[45%] z-0 overflow-hidden">
             <img
-              src="/images/whyapply_selfie.jpg"
+              src={asset("/images/whyapply_selfie.jpg")}
               alt="Foto študenti"
               width={1200}
               height={900}

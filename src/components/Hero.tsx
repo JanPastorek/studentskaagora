@@ -28,14 +28,19 @@ export function Hero() {
 
       <div className="flex-1 w-full max-w-7xl mx-auto px-6 pt-6 md:pt-10 lg:pt-12 flex flex-col lg:flex-row items-stretch relative z-10">
         <Reveal className="w-full lg:w-[45%] pr-0 lg:pr-8 pb-8 lg:pb-14 flex flex-col justify-center">
-          <h2 className="font-serif text-3xl sm:text-4xl md:text-5xl lg:text-[3.4rem] font-semibold leading-[1.12] mb-5 md:mb-6">
+          {/*
+            The single <h1> on the page: this is the main headline, so it
+            must outrank every section's <h2> in the heading hierarchy
+            (screen readers and SEO crawlers both rely on this).
+          */}
+          <h1 className="font-serif text-3xl sm:text-4xl md:text-5xl lg:text-[3.4rem] font-semibold leading-[1.12] mb-5 md:mb-6">
             {lines.map((line, i) => (
               <span key={i}>
                 {renderWithOrange(line, data.titleOrangeWords ?? [])}
                 {i < lines.length - 1 && <br />}
               </span>
             ))}
-          </h2>
+          </h1>
           <p className="font-serif text-sm sm:text-base md:text-lg italic text-gray-300 mb-5 max-w-md leading-relaxed">
             {data.subtitle}
           </p>

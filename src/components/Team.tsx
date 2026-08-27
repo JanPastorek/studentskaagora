@@ -54,7 +54,7 @@ export function Team() {
                   />
                 </div>
                 <h3 className="font-serif font-semibold text-[17px] mb-1 text-gray-900">{person.name}</h3>
-                <p className="font-serif italic text-xs text-gray-500">{person.role}</p>
+                <p className="font-serif italic text-xs text-gray-600">{person.role}</p>
               </Reveal>
             );
           })}

@@ -1,4 +1,4 @@
-import { Calendar, Euro, Mail, ArrowRight } from "lucide-react";
+import { Mail, ArrowRight } from "lucide-react";
 import { loadContent, type ApplyData } from "@/lib/content";
 import { asset } from "@/lib/asset";
 import { Reveal } from "./Reveal";
@@ -15,6 +15,9 @@ export function Apply() {
             src={asset("/sun2.svg")}
             alt=""
             aria-hidden="true"
+            width={446}
+            height={330}
+            loading="lazy"
             className="hidden md:block absolute top-6 right-6 w-[45%] max-w-[400px] h-auto pointer-events-none opacity-90 z-0"
           />
 
@@ -60,7 +63,7 @@ export function Apply() {
               <div>
                 <p className="text-base mb-1">{data.contactLabel}</p>
                 <a
-                  href={`mailto:${data.applicationEmail}`}
+                  href={mailto}
                   className="text-agora-yellow hover:underline text-base font-medium break-all"
                 >
                   {data.applicationEmail}

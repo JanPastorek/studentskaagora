@@ -160,3 +160,10 @@
 .marquee-track:hover {
   animation-play-state: paused;
 }
+
+/* Respect the OS-level "reduce motion" setting (vestibular-disorder / motion-sensitivity a11y) */
+@media (prefers-reduced-motion: reduce) {
+  .marquee-track {
+    animation: none;
+  }
+}

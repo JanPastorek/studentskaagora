@@ -7,7 +7,7 @@ const ICONS = [MapPin, Users, BookOpen, GraduationCap, Euro];
 const RING_STYLE: Record<string, string> = {
   blue:   "border-agora-blue   text-agora-blue",
   orange: "border-agora-orange text-agora-orange",
-  yellow: "border-agora-yellow text-amber-700",
+  yellow: "border-agora-yellow text-amber-800",
 };
 
 export function StatStrip() {

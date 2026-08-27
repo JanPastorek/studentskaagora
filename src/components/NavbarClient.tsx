@@ -1,5 +1,5 @@
 "use client";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Menu, X } from "lucide-react";
 import { asset } from "@/lib/asset";
 import type { NavData } from "@/lib/content";
@@ -7,10 +7,26 @@ import type { NavData } from "@/lib/content";
 export function NavbarClient({ data }: { data: NavData }) {
   const [open, setOpen] = useState(false);
 
+  // Let keyboard users close the mobile menu with Escape, not just by clicking a link.
+  useEffect(() => {
+    if (!open) return;
+    const onKeyDown = (e: KeyboardEvent) => {
+      if (e.key === "Escape") setOpen(false);
+    };
+    window.addEventListener("keydown", onKeyDown);
+    return () => window.removeEventListener("keydown", onKeyDown);
+  }, [open]);
+
   return (
     <header className="w-full max-w-7xl mx-auto px-4 sm:px-6 py-4 sm:py-6 flex justify-between items-center relative z-30">
       <a href="#">
-        <img src={asset(data.logo.src)} alt={data.logo.alt} className="h-9 sm:h-12 w-auto" />
+        <img
+          src={asset(data.logo.src)}
+          alt={data.logo.alt}
+          width={1546}
+          height={467}
+          className="h-9 sm:h-12 w-auto"
+        />
       </a>
 
       <div className="flex items-center gap-4 md:gap-8">
@@ -33,7 +49,7 @@ export function NavbarClient({ data }: { data: NavData }) {
         </a>
         <button
           type="button"
-          aria-label="Otvoriť menu"
+          aria-label={open ? "Zavrieť menu" : "Otvoriť menu"}
           aria-expanded={open}
           onClick={() => setOpen((v) => !v)}
           className="md:hidden w-11 h-11 flex items-center justify-center text-xl hover:text-agora-yellow transition-colors"

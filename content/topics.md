@@ -23,7 +23,7 @@ topics:
   - name: Realita a pravda
     question: "Je realita objektívna? Vieme ju vôbec poznať?"
     bgFront: orange-dark
-    textFront: white
+    textFront: dark
     bgBack: card-cream
     textBack: dark
   - name: Utrpenie
@@ -35,7 +35,7 @@ topics:
   - name: Vedomie a skúsenosť
     question: "Aká je vedomá skúsenosť?"
     bgFront: orange-dark
-    textFront: white
+    textFront: dark
     bgBack: card-cream
     textBack: dark
   - name: Sloboda
@@ -61,5 +61,5 @@ topics:
     bgFront: card-cream
     textFront: dark
     bgBack: orange-dark
-    textBack: white
+    textBack: dark
 ---

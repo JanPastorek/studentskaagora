@@ -35,14 +35,17 @@ export function TopicsSection() {
               <Reveal key={topic.name} delay={(i % 5) * 60} className="flip-card group aspect-square [perspective:1000px]">
                 <div className="flip-inner relative w-full h-full transition-transform duration-500 [transform-style:preserve-3d] group-hover:[transform:rotateY(180deg)]">
                   <div className={`absolute inset-0 [backface-visibility:hidden] ${frontBg} ${frontText} p-5 sm:p-6 flex flex-col border-t-[3px] border-black/10`}>
-                    <span className="font-serif text-sm sm:text-base italic opacity-60 self-end">{ROMAN[i] ?? i + 1}.</span>
+                    {/* Decorative index numeral: aria-hidden since it carries no information beyond the card's position */}
+                    <span aria-hidden="true" className="font-serif text-sm sm:text-base italic self-end">{ROMAN[i] ?? i + 1}.</span>
                     <div className="mt-auto">
                       <h3 className="font-serif text-xl sm:text-2xl font-semibold leading-tight mb-3">{topic.name}</h3>
-                      <p className="font-serif text-sm sm:text-base italic leading-snug opacity-70">{topic.question}</p>
+                      {/* Full opacity (not dimmed): some front/back color pairings (e.g. dark text on orange-dark)
+                          only clear the 4.5:1 contrast minimum at full opacity. */}
+                      <p className="font-serif text-sm sm:text-base italic leading-snug">{topic.question}</p>
                     </div>
                   </div>
                   <div className={`flip-back absolute inset-0 [backface-visibility:hidden] [transform:rotateY(180deg)] ${backBg} ${backText} p-5 sm:p-6 flex flex-col justify-between`}>
-                    <span className="font-serif text-base italic opacity-55 self-end">{ROMAN[i] ?? i + 1}.</span>
+                    <span aria-hidden="true" className="font-serif text-base italic self-end">{ROMAN[i] ?? i + 1}.</span>
                     <p className="font-serif text-base sm:text-xl italic leading-relaxed text-center">{topic.question}</p>
                   </div>
                 </div>
