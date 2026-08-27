@@ -1,7 +1,7 @@
 ﻿---
 stats:
   - heading: Kde a kedy?
-    text: "Bratislava, Svoradov\nOktóber 2026 – máj 2027"
+    text: "Bratislava, Svoradov\nOktóber 2026 – máj 2027\nPodvečer v pracovné dni"
     iconColor: blue
   - heading: Pre koho?
     text: Pre študentov a mladých pracujúcich
