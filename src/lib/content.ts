@@ -120,3 +120,9 @@ export type FaqData = {
   headingOrange: string;
   items: FaqItem[];
 };
+
+export type Seminar = { number: string; title: string; tutor: string };
+export type SeminarsData = {
+  heading: string;
+  seminars: Seminar[];
+};

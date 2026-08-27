@@ -1,4 +1,4 @@
-import { loadContent, type TopicsData } from "@/lib/content";
+import { loadContent, type TopicsData, type SeminarsData } from "@/lib/content";
 import { Reveal } from "./Reveal";
 
 const BG_MAP: Record<string, string> = {
@@ -15,6 +15,7 @@ const ROMAN = ["I", "II", "III", "IV", "V", "VI", "VII", "VIII", "IX", "X"];
 
 export function TopicsSection() {
   const { data } = loadContent<TopicsData>("topics");
+  const { data: seminarsData } = loadContent<SeminarsData>("seminars");
 
   return (
     <section id="temy" className="bg-agora-cream py-12 lg:py-16 pb-16 lg:pb-24 border-t border-[#e2d5c8]">
@@ -52,6 +53,27 @@ export function TopicsSection() {
               </Reveal>
             );
           })}
+        </div>
+
+        {/* Separator: visually distinguishes the 3 seminars below from the 10 tutorial cards above */}
+        <Reveal className="flex items-center gap-4 mt-12 mb-8 md:mt-16 md:mb-10">
+          <div className="h-px flex-1 bg-agora-blue/15" />
+          <span className="font-serif italic text-sm sm:text-base text-agora-blue/70 tracking-wide whitespace-nowrap">
+            {seminarsData.heading}
+          </span>
+          <div className="h-px flex-1 bg-agora-blue/15" />
+        </Reveal>
+
+        <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
+          {seminarsData.seminars.map((seminar, i) => (
+            <Reveal key={seminar.number} delay={i * 60} className="rounded-lg border border-agora-blue/15 bg-white/60 p-5 sm:p-6">
+              <span className="font-serif italic text-xs sm:text-sm text-orange-700">Seminár {seminar.number}</span>
+              <h3 className="font-serif text-lg sm:text-xl font-semibold leading-tight mt-1 mb-2 text-gray-900">
+                {seminar.title}
+              </h3>
+              <p className="text-sm text-gray-600">{seminar.tutor}</p>
+            </Reveal>
+          ))}
         </div>
       </div>
     </section>
