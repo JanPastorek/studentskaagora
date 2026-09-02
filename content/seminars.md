@@ -8,6 +8,6 @@ seminars:
     title: "Existencia Boha"
     tutor: "Marián Janík"
   - number: "3"
-    title: "Ľudské embryo"
+    title: "Osoba v bioetike"
     tutor: "Mária Kolesárová"
 ---
