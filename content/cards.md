@@ -31,5 +31,5 @@ cards:
 
       Vytlačené skriptá
 
-      **Ročné školné:** 179€ early bird 149€
+      **Ročné školné:** 179€
 ---
