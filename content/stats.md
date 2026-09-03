@@ -7,7 +7,7 @@ stats:
     text: Pre študentov a mladých pracujúcich
     iconColor: orange
   - heading: Čo ťa čaká?
-    text: "10 tutoriálov • 3 semináre • diskusie • komunitné eventy"
+    text: "10 tutoriálov • 3 semináre • diskusie • komunitné stretnutia"
     iconColor: yellow
   - heading: Ročné školné
     price: "179 €"
