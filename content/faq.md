@@ -40,4 +40,9 @@ items:
       To je v poriadku.
 
       Agora stojí na dialógu, nie na tom, aby sme všetci dospeli k rovnakému názoru. Chceme vytvárať prostredie, v ktorom môžeš slobodne vyjadriť svoj názor, nesúhlasiť, argumentovať a zároveň počúvať druhých.
+     - question: Ako vznika Agora?
+    answer: |
+      Program začal v roku 2020 pod názvom Komenského College a v tejto podobe fungoval niekoľko rokov. Neskôr prešiel rebrandingom a istý čas sme ho rozvíjali v spolupráci s Pravidelnou dávkou.
+
+V súčasnosti je Študentská Agora samostatným filozofickým programom, ktorý je nezávislý od akýchkoľvek akademických inštitúcií. Formát zostáva ten istý ako na začiatku: malé skupiny, veľké texty a otvorený dialóg.
 ---
