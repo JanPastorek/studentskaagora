@@ -33,7 +33,8 @@ items:
   - question: Čo mi Agora môže dať?
     answer: |
       Agora vytvára priestor na rozvoj kritického a analytického myslenia, schopnosti argumentovať, formulovať vlastné myšlienky a diskutovať s ľuďmi, ktorí môžu mať na veci úplne iný pohľad.
-A zároveň je to komunita ľudí, ktorí sa nechcú uspokojiť len s povrchnými odpoveďami.
+
+     A zároveň je to komunita ľudí, ktorí sa nechcú uspokojiť len s povrchnými odpoveďami.
   - question: Čo ak nebudem súhlasiť s ostatnými?
     answer: |
       To je v poriadku.
@@ -43,5 +44,5 @@ A zároveň je to komunita ľudí, ktorí sa nechcú uspokojiť len s povrchným
     answer: |
       Program začal v roku 2020 pod názvom Komenského College a v tejto podobe fungoval niekoľko rokov. Neskôr prešiel rebrandingom a istý čas sme ho rozvíjali v spolupráci s Pravidelnou dávkou.
 
-V súčasnosti je Študentská Agora samostatným filozofickým programom, ktorý je nezávislý od akýchkoľvek akademických inštitúcií. Formát zostáva ten istý ako na začiatku: malé skupiny, veľké texty a otvorený dialóg.
+     V súčasnosti je Študentská Agora samostatným filozofickým programom, ktorý je nezávislý od akýchkoľvek akademických inštitúcií. Formát zostáva ten istý ako na začiatku: malé skupiny, veľké texty a otvorený dialóg.
 ---
