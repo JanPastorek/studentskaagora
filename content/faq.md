@@ -33,8 +33,7 @@ items:
   - question: Čo mi Agora môže dať?
     answer: |
       Agora vytvára priestor na rozvoj kritického a analytického myslenia, schopnosti argumentovať, formulovať vlastné myšlienky a diskutovať s ľuďmi, ktorí môžu mať na veci úplne iný pohľad.
-
-    A zároveň je to komunita ľudí, ktorí sa nechcú uspokojiť len s povrchnými odpoveďami.
+A zároveň je to komunita ľudí, ktorí sa nechcú uspokojiť len s povrchnými odpoveďami.
   - question: Čo ak nebudem súhlasiť s ostatnými?
     answer: |
       To je v poriadku.
