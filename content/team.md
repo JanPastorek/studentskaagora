@@ -2,7 +2,7 @@
 headingBlue: "Tváre"
 headingOrange: "Agory"
 people:
-  - name: Mgr. Andrej Šnahničan
+  - name: Mgr. Andrej Sňahničan
     role: Riaditeľ programu a tútor
     image: /images/andrej.jpeg
     accentColor: yellow
