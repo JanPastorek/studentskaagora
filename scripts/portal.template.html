@@ -1,0 +1,491 @@
+<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover">
+<style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style>
+</head><body>
+<title>Portál Študentskej Agory</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,800;1,400&family=Plus+Jakarta+Sans:wght@400;500;700;800&display=swap">
+<style>
+/* Layout: jeden stĺpec čítania (max 880px); navrchu tmavý blok „kde sme teraz“,
+   pod ním os ročníka ako číslovaný zoznam s rozbaliteľnými textami, potom dokumenty a pravidlá. */
+:root{
+  --navy:#0C3576; --cream:#F5F2EC; --terra:#E85A1C; --gold:#EE9D00; --white:#FFFFFF;
+  --bg:#F5F2EC; --fg:#0C3576; --muted:#4A6090; --line:#0C357633; --line-soft:#0C35761A;
+  --card:#FFFFFF; --feature-bg:#0C3576; --feature-fg:#FFFFFF; --feature-muted:#C9D5EC; --feature-eyebrow:#EE9D00;
+  --eyebrow:#E85A1C; --cta-bg:#E85A1C; --cta-fg:#FFFFFF; --done:#4A6090; --dot:#0C357640;
+  --display:"Playfair Display",Georgia,"Times New Roman",serif;
+  --body:"Plus Jakarta Sans","Inter",-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --bg:#0C3576; --fg:#FFFFFF; --muted:#C9D5EC; --line:#FFFFFF40; --line-soft:#FFFFFF1F;
+    --card:#14418A; --feature-bg:#F5F2EC; --feature-fg:#0C3576; --feature-muted:#4A6090; --feature-eyebrow:#E85A1C;
+    --eyebrow:#EE9D00; --cta-bg:#E85A1C; --cta-fg:#FFFFFF; --done:#C9D5EC; --dot:#FFFFFF40; color-scheme:dark;
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#0C3576; --fg:#FFFFFF; --muted:#C9D5EC; --line:#FFFFFF40; --line-soft:#FFFFFF1F;
+  --card:#14418A; --feature-bg:#F5F2EC; --feature-fg:#0C3576; --feature-muted:#4A6090; --feature-eyebrow:#E85A1C;
+  --eyebrow:#EE9D00; --cta-bg:#E85A1C; --cta-fg:#FFFFFF; --done:#C9D5EC; --dot:#FFFFFF40; color-scheme:dark;
+}
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--fg);font-family:var(--body);font-size:16px;line-height:1.6;margin:0}
+.wrap{max-width:880px;margin:0 auto;padding-inline:20px;padding-block:20px 72px;display:flex;flex-direction:column;gap:48px}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--gold);outline-offset:2px;border-radius:4px}
+h1,h2,h3{font-family:var(--display);margin:0;text-wrap:balance;line-height:1.12}
+p{margin:0}
+.eyebrow{font-size:12.5px;font-weight:800;letter-spacing:.09em;text-transform:uppercase;color:var(--eyebrow)}
+
+/* hlavička */
+.top{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:12px 24px;padding-bottom:16px;border-bottom:1px solid var(--line)}
+.logo{display:block;height:46px;width:auto;color:var(--fg)}
+.meta{font-size:12px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+nav{display:flex;flex-wrap:wrap;gap:6px 22px;font-weight:700;font-size:14.5px}
+nav a{text-decoration:none;padding-block:4px;border-bottom:2px solid transparent}
+nav a:hover{border-bottom-color:var(--terra)}
+
+/* zámok */
+.lock{display:grid;gap:28px;padding-block:24px}
+.lock h1{font-size:clamp(34px,7vw,56px);font-weight:800}
+.lock h1 em{font-style:italic;font-weight:400;color:var(--terra)}
+.lock .lead{max-width:56ch;color:var(--muted);font-size:17px}
+.gate{display:flex;flex-wrap:wrap;gap:10px;align-items:flex-end}
+.gate label{display:grid;gap:6px;font-size:13px;font-weight:700;flex:1 1 220px;max-width:320px}
+.gate input{font:inherit;padding:12px 14px;border:1.5px solid var(--fg);border-radius:14px;background:var(--card);color:var(--fg);width:100%}
+.btn{font:inherit;font-weight:700;background:var(--cta-bg);color:var(--cta-fg);border:0;border-radius:14px;padding:13px 22px;cursor:pointer;text-decoration:none;display:inline-block}
+.btn:hover{filter:brightness(.94)}
+.contacts{background:var(--card);border:1px solid var(--line-soft);border-radius:18px;padding:22px 24px;display:grid;gap:10px;scroll-margin-top:16px}
+.contacts h3{font-size:22px}
+.clist{list-style:none;margin:0;padding:0;display:grid}
+.clist li{display:flex;flex-wrap:wrap;align-items:center;gap:4px 14px;padding:10px 0;border-top:1px solid var(--line-soft)}
+.clist b{flex:0 0 170px;font-size:15.5px}
+.clist .mail{flex:1 1 220px;min-width:0;overflow-wrap:anywhere;user-select:all;font-size:15px}
+.copy{font:inherit;font-size:13px;font-weight:700;background:none;border:1.5px solid var(--line);color:var(--fg);border-radius:999px;padding:4px 12px;cursor:pointer}
+.copy:hover{border-color:var(--terra);color:var(--terra)}
+.signupbar{display:flex;flex-wrap:wrap;gap:14px 24px;align-items:center;justify-content:space-between;background:var(--card);border:2px solid var(--terra);border-radius:18px;padding:18px 22px}
+.signupbar .sb-text{display:grid;gap:2px;min-width:0;flex:1 1 280px}
+.signupbar b{font-family:var(--display);font-size:20px}
+.signupbar span{font-size:14.5px;color:var(--muted)}
+.btn2{font:inherit;font-weight:700;border:2px solid currentColor;border-radius:14px;padding:11px 20px;text-decoration:none;display:inline-block;color:inherit}
+.btn2:hover{background:rgba(238,157,0,.15)}
+.fb{display:flex;flex-wrap:wrap;gap:10px 16px;align-items:center;border-top:1px solid var(--feature-muted);padding-top:14px;margin-top:6px;max-width:100%}
+.chip.fb-chip{border-color:var(--terra);color:var(--terra);text-decoration:none}
+.chip.fb-chip:hover{background:var(--terra);color:#FFFFFF}
+.err{color:var(--terra);font-weight:700;font-size:14px;min-height:1.4em}
+.inside{list-style:none;margin:0;padding:20px 0 0;border-top:1px solid var(--line);display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:18px 28px}
+.inside li{display:grid;gap:2px;font-size:14.5px;color:var(--muted)}
+.inside b{font-family:var(--display);font-size:19px;color:var(--fg)}
+
+/* teraz */
+.intro{display:grid;gap:10px}
+.intro h1{font-size:clamp(32px,6vw,48px);font-weight:800}
+.uline{background:linear-gradient(transparent 82%,var(--terra) 82%,var(--terra) 94%,transparent 94%)}
+.now{position:relative;overflow:hidden;background:var(--feature-bg);color:var(--feature-fg);border-radius:24px;padding:32px 28px;display:grid;gap:14px}
+.now::before{content:"";position:absolute;right:-70px;top:-70px;width:200px;height:200px;border-radius:50%;background:var(--gold)}
+.now::after{content:"";position:absolute;right:28px;bottom:24px;width:78px;height:50px;background-image:radial-gradient(circle,var(--feature-muted) 1.6px,transparent 1.8px);background-size:13px 13px;opacity:.7}
+.now > *{position:relative;max-width:calc(100% - 96px)}
+.now .eyebrow{color:var(--feature-eyebrow)}
+.now h2{font-size:clamp(28px,5.4vw,42px);font-weight:800}
+.now .q{font-family:var(--display);font-style:italic;font-size:20px;line-height:1.35}
+.now .when{font-weight:700}
+.now ul{margin:0;padding-left:18px;display:grid;gap:4px;font-size:15px}
+.now .sub{color:var(--feature-muted);font-size:14.5px}
+.now .actions{display:flex;flex-wrap:wrap;gap:12px 18px;align-items:center;margin-top:6px;max-width:100%}
+.strip{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:20px 32px;padding-top:4px}
+.strip div{display:grid;gap:4px;align-content:start}
+.strip .k{font-size:12px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+.strip .v{font-family:var(--display);font-weight:700;font-size:21px;line-height:1.2}
+.strip .s{font-size:14px;color:var(--muted)}
+.bar{display:flex;gap:4px;margin-top:6px}
+.bar i{flex:1;height:6px;border-radius:3px;background:var(--line)}
+.bar i.on{background:var(--terra)}
+
+/* sekcie */
+section{display:grid;gap:20px;scroll-margin-top:16px}
+.sh{display:grid;gap:6px}
+.sh h2{font-size:clamp(26px,4.6vw,34px);font-weight:700}
+.sh p{color:var(--muted);max-width:62ch}
+
+/* os ročníka */
+.tl{list-style:none;margin:0;padding:0;border-top:1px solid var(--line)}
+.tl > li{border-bottom:1px solid var(--line)}
+.row{display:grid;grid-template-columns:52px minmax(0,1fr);gap:4px 12px;padding:16px 0;align-items:start}
+.num{font-family:var(--display);font-weight:800;font-size:30px;line-height:1;font-variant-numeric:tabular-nums}
+.num.small{font-family:var(--body);font-size:11px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);padding-top:9px}
+.main{display:grid;gap:4px;min-width:0}
+.main h3{font-size:21px;font-weight:700}
+.main .q{font-style:italic;font-family:var(--display);font-size:16.5px;color:var(--muted)}
+.tags{display:flex;flex-wrap:wrap;gap:6px 10px;align-items:center;font-size:13px;color:var(--muted);font-weight:500}
+.chip{font-size:11.5px;font-weight:800;letter-spacing:.07em;text-transform:uppercase;border-radius:999px;padding:3px 10px;border:1.5px solid var(--line);color:var(--muted)}
+.chip.now-chip{background:var(--terra);border-color:var(--terra);color:#FFFFFF}
+.chip.done-chip{border-style:dashed}
+li.is-done .num, li.is-done h3{color:var(--done)}
+li.is-now .row{position:relative}
+li.is-now .num{color:var(--terra)}
+details{grid-column:2}
+.acts{grid-column:2;position:relative;min-width:0}
+.acts .fbl{position:absolute;top:6px;left:170px;font-size:14px}
+summary{cursor:pointer;font-weight:700;font-size:14px;padding:6px 0;width:fit-content;text-decoration:underline;text-decoration-color:var(--terra);text-underline-offset:4px;list-style:none}
+summary::-webkit-details-marker{display:none}
+summary::after{content:" +"}
+details[open] summary::after{content:" −"}
+.srcs{display:grid;gap:14px;padding:8px 0 6px;font-size:15px}
+.srcs h4{margin:0 0 4px;font-size:12px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+.srcs ul,.srcs ol{margin:0;padding-left:20px;display:grid;gap:6px}
+.srcs li{overflow-wrap:anywhere}
+.anot{max-width:64ch}
+.now li{overflow-wrap:anywhere}
+[hidden]{display:none!important}
+.note{font-size:14.5px;color:var(--muted)}
+
+/* dokumenty */
+.docs{list-style:none;margin:0;padding:0;display:grid;gap:12px}
+.docs li{background:var(--card);border:1px solid var(--line-soft);border-radius:14px;padding:16px 18px;display:flex;flex-wrap:wrap;gap:8px 20px;align-items:center;justify-content:space-between}
+.docs .d{display:grid;gap:2px;min-width:0;flex:1 1 260px}
+.docs b{font-family:var(--display);font-size:19px}
+.docs span{font-size:14.5px;color:var(--muted)}
+.link{font-weight:700;text-decoration:underline;text-decoration-color:var(--terra);text-underline-offset:4px;white-space:nowrap}
+
+/* pravidlá */
+.rules{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:28px 36px}
+.rules h3{font-size:20px;font-weight:700;margin-bottom:6px}
+.rules ul{margin:0;padding-left:18px;display:grid;gap:6px;font-size:15px}
+.phases{display:grid;gap:10px}
+.pbar{display:flex;gap:3px;height:12px}
+.pbar i{border-radius:3px;background:var(--fg)}
+.pbar i:nth-child(2){background:var(--terra)}
+.pbar i:nth-child(3){background:var(--gold)}
+.plist{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:12px 24px;font-size:14.5px}
+.plist b{display:block;font-size:15.5px}
+.plist span{color:var(--muted)}
+footer{border-top:1px solid var(--line);padding-top:18px;display:flex;flex-wrap:wrap;gap:8px 24px;justify-content:space-between;font-size:13.5px;color:var(--muted)}
+footer em{font-family:var(--display);font-size:17px;color:var(--fg)}
+footer em span{color:var(--terra)}
+.linkbtn{font:inherit;font-size:13.5px;background:none;border:0;padding:0;color:var(--muted);text-decoration:underline;cursor:pointer}
+@media (max-width:520px){
+  .now{padding:26px 20px}
+  .now > *{max-width:100%}
+  .now .eyebrow{max-width:calc(100% - 90px)}
+  .now::after{display:none}
+  .now::before{width:110px;height:110px;right:-55px;top:-55px}
+  .row{grid-template-columns:38px minmax(0,1fr)}
+  .num{font-size:25px}
+}
+@media (prefers-reduced-motion:no-preference){ html{scroll-behavior:smooth} }
+</style>
+
+<div class="wrap">
+  <header class="top">
+    <svg class="logo" role="img" aria-label="Študentská Agora" viewBox="0 0 165 59" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M17.9984 29.6H17.2984C16.4984 29.6 15.9984 30 15.9984 30.6V46.9H18.4984L18.5984 30.6C18.5984 30 18.1984 29.6 17.9984 29.6ZM21.9984 29.6C21.2984 29.6 20.7984 30 20.7984 30.6V46.8H22.9984L23.0984 30.6C23.0984 30 22.5984 29.6 21.9984 29.6ZM26.3984 29.4C25.6984 29.4 25.0984 30 25.0984 30.4V46.6L26.2984 47L27.6984 46.6V30.4C27.7984 30 27.1984 29.4 26.3984 29.4ZM30.9984 29.4C30.2984 29.4 29.4984 30 29.5984 30.5V46.7L31.0984 47L32.0984 46.6V30.4C32.1984 30 31.7984 29.4 30.9984 29.4ZM35.4984 29.5C34.8984 29.5 33.9984 29.7 33.9984 30.5V46.6L35.0984 47L36.6984 46.7V30.5C36.6984 29.7 35.9984 29.5 35.4984 29.5ZM40.1984 29.5L39.2984 29.7C38.9984 29.7 38.6984 30.2 38.6984 30.6V46.8H41.3984V30.6C41.3984 30 40.7984 29.5 40.1984 29.5ZM11.4984 8.5V11.6H46.9984V8.5H10.5984H11.4984ZM11.5984 48.4V51.3H45.7984V48.4H11.5984ZM43.0984 14H14.3984C11.1984 14 7.39844 16.8 7.39844 21.2C7.39844 25.6 10.8984 28.3 13.7984 28.3C17.5984 28.5 19.9984 25.4 19.9984 22.9L19.8984 21.9H38.0984L37.9984 22.6C37.8984 25.2 40.3984 28.4 44.0984 28.3C46.9984 28.3 50.5984 26.2 50.5984 21.4C50.4984 17.6 47.2984 14 43.0984 14ZM43.6984 26C41.9984 26 40.2984 24.6 40.2984 22.9C40.2984 21.7 41.1984 20.7 42.1984 20.7C43.0984 20.7 43.3984 21.3 43.3984 21.4L43.0984 21.7C41.4984 22.9 43.7984 24.8 45.2984 23.1L45.7984 22.4C46.4984 20.7 44.6984 18.5 42.6984 18.5C41.6984 18.5 40.7984 18.8 40.1984 19.2H18.5984C17.9984 18.8 17.0984 18.6 16.0984 18.6C12.7984 18.6 10.8984 22.6 13.4984 23.8L13.8984 23.9C15.4984 24.2 15.8984 22.7 14.8984 22.2C14.1984 21.9 14.7984 20.7 15.9984 20.8C16.7984 20.7 17.3984 21.9 17.3984 22.6C17.3984 24.2 16.3984 26 14.3984 26C11.3984 26.2 9.69844 23.6 9.69844 21.4C9.69844 18.9 12.0984 16.5 14.7984 16.5H42.9984C45.6984 16.5 48.0984 18.7 48.0984 21.3C48.0984 23.9 46.4984 25.9 43.6984 26ZM21.9984 23.5V25.9H35.5984V23.5H21.9984Z" fill="currentColor"/>
+<path d="M60.6992 23.5L62.9992 23.1C63.1992 24.4 64.1992 25.4 65.9992 25.4C67.6992 25.5 68.5992 24.5 68.5992 23.4C68.5992 22.4 67.7992 21.8 66.6992 21.5L64.8992 21C62.9992 20.5 61.2992 19.5 61.2992 17.5C61.2992 15.3 62.8992 13.3 65.8992 13.3C68.6992 13.3 70.4992 14.9 70.5992 17L68.5992 17.3C68.4992 16.2 67.4992 15.4 65.8992 15.4C64.4992 15.4 63.5992 16.2 63.5992 17.2C63.5992 18.1 64.3992 18.6 65.3992 18.9L67.2992 19.5C69.5992 20.1 70.8992 21.3 70.8992 23.2C70.8992 25.5 69.1992 27.4 65.9992 27.4C62.9992 27.4 60.9992 25.8 60.6992 23.5ZM62.6992 9.30005H64.6992L65.9992 10.9L67.2992 9.30005H68.9992L67.4992 12.1H64.6992L62.8992 9.40005L62.6992 9.30005Z" fill="currentColor"/>
+<path d="M73.3008 24.4001V19.6001H71.8008V17.8001H73.4008V15.1001H75.4008V17.8001H77.3008V19.6001H75.4008V24.1001C75.4008 25.1001 75.6008 25.4001 76.6008 25.4001H77.3008V27.2001H76.4008C74.4008 27.3001 73.3008 26.6001 73.3008 24.4001Z" fill="currentColor"/>
+<path d="M78.8008 23.6V17.8H80.9008V23.4C81.0008 25 81.6008 25.5 82.7008 25.5C83.9008 25.5 84.7008 24.5 84.7008 23V17.8H86.8008V27.1H84.9008L84.7008 26C84.4008 26.7 83.4008 27.4 82.0008 27.4C80.0008 27.4 78.8008 26.0001 78.8008 23.7001V23.6Z" fill="currentColor"/>
+<path d="M88.6016 22.5C88.6016 19.8 90.2016 17.7 93.0016 17.7C94.3016 17.7 95.5016 18.3 96.1016 19V13.7H98.2016V27.1H96.3016L96.2016 26C95.6016 26.8 94.6016 27.4 93.1016 27.4C90.2016 27.4 88.6016 25.3 88.6016 22.5ZM96.1016 22.5C96.1016 20.7 95.2016 19.5 93.6016 19.5C92.0016 19.5 90.9016 20.7 90.9016 22.5C90.9016 24.3 91.8016 25.6 93.4016 25.6C95.2016 25.6 96.1016 24.4 96.1016 22.5Z" fill="currentColor"/>
+<path d="M100 22.4001C100 19.8001 101.6 17.6001 104.3 17.6001C107 17.6001 108.6 19.5001 108.6 22.0001V23.0001H102.1C102.2 24.6001 103.1 25.5001 104.5 25.5001C105.7 25.5001 106.4 24.7001 106.7 24.1001L108.5 24.8001C107.9 26.3001 106.6 27.3001 104.3 27.3001C101.6 27.3001 100 25.3001 100 22.4001ZM106.5 21.4001C106.5 19.9001 105.5 19.3001 104.4 19.3001C103.841 19.3224 103.308 19.5479 102.903 19.9346C102.498 20.3212 102.248 20.8423 102.2 21.4001H106.5Z" fill="currentColor"/>
+<path d="M110.301 17.8H112.301L112.401 19.1C113.001 18.3 113.901 17.5 115.201 17.5C117.101 17.5 118.501 19 118.501 20.9V27.1H116.501V21.7C116.501 20.3 115.801 19.5 114.701 19.5C113.601 19.5 112.501 20.3 112.501 21.9V27.2H110.301V17.8Z" fill="currentColor"/>
+<path d="M121.501 24.4V19.6H119.801V17.8H121.501V15.2H123.601V17.8H125.601V19.6H123.601V24C123.601 25.1 123.801 25.4 124.801 25.4H125.601V27.3H124.601C122.601 27.3 121.501 26.6 121.501 24.3V24.4Z" fill="currentColor"/>
+<path d="M126.602 24.6001L128.502 24.1001C128.702 25.0001 129.202 25.6001 130.402 25.6001C131.602 25.6001 132.002 25.1001 132.002 24.6001C131.902 23.9001 131.502 23.6001 130.102 23.2001C128.102 22.7001 126.902 21.8001 126.902 20.4001C126.902 18.9001 128.202 17.6001 130.202 17.6001C132.202 17.6001 133.802 18.7001 133.802 20.2001L132.002 20.5001C131.902 19.6001 131.402 19.2001 130.402 19.2001C129.402 19.2001 129.002 19.6001 129.002 20.3001C129.002 20.9001 129.602 21.2001 131.002 21.6001C133.202 22.3001 134.102 23.1001 134.102 24.6001C134.102 26.3001 132.802 27.4001 130.502 27.4001C128.302 27.4001 126.902 26.3001 126.702 24.7001L126.602 24.6001Z" fill="currentColor"/>
+<path d="M135.602 13.7H137.802V21.8L141.502 17.8H144.302L141.002 21.6L144.502 27.1H142.102L139.402 22.9L137.902 24.4V27.2H135.602V13.7Z" fill="currentColor"/>
+<path d="M145 21.4V19.4C145.6 18.2 147 17.6 148.8 17.6C151.2 17.7 152.7 19 152.7 21.3V25.4L153.7 25.6V27.2H152.6C151.9 27.2 151.1 27 151 26.1C150.3 26.9 149.4 27.4 147.9 27.4C146.2 27.4 145 26.7 145 24.9C145 20.6 150.5 22.3 150.5 20.8C150.5 20 149.9 19.2 148.7 19.2C147.5 19.2 146.9 20 146.9 20.8L145.3 20.7L145 21.4ZM150.5 23.4V22.7C149 23.2 147 23.2 147 24.5C146.8 26.3 150.5 26.4 150.5 23.4ZM148.6 16.7H147.3L148.7 13.8H151.1L149 16.6H148.6V16.7Z" fill="currentColor"/>
+<path d="M65.8008 32.4001H68.6008L73.9008 46.1001H71.6008L70.0008 42.4001H64.3008L62.7008 46.1001H60.3008L65.8008 32.4001ZM69.3008 40.4001L67.1008 34.6001L65.1008 40.4001H69.3008Z" fill="currentColor"/>
+<path d="M75.1 47.7L76.9 46.9C77.4 48.1 78.3 48.5999 79.4 48.5999C80.9 48.5999 82 47.8 82 45.9V44.5999C81.4 45.5999 80.4 46.2 78.8 46.2C76.1 46.2 74.5 44.2 74.5 41.2C74.6 38.2 76.3 36.2 78.8 36.2C80.4 36.2 81.4 36.6999 82.1 37.5999L82.3 36.4H84V45.9C84 49.1 81.9 50.5 79.3 50.5C77.1 50.5 75.5 49.7 75.1 47.7ZM81.9 41.4C81.9 39.6 81 38.0999 79.4 38.0999C77.8 38.0999 76.7 39.4 76.7 41.4C76.7 43.4 77.7 44.4 79.4 44.4C81.1 44.4 82 43.1 82 41.4H81.9Z" fill="currentColor"/>
+<path d="M85.6992 41.2999C85.6992 38.4999 87.4992 36.2 90.5992 36.2C93.6992 36.2 95.6992 38.5 95.6992 41.2C95.6992 44 93.8992 46.2999 90.6992 46.2999C87.4992 46.2999 85.6992 44.1999 85.6992 41.2999ZM93.2992 41.2999C93.2992 39.4999 92.3992 38 90.6992 38C88.9992 38 87.9992 39.3999 87.9992 41.2999C87.9992 43.1999 88.9992 44.4 90.5992 44.4C92.1992 44.4 93.2992 43.2999 93.2992 41.2999Z" fill="currentColor"/>
+<path d="M97.4023 36.4H99.5023L99.6023 37.7C99.9023 37 100.802 36.2 102.202 36.2L103.102 36.4V38.2L101.902 38.0999C100.702 38.0999 99.7023 39.2 99.7023 40.7V45.9H97.4023V36.4Z" fill="currentColor"/>
+<path d="M104.5 39.4001V38.5001C104.9 37.0001 106.3 36.1001 108.4 36.1001C110.5 36.1001 112.2 37.3001 112.3 39.4001V44.0001L113.4 44.4001V46.0001H112.3C111.6 46.0001 110.7 45.7001 110.5 44.7001C109.9 45.6001 108.8 46.2001 107.4 46.2001C106 46.2001 104 45.5001 104 43.4001C104.1 39.0001 110 40.5001 110 39.2001C110 38.5001 109.6 37.7001 108.4 37.7001C107.2 37.7001 106.6 38.6001 106.5 39.4001H104.5ZM110.2 41.6001C109.1 42.0001 106.4 42.0001 106.3 43.4001C106.3 45.4001 110.1 45.1001 110.2 42.9001V41.5001V41.6001Z" fill="currentColor"/>
+</svg>
+    <span class="meta" id="meta"></span>
+  </header>
+
+  <main id="applock" class="lock"></main>
+
+  <div id="app" hidden style="display:contents">
+    <nav aria-label="Sekcie">
+      <a href="#teraz">Kde sme teraz</a>
+      <a href="#program">Os ročníka</a>
+      <a href="#dokumenty">Dokumenty</a>
+      <a href="#pravidla">Ako to funguje</a>
+    </nav>
+
+    <div id="signupbar" class="signupbar" hidden>
+      <div class="sb-text"><b id="signuptitle"></b><span id="signuptext"></span></div>
+      <a id="signupbtn" class="btn" href="#" target="_blank" rel="noopener"></a>
+    </div>
+
+    <section id="teraz">
+      <div class="intro"><p class="eyebrow">Portál účastníka</p><h1>Kde sme <span class="uline">práve teraz</span></h1></div>
+      <div id="now" class="now"></div>
+      <div id="strip" class="strip"></div>
+    </section>
+
+    <section id="program">
+      <div class="sh"><p class="eyebrow">Október 2026 – máj 2027</p><h2>Os ročníka</h2>
+        <p>Desať tutoriálov a tri semináre v poradí, v akom nimi prejdeme. Pri každej téme si rozbaľ texty na čítanie a otázky na prípravu.</p></div>
+      <ol id="tl" class="tl"></ol>
+    </section>
+
+    <section id="dokumenty">
+      <div class="sh"><p class="eyebrow">Na jednom mieste</p><h2>Dokumenty</h2></div>
+      <ul id="docs" class="docs"></ul>
+    </section>
+
+    <section id="pravidla">
+      <div class="sh"><p class="eyebrow">Stručne</p><h2>Ako to funguje</h2></div>
+      <div class="phases">
+        <div class="pbar" aria-hidden="true"><i style="flex:12.5"></i><i style="flex:47.5"></i><i style="flex:15"></i></div>
+        <ul id="plist" class="plist"></ul>
+      </div>
+      <div id="tutori" class="contacts">
+        <h3 id="ctitle"></h3>
+        <p class="note" id="cnote"></p>
+        <ul id="clist" class="clist"></ul>
+      </div>
+      <div id="rules" class="rules"></div>
+    </section>
+
+    <footer>
+      <em id="ftag"></em>
+      <span><span id="stamp"></span> · <button id="out" class="linkbtn" type="button">Zamknúť</button></span>
+    </footer>
+  </div>
+</div>
+
+<script type="application/json" id="portal-config">__PORTAL_CONFIG__</script>
+<script>
+(function(){
+  var CFG = {};
+  try { CFG = JSON.parse(document.getElementById("portal-config").textContent); } catch(e){}
+  var S = CFG.settings || {};
+  var KEY = "agora-portal-unlocked";
+  function $(id){ return document.getElementById(id); }
+
+  function esc(s){ return String(s==null?"":s).replace(/[&<>"']/g,function(c){return {"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c];}); }
+  function arr(v){ return Array.isArray(v) ? v.filter(Boolean) : String(v||"").split(/\n+/).map(function(s){return s.trim();}).filter(Boolean); }
+
+  // Minimal, safe inline markdown: escape first, then links / bold / italic / code.
+  function mdInline(s){
+    s = esc(s);
+    s = s.replace(/`([^`]+)`/g, "<code>$1</code>");
+    s = s.replace(/\[([^\]]+)\]\(([^)\s]+)\)/g, function(m, t, u){
+      if (/^(https?:\/\/|mailto:|#)/i.test(u)){
+        var ext = /^https?:/i.test(u);
+        return '<a class="link" href="' + u + '"' + (ext ? ' target="_blank" rel="noopener"' : "") + ">" + t + "</a>";
+      }
+      return t;
+    });
+    s = s.replace(/\*\*([^*]+)\*\*/g, "<strong>$1</strong>");
+    s = s.replace(/(^|[^*])\*([^*\s][^*]*?)\*/g, "$1<em>$2</em>");
+    s = s.replace(/\b_([^_]+)_\b/g, "<em>$1</em>");
+    return s;
+  }
+  function mdBlock(s, cls){
+    return arr(s).map(function(p){ return "<p" + (cls?' class="'+cls+'"':"") + ">" + mdInline(p) + "</p>"; }).join("");
+  }
+  function li(items, tag){ return "<" + tag + ">" + items.map(function(t){ return "<li>" + mdInline(t) + "</li>"; }).join("") + "</" + tag + ">"; }
+  function safeUrl(u){ u = String(u||"").trim(); return /^https?:\/\//i.test(u) ? u : ""; }
+
+  function hash(str){
+    var h1=0xdeadbeef,h2=0x41c6ce57;
+    for(var i=0,ch;i<str.length;i++){ch=str.charCodeAt(i);h1=Math.imul(h1^ch,2654435761);h2=Math.imul(h2^ch,1597334677);}
+    h1=Math.imul(h1^(h1>>>16),2246822507);h1^=Math.imul(h2^(h2>>>13),3266489909);
+    h2=Math.imul(h2^(h2>>>16),2246822507);h2^=Math.imul(h1^(h1>>>13),3266489909);
+    return (4294967296*(2097151&h2)+(h1>>>0)).toString(36);
+  }
+
+  function parseCsv(text){
+    var rows=[],row=[],cur="",q=false;
+    for(var i=0;i<text.length;i++){var c=text[i];
+      if(q){if(c==='"'){if(text[i+1]==='"'){cur+='"';i++;}else q=false;}else cur+=c;}
+      else if(c==='"')q=true;
+      else if(c===","){row.push(cur);cur="";}
+      else if(c==="\n"){row.push(cur);rows.push(row);row=[];cur="";}
+      else if(c!=="\r")cur+=c;
+    }
+    if(cur!==""||row.length){row.push(cur);rows.push(row);}
+    var head=(rows.shift()||[]).map(function(h){return h.trim().toLowerCase();});
+    return rows.filter(function(r){return r.some(function(x){return x.trim();});}).map(function(r){
+      var o={};head.forEach(function(h,i){o[h]=(r[i]||"").trim();});return o;});
+  }
+  function parseDate(s){
+    var m=/^(\d{4})-(\d{2})-(\d{2})$/.exec(String(s||"").trim());
+    if(m)return new Date(+m[1],+m[2]-1,+m[3]);
+    m=/^(\d{1,2})\.\s*(\d{1,2})\.\s*(\d{4})$/.exec(String(s||"").trim());
+    return m?new Date(+m[3],+m[2]-1,+m[1]):null;
+  }
+  function fmtDate(d){try{return d.toLocaleDateString("sk-SK",{weekday:"long",day:"numeric",month:"long",year:"numeric"});}catch(e){return d.toDateString();}}
+  function whenOf(it){var d=parseDate(it.datum);return it.termin||(d?fmtDate(d):"");}
+  function kind(it){return it.typ==="tutorial"?"Tutoriál "+it.cislo:it.typ==="seminar"?"Seminár"+(it.cislo?" "+it.cislo:""):"Udalosť";}
+  function lead(it){var m=/^[\s\S]*?[.?!](?=\s|$)/.exec(String(it.anotacia||"").trim());return m?m[0]:"";}
+
+  function fromCsv(r){
+    return {
+      typ:r.typ, cislo:r.cislo, nazov:r.nazov, vedie:r.vedie, anotacia:r.anotacia,
+      datum:r.datum, termin:r.termin, poznamka:r.poznamka, odkaz:r.odkaz,
+      spatnaVazba:r.spatna_vazba || r.spatnavazba,
+      texty:arr(r.texty), otazky:arr(r.otazky), doplnkove:arr(r.doplnkove), otazkyDopl:arr(r.otazky_dopl||r.otazkydopl)
+    };
+  }
+
+  function render(items, documents){
+    var today=new Date();today.setHours(0,0,0,0);
+    var signup=safeUrl(S.signupUrl);
+    if(signup){$("signupbtn").href=signup;var sl=$("signuplink");if(sl)sl.href=signup;$("signupbar").hidden=false;}
+
+    var lastPast=-1,nowIdx=-1;
+    items.forEach(function(it,i){var d=parseDate(it.datum);if(d&&d<today)lastPast=i;});
+    items.forEach(function(it,i){it._done=i<=lastPast;if(!it._done&&nowIdx<0)nowIdx=i;});
+
+    var tuts=items.filter(function(i){return i.typ==="tutorial";});
+    var doneT=tuts.filter(function(i){return i._done;}).length;
+    var cur=items[nowIdx],next=items[nowIdx+1];
+
+    var h="";
+    if(cur){
+      var texts=arr(cur.texty),w=whenOf(cur),link=safeUrl(cur.odkaz)||(cur.typ==="tutorial"?signup:"");
+      h+='<p class="eyebrow">'+esc(cur.typ==="udalost"?"Najbližšie nás čaká":"Práve čítame · "+kind(cur))+"</p>";
+      h+="<h2>"+esc(cur.nazov)+"</h2>";
+      if(lead(cur))h+='<p class="q">'+mdInline(lead(cur))+"</p>";
+      h+='<p class="when">'+esc(w||"Termín upresníme")+"</p>";
+      if(texts.length)h+=li(texts,"ul");
+      if(cur.vedie)h+='<p class="sub">Vedie '+esc(cur.vedie)+".</p>";
+      if(cur.typ==="tutorial")h+='<p class="sub">Prípravu pošli svojmu tútorovi najneskôr 24 hodín vopred · <a href="#tutori" style="color:inherit;font-weight:700">e-maily tútorov</a></p>';
+      if(cur.poznamka)h+='<div class="sub">'+mdBlock(cur.poznamka)+"</div>";
+      if(cur.typ==="tutorial"||cur.typ==="seminar"){
+        h+='<div class="actions">';
+        if(cur.typ==="tutorial"){
+          if(link)h+='<a class="btn" href="'+esc(link)+'" target="_blank" rel="noopener">Prihlásiť sa na termín</a>';
+          else h+='<span class="sub">Termíny a časové bloky zverejníme najneskôr týždeň vopred.</span>';
+        }
+        var fbNow=safeUrl(cur.spatnaVazba);
+        if(fbNow)h+='<a class="btn2" href="'+esc(fbNow)+'" target="_blank" rel="noopener">Spätná väzba po stretnutí</a>';
+        h+="</div>";
+      }
+      var prev=null;
+      for(var j=nowIdx-1;j>=0;j--){if(items[j].typ!=="udalost"){prev=items[j];break;}}
+      var fbPrev=prev&&safeUrl(prev.spatnaVazba);
+      if(fbPrev)h+='<div class="fb"><span class="sub">Ako sa ti páčil '+esc(kind(prev).toLowerCase()+" · "+prev.nazov)+'?</span><a class="btn2" href="'+esc(fbPrev)+'" target="_blank" rel="noopener">Daj nám spätnú väzbu</a></div>';
+    }else{
+      h+='<p class="eyebrow">Ročník 2026/2027</p><h2>Ročník je za nami</h2><p class="sub">Všetky tutoriály a semináre prebehli. Ďakujeme za spoločné premýšľanie.</p>';
+    }
+    $("now").innerHTML=h;
+
+    var s='<div><span class="k">Potom</span>';
+    s+=next?'<span class="v">'+esc(next.nazov)+'</span><span class="s">'+esc(kind(next)+(whenOf(next)?" · "+whenOf(next):""))+"</span>":'<span class="v">Koniec ročníka</span>';
+    s+='</div><div><span class="k">Tutoriály</span><span class="v">'+doneT+" z "+tuts.length+' za nami</span><span class="bar" role="img" aria-label="'+doneT+" z "+tuts.length+' tutoriálov prebehlo">';
+    tuts.forEach(function(t){s+="<i"+(t._done?' class="on"':"")+"></i>";});
+    s+="</span></div>";
+    $("strip").innerHTML=s;
+
+    $("tl").innerHTML=items.map(function(it,i){
+      var isNow=i===nowIdx,w=whenOf(it),texts=arr(it.texty),extra=arr(it.doplnkove),qs=arr(it.otazky),qs2=arr(it.otazkyDopl);
+      var link=safeUrl(it.odkaz);
+      var o='<li class="'+(it._done?"is-done":isNow?"is-now":"")+'"><div class="row">';
+      o+=it.typ==="tutorial"?'<span class="num">'+esc(it.cislo)+"</span>":'<span class="num small">'+(it.typ==="seminar"?"Sem.":"•")+"</span>";
+      o+='<div class="main"><h3>'+esc(it.nazov)+"</h3>";
+      if(lead(it))o+='<p class="q">'+mdInline(lead(it))+"</p>";
+      o+='<div class="tags">';
+      if(isNow)o+='<span class="chip now-chip">Teraz</span>';
+      else if(it._done)o+='<span class="chip done-chip">Prebehlo</span>';
+      o+="<span>"+esc(it.typ==="udalost"?(w||"termín upresníme"):kind(it)+(it.vedie?" · "+it.vedie:"")+" · "+(w||"termín upresníme"))+"</span></div>";
+      if(it.typ==="udalost"&&it.poznamka)o+='<div class="note">'+mdBlock(it.poznamka)+"</div>";
+      o+="</div>";
+      if(it.typ!=="udalost"&&(texts.length||extra.length||qs.length||it.anotacia||it.poznamka||link)){
+        var fb=safeUrl(it.spatnaVazba);
+        o+='<div class="acts">';
+        if(fb)o+='<a class="link fbl" href="'+esc(fb)+'" target="_blank" rel="noopener">Spätná väzba</a>';
+        o+="<details"+(isNow?" open":"")+'><summary>Texty a otázky</summary><div class="srcs">';
+        if(it.anotacia)o+=mdBlock(it.anotacia,"anot");
+        if(texts.length)o+="<div><h4>"+(texts.length>1?"Hlavné texty":"Hlavný text")+"</h4>"+li(texts,"ul")+"</div>";
+        if(qs.length)o+="<div><h4>Otázky k "+(texts.length>1?"hlavným textom":"hlavnému textu")+"</h4>"+li(qs,"ol")+"</div>";
+        if(extra.length)o+="<div><h4>Doplnkové zdroje</h4>"+li(extra,"ul")+"</div>";
+        if(qs2.length)o+="<div><h4>Otázky k doplnkovým zdrojom</h4>"+li(qs2,"ol")+"</div>";
+        if(it.poznamka)o+='<div class="note">'+mdBlock(it.poznamka)+"</div>";
+        if(link)o+="<p>"+mdInline("[Otvoriť podklady]("+link+")")+"</p>";
+        o+="</div></details></div>";
+      }
+      return o+"</div></li>";
+    }).join("");
+
+    $("docs").innerHTML=(documents||[]).map(function(d){
+      var u=safeUrl(d.odkaz);
+      return '<li><div class="d"><b>'+esc(d.nazov)+"</b>"+(d.poznamka?"<span>"+mdInline(d.poznamka)+"</span>":"")+"</div>"+(u?'<a class="link" href="'+esc(u)+'" target="_blank" rel="noopener">Otvoriť</a>':"")+"</li>";
+    }).join("");
+
+    $("stamp").textContent="Obsah aktualizovaný "+(S.snapshot||"");
+  }
+
+  function renderStatic(){
+    var L=CFG.lock||{}, H=CFG.header||{}, SG=CFG.signup||{}, C=CFG.contacts||{}, F=CFG.footer||{};
+    if(H.meta)$("meta").textContent=H.meta;
+    var lk="";
+    if(L.eyebrow)lk+='<p class="eyebrow">'+esc(L.eyebrow)+"</p>";
+    lk+="<h1>"+esc(L.title||"")+(L.titleEm?" <em>"+esc(L.titleEm)+"</em>":"")+"</h1>";
+    if(L.lead)lk+='<div class="lead">'+mdBlock(L.lead)+"</div>";
+    lk+='<form id="gate" class="gate" novalidate><label for="pw">Heslo ročníka<input id="pw" type="password" autocomplete="current-password" autocapitalize="none" spellcheck="false"></label><button class="btn" type="submit">Vstúpiť</button></form>';
+    lk+='<p id="err" class="err" role="alert"></p><p class="note">Tento prehliadač si heslo zapamätá na 30 dní.</p>';
+    if(L.inside&&L.inside.length){
+      lk+='<ul class="inside">'+L.inside.map(function(x){return "<li><b>"+esc(x.b)+"</b>"+mdInline(x.text||"")+"</li>";}).join("")+"</ul>";
+    }
+    $("applock").innerHTML=lk;
+    if(SG.title)$("signuptitle").textContent=SG.title;
+    if(SG.text)$("signuptext").textContent=SG.text;
+    if(SG.button)$("signupbtn").textContent=SG.button;
+    var ph=CFG.phases||[];
+    if(ph.length)$("plist").innerHTML=ph.map(function(p){return "<li><b>"+esc(p.b)+"</b><span>"+mdInline(p.text||"")+"</span></li>";}).join("");
+    var rl=CFG.rules||[];
+    $("rules").innerHTML=rl.map(function(col){return "<div><h3>"+esc(col.title)+"</h3>"+li(col.items||[],"ul")+"</div>";}).join("");
+    if(C.title)$("ctitle").textContent=C.title;
+    if(C.note)$("cnote").textContent=C.note;
+    $("clist").innerHTML=(C.people||[]).map(function(p){return '<li><b>'+esc(p.name)+'</b><span class="mail">'+esc(p.mail)+'</span><button class="copy" type="button" data-mail="'+esc(p.mail)+'">Kopírovať</button></li>';}).join("");
+    if(F.tagline)$("ftag").innerHTML=esc(F.tagline)+(F.taglineEm?" <span>"+esc(F.taglineEm)+"</span>":"");
+  }
+
+  function load(){
+    var items=(CFG.timeline||[]).slice();
+    var documents=(CFG.documents||[]).slice();
+    render(items, documents);
+    if(safeUrl(S.sheetCsvUrl)){
+      fetch(S.sheetCsvUrl).then(function(r){if(!r.ok)throw 0;return r.text();}).then(function(t){
+        var rows=parseCsv(t);
+        var its=rows.filter(function(r){return /^(tutorial|seminar|udalost)$/.test(r.typ);}).map(fromCsv);
+        var docs=rows.filter(function(r){return r.typ==="dokument";}).map(function(r){return {nazov:r.nazov,poznamka:r.poznamka,odkaz:r.odkaz};});
+        if(its.length){ S.snapshot="práve teraz z tabuľky"; render(its, docs.length?docs:documents); }
+      }).catch(function(){});
+    }
+  }
+
+  function open(){ $("applock").hidden=true; $("app").hidden=false; load(); }
+  var DAYS=30,MS=DAYS*864e5;
+  function save(){try{localStorage.setItem(KEY,JSON.stringify({h:S.passwordHash,t:Date.now()}));}catch(e){}}
+  function remembered(){
+    try{var raw=localStorage.getItem(KEY);if(!raw)return false;
+      if(raw===S.passwordHash){save();return true;}
+      var o=JSON.parse(raw);
+      if(o&&o.h===S.passwordHash&&Date.now()-o.t<MS)return true;
+      localStorage.removeItem(KEY);return false;
+    }catch(e){return false;}
+  }
+
+  renderStatic();
+  $("gate").addEventListener("submit",function(e){
+    e.preventDefault();
+    var v=$("pw").value.trim().toLowerCase();
+    if(!v){$("err").textContent="Zadaj heslo ročníka.";return;}
+    if(hash(v)===S.passwordHash){save();$("err").textContent="";open();}
+    else{$("err").textContent="Toto heslo nesedí. Skús to znova alebo sa opýtaj svojho tútora.";$("pw").select();}
+  });
+  $("out").addEventListener("click",function(){
+    try{localStorage.removeItem(KEY);}catch(e){}
+    $("app").hidden=true;$("applock").hidden=false;$("pw").value="";window.scrollTo(0,0);
+  });
+  document.addEventListener("click",function(e){
+    var b=e.target.closest&&e.target.closest(".copy");if(!b)return;
+    var m=b.getAttribute("data-mail");
+    function done(){b.textContent="Skopírované";setTimeout(function(){b.textContent="Kopírovať";},1500);}
+    function fallback(){var s=b.previousElementSibling;var r=document.createRange();r.selectNodeContents(s);var sel=getSelection();sel.removeAllRanges();sel.addRange(r);b.textContent="Označené, stlač Ctrl+C";}
+    try{navigator.clipboard.writeText(m).then(done,fallback);}catch(err){fallback();}
+  });
+  if(remembered())open();
+})();
+
+</script>
+</body></html>

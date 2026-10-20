@@ -1,4 +1,6 @@
-<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
+<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover">
+<style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style>
+</head><body>
 <title>Portál Študentskej Agory</title>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,800;1,400&family=Plus+Jakarta+Sans:wght@400;500;700;800&display=swap">
 <style>
@@ -191,31 +193,11 @@ footer em span{color:var(--terra)}
 <path d="M97.4023 36.4H99.5023L99.6023 37.7C99.9023 37 100.802 36.2 102.202 36.2L103.102 36.4V38.2L101.902 38.0999C100.702 38.0999 99.7023 39.2 99.7023 40.7V45.9H97.4023V36.4Z" fill="currentColor"/>
 <path d="M104.5 39.4001V38.5001C104.9 37.0001 106.3 36.1001 108.4 36.1001C110.5 36.1001 112.2 37.3001 112.3 39.4001V44.0001L113.4 44.4001V46.0001H112.3C111.6 46.0001 110.7 45.7001 110.5 44.7001C109.9 45.6001 108.8 46.2001 107.4 46.2001C106 46.2001 104 45.5001 104 43.4001C104.1 39.0001 110 40.5001 110 39.2001C110 38.5001 109.6 37.7001 108.4 37.7001C107.2 37.7001 106.6 38.6001 106.5 39.4001H104.5ZM110.2 41.6001C109.1 42.0001 106.4 42.0001 106.3 43.4001C106.3 45.4001 110.1 45.1001 110.2 42.9001V41.5001V41.6001Z" fill="currentColor"/>
 </svg>
-
-    <span class="meta">Ročník 2026/2027 · Svoradov, Bratislava</span>
+    <span class="meta" id="meta"></span>
   </header>
 
-  <!-- ZÁMOK -->
-  <main id="lock" class="lock">
-    <p class="eyebrow">Portál účastníka</p>
-    <h1>Idey menia svet. <em>Otázky menia nás.</em></h1>
-    <p class="lead">Tu nájdeš všetko, čo počas ročníka potrebuješ: kde sa práve nachádzame, čo sa číta na ďalší tutoriál a kde sú dokumenty. Heslo dostali účastníci od svojho tútora.</p>
-    <form id="gate" class="gate" novalidate>
-      <label for="pw">Heslo ročníka
-        <input id="pw" type="password" autocomplete="current-password" autocapitalize="none" spellcheck="false">
-      </label>
-      <button class="btn" type="submit">Vstúpiť</button>
-    </form>
-    <p id="err" class="err" role="alert"></p>
-    <p class="note">Tento prehliadač si heslo zapamätá na 30 dní.</p>
-    <ul class="inside">
-      <li><b>Os ročníka</b>10 tutoriálov a 3 semináre v poradí, s vyznačením, kde sme.</li>
-      <li><b>Sylaby</b>Hlavné a doplnkové texty aj otázky ku každej téme.</li>
-      <li><b>Dokumenty</b>Texty na Drive, príprava na tutoriál, House rules.</li>
-    </ul>
-  </main>
+  <main id="applock" class="lock"></main>
 
-  <!-- PORTÁL -->
   <div id="app" hidden style="display:contents">
     <nav aria-label="Sekcie">
       <a href="#teraz">Kde sme teraz</a>
@@ -225,307 +207,285 @@ footer em span{color:var(--terra)}
     </nav>
 
     <div id="signupbar" class="signupbar" hidden>
-      <div class="sb-text"><b>Zápis na tutoriály</b><span>Vyber si termín v tabuľke. Na jeden termín najviac 6 ľudí, kto prv príde, ten ide.</span></div>
-      <a id="signupbtn" class="btn" href="#" target="_blank" rel="noopener">Prihlásiť sa na tutoriál</a>
+      <div class="sb-text"><b id="signuptitle"></b><span id="signuptext"></span></div>
+      <a id="signupbtn" class="btn" href="#" target="_blank" rel="noopener"></a>
     </div>
 
     <section id="teraz">
-      <div class="intro">
-        <p class="eyebrow">Portál účastníka</p>
-        <h1>Kde sme <span class="uline">práve teraz</span></h1>
-      </div>
+      <div class="intro"><p class="eyebrow">Portál účastníka</p><h1>Kde sme <span class="uline">práve teraz</span></h1></div>
       <div id="now" class="now"></div>
       <div id="strip" class="strip"></div>
     </section>
 
     <section id="program">
-      <div class="sh">
-        <p class="eyebrow">Október 2026 – máj 2027</p>
-        <h2>Os ročníka</h2>
-        <p>Desať tutoriálov a tri semináre v poradí, v akom nimi prejdeme. Pri každej téme si rozbaľ texty na čítanie a otázky na prípravu.</p>
-      </div>
+      <div class="sh"><p class="eyebrow">Október 2026 – máj 2027</p><h2>Os ročníka</h2>
+        <p>Desať tutoriálov a tri semináre v poradí, v akom nimi prejdeme. Pri každej téme si rozbaľ texty na čítanie a otázky na prípravu.</p></div>
       <ol id="tl" class="tl"></ol>
     </section>
 
     <section id="dokumenty">
-      <div class="sh">
-        <p class="eyebrow">Na jednom mieste</p>
-        <h2>Dokumenty</h2>
-      </div>
+      <div class="sh"><p class="eyebrow">Na jednom mieste</p><h2>Dokumenty</h2></div>
       <ul id="docs" class="docs"></ul>
     </section>
 
     <section id="pravidla">
-      <div class="sh">
-        <p class="eyebrow">Stručne</p>
-        <h2>Ako to funguje</h2>
-      </div>
+      <div class="sh"><p class="eyebrow">Stručne</p><h2>Ako to funguje</h2></div>
       <div class="phases">
         <div class="pbar" aria-hidden="true"><i style="flex:12.5"></i><i style="flex:47.5"></i><i style="flex:15"></i></div>
-        <ul class="plist">
-          <li><b>Úvod · 10 – 15 min</b><span>Otvorenie témy a prvé dojmy z textu.</span></li>
-          <li><b>Jadro diskusie · 45 – 50 min</b><span>Analýza textu, sokratovské otázky, protiargumenty.</span></li>
-          <li><b>Záver · 15 min</b><span>Zhrnutie tutoriálu: s čím odchádzam?</span></li>
-        </ul>
+        <ul id="plist" class="plist"></ul>
       </div>
       <div id="tutori" class="contacts">
-        <h3>Kam poslať prípravu</h3>
-        <p class="note">Prípravu pošli e-mailom svojmu tútorovi najneskôr 24 hodín pred tutoriálom.</p>
-        <ul class="clist">
-          <li><b>Andrej Sňahničan</b><span class="mail">snahnican.andrej@gmail.com</span><button class="copy" type="button" data-mail="snahnican.andrej@gmail.com">Kopírovať</button></li>
-          <li><b>Ján Pastorek</b><span class="mail">jpastorek5@gmail.com</span><button class="copy" type="button" data-mail="jpastorek5@gmail.com">Kopírovať</button></li>
-          <li><b>Michal Fronc</b><span class="mail">froncmichal@gmail.com</span><button class="copy" type="button" data-mail="froncmichal@gmail.com">Kopírovať</button></li>
-          <li><b>Samuel Prílepok</b><span class="mail">samuel.prilepok@gmail.com</span><button class="copy" type="button" data-mail="samuel.prilepok@gmail.com">Kopírovať</button></li>
-          <li><b>Mária Kolesárová</b><span class="mail">maria.kolesarova@fmed.uniba.sk</span><button class="copy" type="button" data-mail="maria.kolesarova@fmed.uniba.sk">Kopírovať</button></li>
-        </ul>
+        <h3 id="ctitle"></h3>
+        <p class="note" id="cnote"></p>
+        <ul id="clist" class="clist"></ul>
       </div>
-      <div class="rules">
-        <div>
-          <h3>Príprava</h3>
-          <ul>
-            <li>Krátka písomná príprava, najviac 300 slov.</li>
-            <li>Pošli ju tútorovi najneskôr 24 hodín pred tutoriálom (<a class="link" href="#tutori">e-maily tútorov</a>).</li>
-            <li>Súvislé odpovede na 3 – 5 otázok k textu, nie odrážky.</li>
-            <li>Bez použitia AI. Ide o vlastné myslenie, nie o dokonalosť.</li>
-            <li>Čítaj z vytlačených skrípt a rob si poznámky do textu.</li>
-          </ul>
-        </div>
-        <div>
-          <h3>Prihlasovanie na termíny</h3>
-          <ul>
-            <li>Termíny a časové bloky zverejníme najneskôr týždeň vopred v <a id="signuplink" class="link" href="#" target="_blank" rel="noopener">tabuľke na prihlasovanie</a>.</li>
-            <li>Na jeden blok sa prihlási najviac 6 účastníkov.</li>
-            <li>Platí „kto prv príde, ten ide“. Ak je blok plný, vymeň sa so spolužiakom.</li>
-            <li>Ak nemôžeš prísť, daj čo najskôr vedieť tútorovi.</li>
-          </ul>
-        </div>
-        <div>
-          <h3>Na mieste</h3>
-          <ul>
-            <li>Internát Svoradov: salónik Antona Neuwirtha alebo miestnosť Eugena Filkorna.</li>
-            <li>Na vrátnici povedz, že ideš na stretnutie Študentskej Agory.</li>
-            <li>Prichádzame načas a priestor vraciame do pôvodného stavu.</li>
-            <li>Kritizujeme myšlienky, nie ľudí.</li>
-          </ul>
-        </div>
-      </div>
+      <div id="rules" class="rules"></div>
     </section>
 
     <footer>
-      <em>Idey menia svet. <span>Otázky menia nás.</span></em>
+      <em id="ftag"></em>
       <span><span id="stamp"></span> · <button id="out" class="linkbtn" type="button">Zamknúť</button></span>
     </footer>
   </div>
 </div>
 
-<script type="application/json" id="data">[{"typ": "udalost", "cislo": "", "nazov": "Uzávierka prihlášok", "vedie": "", "anotacia": "", "datum": "2026-10-04", "termin": "nedeľa 4. októbra 2026", "texty": "", "otazky": "", "doplnkove": "", "otazky_dopl": "", "poznamka": "Po uzávierke prebehne finálny výber účastníkov.", "odkaz": "", "spatna_vazba": ""}, {"typ": "udalost", "cislo": "", "nazov": "Welcome Party", "vedie": "", "anotacia": "", "datum": "2026-10-12", "termin": "pondelok 12. 10. 2026 od 17:30, Svoradov", "texty": "", "otazky": "", "doplnkove": "", "otazky_dopl": "", "poznamka": "Slávnostné otvorenie ročníka pre všetkých prijatých účastníkov.", "odkaz": "", "spatna_vazba": ""}, {"typ": "tutorial", "cislo": "1", "nazov": "Cieľ života", "vedie": "", "anotacia": "Čo znamená žiť dobrý život a podľa čoho spoznáme, že sa nám darí ako ľuďom? Aristotelovo uvažovanie o blaženosti (eudaimonii) otvára otázku, ako spolu súvisia cnosť, potešenie a vonkajšie dobrá. Stačilo by nám cítiť sa šťastní, keby náš život nebol skutočný?", "datum": "2026-10-23", "termin": "týždeň 19. – 23. 10. 2026", "texty": "Aristoteles: Etika Nikomachova. Bratislava: Kalligram, 2011, s. 27 – 32 a 36 – 60. || https://drive.google.com/file/d/1UVpydAD3eS1EvNyD56a-y9hveFutOS7l/view?usp=sharing", "otazky": "Ako Aristoteles dospieva k svojej definícii blaženosti? Súhlasíte s jeho argumentom? Prečo?\nSúhlasíte s Aristotelom, že na dosiahnutie blaženosti sú potrebné aj vonkajšie dobrá? Aké miesto majú v živote cnostného človeka?\nAký je podľa Aristotela vzťah medzi cnosťou a blaženosťou?\nČo vás na danom texte najviac oslovilo? S čím nesúhlasíte?", "doplnkove": "Richard Kraut: Aristotle’s Ethics. Stanford Encyclopedia of Philosophy, časť 2 „The Human Good and the Function Argument“. || https://plato.stanford.edu/entries/aristotle-ethics/#HumaGoodFuncArgu\nRobert Nozick: The Experience Machine. In: Anarchy, State, and Utopia, 1974, s. 42 – 45. || https://gned.ca/readings/Reading01Nozick%20.pdf\nJ. L. Ackrill: Aristotle on Eudaimonia. Proceedings of the British Academy, roč. 60, 1974, s. 339 – 359. || https://pdfcoffee.com/ackrill-jl-aristotle-on-eudaimoniapdf-5-pdf-free.html", "otazky_dopl": "", "poznamka": "", "odkaz": "", "spatna_vazba": "https://docs.google.com/forms/d/e/1FAIpQLSd14PuUpwdu22vNAwDmC2Ohp2Or5WwhFFar3ej_X79xt5oO_g/viewform"}, {"typ": "tutorial", "cislo": "2", "nazov": "Veda a myslenie", "vedie": "", "anotacia": "Prečo niektoré vysvetlenia objasňujú svet lepšie než iné? Na základe Deutschovho textu preskúmame, akú úlohu majú vo vede domnienky, kritika a ochota opraviť vlastný omyl. Môže byť poznanie spoľahlivé, aj keď nie je neomylné?", "datum": "2026-11-06", "termin": "týždeň 2. – 6. 11. 2026", "texty": "David Deutsch: The Reach of Explanations. In: The Beginning of Infinity, 2011, kap. 1 (33 strán PDF). || https://iacmr.org/wp-content/uploads/sites/26/2026/05/02-David-Deutsch-2011_The-Beginning-of-Infinity_Chapter-1.pdf", "otazky": "Čím sa podľa Deutscha odlišuje dobré vysvetlenie od zlého?\nČo je úlohou vedy a čo ňou nie je?\nMôžu byť mýtické vysvetlenia dobré?", "doplnkove": "Paul Feyerabend: How to Defend Society Against Science. Radical Philosophy, č. 11, 1975, s. 3 – 8. || https://www.radicalphilosophy.com/article/how-to-defend-society-against-science\nAlister E. McGrath: A Theory of Everything (That Matters), 2019, kap. 2 „The Old World: Newton’s Clockwork Universe“, s. 17 – 34. || https://drive.google.com/drive/folders/1sqbdJLr677CGncrLMHaqA_L_AdkcZp_G\nBrian Hepburn – Hanne Andersen: Scientific Method. Stanford Encyclopedia of Philosophy. || https://plato.stanford.edu/entries/scientific-method/\nKarl R. Popper: The Logic of Scientific Discovery, časť I „Introduction to the Logic of Science“, s. 3 – 34. || https://philotextes.info/spip/IMG/pdf/popper-logic-scientific-discovery.pdf\nEdmund L. Gettier: Is Justified True Belief Knowledge? Analysis, roč. 23, č. 6, 1963, s. 121 – 123. || https://courses.physics.illinois.edu/phys419/sp2021/Gettier.pdf", "otazky_dopl": "Prečo podľa Gettiera nestačí definovať poznanie ako „zdôvodnené pravdivé presvedčenie“ (justified true belief)?\nV čom sa doplnkové texty zhodujú s Deutschovým pohľadom na úlohu vedy a v čom sa od neho líšia?\nAko môže predstava o neomylnosti vedy brániť vedeckému pokroku? Pri odpovedi vychádzajte z McGrathovho textu.\nAký je vzťah medzi pojmami „atóm“, „elektrón“, „elektrický prúd“ a „hmotnosť“ a skutočnosťami, ktoré opisujú?", "poznamka": "", "odkaz": "", "spatna_vazba": "https://docs.google.com/forms/d/e/1FAIpQLSeuD9QnqNU3m72j6QPXYjceHUCkJHCbKigjtOELUKsvkYCM1A/viewform"}, {"typ": "tutorial", "cislo": "3", "nazov": "Ťarcha existencie", "vedie": "", "anotacia": "Ocitli sme sa na svete bez toho, aby sme si vybrali jeho podmienky, no musíme sa rozhodovať, ako budeme žiť. Sartre a Kierkegaard otvárajú otázku, čo znamená stať sa sebou samým a niesť za svoj život zodpovednosť. Aké miesto v tom majú sloboda, zúfalstvo a vzťah k nadprirodzenu?", "datum": "2026-11-20", "termin": "týždeň 16. – 20. 11. 2026", "texty": "Jean-Paul Sartre: Existencializmus je humanizmus. Prel. Ján Švantner. Bratislava: Slovenský spisovateľ, 1997, s. 9 – 29 (po časť „Voľba a angažovanosť“) a s. 38 – 57 (od časti „Existencializmus je optimistické učenie“). || https://drive.google.com/drive/folders/1mqzx_MvLkLU60Gh-yN0gCoVywMkDYFcv\nSøren Kierkegaard: Choroba na smrť. Prel. Peter Šajda. Bratislava: Premedia, 2018, s. 13 – 35. || https://drive.google.com/drive/folders/1mqzx_MvLkLU60Gh-yN0gCoVywMkDYFcv", "otazky": "Čo znamená Sartrovo tvrdenie, že „existencia predchádza esenciu“?\nSartre hovorí, že človek je „odsúdený na slobodu“. Čo tým myslí?\nAko Kierkegaard definuje ľudské „ja“? Čo znamená, že „ja“ je „vzťah, ktorý sa vzťahuje sám k sebe“?\nPrečo Kierkegaard tvrdí, že zúfalstvo je všeobecne rozšírený ľudský stav, ktorý si človek nemusí uvedomovať?\nV čom sa Sartrovo a Kierkegaardovo chápanie ľudskej existencie najvýraznejšie líši?", "doplnkove": "Choroba na smrť, 1. časť (podcast, YouTube). || https://youtu.be/w1iTkpxuuyI\nSv. Augustín: Vyznania, kniha IV, kap. 4 – 14.", "otazky_dopl": "", "poznamka": "", "odkaz": "", "spatna_vazba": "https://docs.google.com/forms/d/e/1FAIpQLScx8B2UNkyN60pK7HYt2h61Rd6F5tqWwPE8ZJ9G-Hdhz8g13g/viewform"}, {"typ": "seminar", "cislo": "1", "nazov": "Filozofia mysle", "vedie": "Jakub Betinský", "anotacia": "Ako rozumieme vlastným myšlienkam a úmyslom a ako ich rozpoznávame u druhých? Téma filozofie mysle nás privedie k otázke, ako vnútorný život súvisí s ľudským konaním.", "datum": "2026-12-04", "termin": "týždeň 30. 11. – 4. 12. 2026", "texty": "G. E. M. Anscombe: Events in the Mind. In: Metaphysics and the Philosophy of Mind (Collected Philosophical Papers, zv. 2). Oxford: Basil Blackwell, 1981, s. 57 – 63. || https://drive.google.com/drive/folders/1a4WzZRMPdlM8H20U2sf2wzd6os3fQW3a", "otazky": "", "doplnkove": "", "otazky_dopl": "", "poznamka": "", "odkaz": "", "spatna_vazba": "https://docs.google.com/forms/d/e/1FAIpQLSfwr_73CnHfEWALiBTK_fwcawqdP2Rq8PyXm0Vn2FjKUNmNyw/viewform"}, {"typ": "tutorial", "cislo": "4", "nazov": "Realita a pravda", "vedie": "", "anotacia": "Je realita nezávislá od nás a môžeme ju poznať takú, aká je? Budeme skúmať, ako naše vnímanie a jazyk ovplyvňujú obraz sveta a či presné pomenovanie pomáha preklenúť rozdiel medzi tým, čo prežívame, a tým, čo skutočne je.", "datum": "2026-12-18", "termin": "týždeň 14. – 18. 12. 2026", "texty": "Jordan B. Peterson: Pravidlo 10 – Vyjadrujte sa presne. In: 12 pravidiel pre život: Liek na chaos. Bratislava: Tatran, 2018, s. 249 – 268. || https://drive.google.com/open?id=1HrF23dkOl8ixLrR4aXMXHnEiEXbGifcv&usp=drive_copy", "otazky": "Dokážeme vidieť svet taký, aký je? Prečo?\nPrečo sa podľa Petersona svet „rúca“, keď veci nedokážeme jasne pomenovať?", "doplnkove": "Platón: Allegory of the Cave. In: The Republic, kniha VII. || https://users.rowan.edu/~clowney/Aesthetics/scans/Plato/PlatoCave.pdf\nBertrand Russell: The Problems of Philosophy, kap. 2 – 3. || http://www.public-library.uk/pdfs/8/893.pdf\nFriedrich Nietzsche: On Truth and Lies in a Nonmoral Sense (1873). In: The Nietzsche Reader. Malden: Blackwell, 2006, s. 114 – 123. || https://dn790002.ca.archive.org/0/items/NietzscheTruthLiesInANonmoralSense1873/Nietzsche%20-%20Truth%20%26%20Lies%20in%20a%20Nonmoral%20Sense%20%281873%29.pdf", "otazky_dopl": "", "poznamka": "", "odkaz": "", "spatna_vazba": "https://docs.google.com/forms/d/e/1FAIpQLSf15ZkhONOhMtCNnJ3vaErpYWdrqzmD7uJ9UTNzJDBNuGeJdA/viewform"}, {"typ": "tutorial", "cislo": "5", "nazov": "Utrpenie", "vedie": "", "anotacia": "Môže si život zachovať zmysel aj v utrpení, ktoré nedokážeme odstrániť? Franklova skúsenosť z koncentračných táborov otvára otázku, akú slobodu má človek voči okolnostiam, ktoré si nezvolil. Budeme rozlišovať medzi hľadaním zmyslu napriek utrpeniu a pripisovaním hodnoty utrpeniu samému.", "datum": "2027-01-29", "termin": "týždeň 25. – 29. 1. 2027", "texty": "Viktor E. Frankl: Hľadanie zmyslu života. Bratislava: Eastone Books, 2011, s. 3 – 80. || https://drive.google.com/file/d/1xWdbtcbly54blYx8tLcHIr7S7uRG7Ow1/view?usp=drive_link", "otazky": "Frankl hovorí, že aj v koncentračnom tábore zostávala človeku „posledná sloboda“ – zvoliť si postoj k okolnostiam, ktoré nemôže zmeniť. Súhlasíte, že táto sloboda zostáva človeku za každých okolností?\nFrankl tvrdí, že zmysel treba vo svete objavovať: v čine, v láske alebo v postoji k nevyhnutnému utrpeniu. Akú úlohu má postoj k utrpeniu v situácii, keď človek nemôže zmeniť svoje okolnosti?\nJe podľa vás Franklovo chápanie zmyslu v utrpení v napätí so snahou utrpenie zmierňovať a odstraňovať, alebo sa dajú tieto postoje zladiť?\nČo vás na príbehu najviac oslovilo a prečo?", "doplnkove": "Fiodor Michajlovič Dostojevskij: The Grand Inquisitor. In: Bratia Karamazovovci, kniha V, kap. 5. || https://drive.google.com/file/d/1eXwlwSIiVlVp7tHYcfOtgZgTpYc_hyyt/view?usp=sharing\nFilm: Život je krásny (La vita è bella, r. Roberto Benigni, 1997).", "otazky_dopl": "", "poznamka": "", "odkaz": "", "spatna_vazba": "https://docs.google.com/forms/d/e/1FAIpQLSdDLPXPFJ2JYtbKsAHLmQVkYXvLBeG1yYi_P3xOxbb49YTgRA/viewform"}, {"typ": "seminar", "cislo": "2", "nazov": "Existencia Boha", "vedie": "Marián Janík", "anotacia": "Dá sa otázka Božej existencie skúmať rozumovými argumentmi? Pri čítaní Tomáša Akvinského sa zameriame na to, čo znamená vysvetliť existenciu sveta a chápať ho ako stvorený. Čo takéto argumenty môžu ukázať a kde sú ich hranice?", "datum": "2027-02-12", "termin": "týždeň 8. – 12. 2. 2027", "texty": "Tomáš Akvinský: výber textov o Božej existencii a stvorení z diel Summa theologiae, Summa contra gentiles, Compendium theologiae, De potentia a De substantiis separatis. || https://drive.google.com/drive/folders/1a4WzZRMPdlM8H20U2sf2wzd6os3fQW3a", "otazky": "", "doplnkove": "", "otazky_dopl": "", "poznamka": "", "odkaz": "", "spatna_vazba": "https://docs.google.com/forms/d/e/1FAIpQLSf-YWsHMvbMCb3aWhY6n18DMS5xgETBkdyQ3JmXpuhqhuLeXA/viewform"}, {"typ": "tutorial", "cislo": "6", "nazov": "Vedomie a skúsenosť", "vedie": "", "anotacia": "Môžeme vedieť všetko o fungovaní mozgu, a predsa nevedieť, aké je niečo vedome prežívať? Myšlienkový experiment s Mary nás privedie k rozdielu medzi poznaním fyzikálnych faktov a vlastnou skúsenosťou. Je tento rozdiel hranicou nášho poznania, alebo nám niečo hovorí aj o povahe skutočnosti?", "datum": "2027-02-26", "termin": "týždeň 22. – 26. 2. 2027", "texty": "Frank Jackson: What Mary Didn’t Know. The Journal of Philosophy, roč. 83, č. 5, 1986, s. 291 – 295. || https://courses.physics.illinois.edu/phys419/sp2021/Jackson1986_WhatMaryDidntKnow.pdf", "otazky": "Opíšte, čo sa podľa Jacksona Mary naučila, keď po prvý raz uvidela farby.\nPrečo je podľa Jacksona vedomá skúsenosť problémom pre čisto fyzikálne vysvetlenie človeka?\nJe vedomá skúsenosť dostatočným argumentom proti fyzikalizmu (materializmu)? Zdôvodnite svoju odpoveď.", "doplnkove": "Frank Jackson: Epiphenomenal Qualia. The Philosophical Quarterly, roč. 32, č. 127, 1982, s. 127 – 136. || http://thatmarcusfamily.org/philosophy/Course_Websites/Contemporary/Readings/Jackson.pdf\nFrank Jackson: Postscript on Qualia. In: There’s Something About Mary. Cambridge, MA: MIT Press, 2004, kap. 19. || https://beisecker.faculty.unlv.edu/Courses/PHIL-352/Dave%20-%20Consciousness%20PDFs/Jackson%20-%20Epiphenomenal%20Qualia/Jackson-Postscript_on_Qualia.PDF\nDavid J. Chalmers: Facing Up to the Problem of Consciousness. Journal of Consciousness Studies, roč. 2, č. 3, 1995, s. 200 – 219. || https://prsinstitute.org/downloads/related/philosophy/consciousness/FacingUptotheProblemofConsciousness.pdf\nPatricia Smith Churchland: The Hornswoggle Problem. Journal of Consciousness Studies, roč. 3, č. 5 – 6, 1996, s. 402 – 408. || https://joelvelasco.net/teaching/2300/hornswoggleprob.pdf\nMary’s Room (video, 5 min). || https://bit.ly/37gbsBa\nThomas Nagel: What Is It Like to Be a Bat? The Philosophical Review, roč. 83, č. 4, 1974, s. 435 – 450. || https://www.sas.upenn.edu/~cavitch/pdf-library/Nagel_Bat.pdf\nMartine Nida-Rümelin – Donnchadh O Conaill: Qualia: The Knowledge Argument. Stanford Encyclopedia of Philosophy, iba časť 2 „Basic Idea“. || https://plato.stanford.edu/archives/sum2026/entries/qualia-knowledge/#BasiIdea", "otazky_dopl": "Aký zásadný rozdiel je medzi závermi Nagela a Jacksona?\nČo navrhuje Chalmers ako možnú cestu k riešeniu ťažkého problému vedomia?\nJe námietka Patricie Churchlandovej dostatočná na odmietnutie Chalmersovho ťažkého problému vedomia?", "poznamka": "", "odkaz": "", "spatna_vazba": "https://docs.google.com/forms/d/e/1FAIpQLScexdUTpFGE4iliKbAPuJv40DqtbT7XDvG1Pj8LEO8eikC2bA/viewform"}, {"typ": "tutorial", "cislo": "7", "nazov": "Sloboda", "vedie": "", "anotacia": "Znamená sloboda iba možnosť robiť si, čo chceme? Arendtovej text nás pozýva uvažovať o slobode, ktorá sa prejavuje v konaní s druhými a v možnosti začať niečo nové. Aké podmienky musí mať spoločný svet, aby sa v ňom táto sloboda mohla uskutočniť?", "datum": "2027-03-12", "termin": "týždeň 8. – 12. 3. 2027", "texty": "Hannah Arendt: What Is Freedom? In: Between Past and Future. New York: Viking Press, 1961, s. 143 – 171. || https://drive.google.com/file/d/1kKF2Hrh7OR-xGVVZSZkT_k27_93NycrR/view?usp=drive_link", "otazky": "Prečo Arendtová odmieta chápať slobodu predovšetkým ako slobodnú vôľu alebo „vnútornú slobodu“ a prečo ju namiesto toho spája s konaním medzi ľuďmi?\nPrečo podľa Arendtovej nestačí byť oslobodený od nátlaku, aby bol človek skutočne slobodný? Akú úlohu pri slobode zohrávajú druhí ľudia a verejný priestor?\nČo Arendtová myslí tvrdením, že podstatou slobody je schopnosť „začať niečo nové“? Prečo slobodné konanie prirovnáva k zázraku?\nČo si o jej chápaní slobody myslíte vy? Súhlasíte s ním?", "doplnkove": "Jan Sokol: Trojí model svobody. In: Etika, život, instituce. Praha: Vyšehrad, 2014, s. 47 – 57. || https://drive.google.com/drive/folders/13RNVBWMpJ1upgFWdZC2blGkp0U21uz5i\nHannah Arendtová: Sloboda byť slobodný. Bratislava: Premedia, 2025, 56 s. || https://www.martinus.sk/3159341-sloboda-byt-slobodny/kniha\nIsaiah Berlin: Two Concepts of Liberty. In: Four Essays on Liberty. Oxford University Press, 1969, s. 118 – 172. || https://cactus.utahtech.edu/green/B_Readings/I_Berlin%20Two%20Concpets%20of%20Liberty.pdf\nEmmanuel Levinas: Reflections on the Philosophy of Hitlerism. Critical Inquiry, roč. 17, č. 1, 1990, s. 63 – 71. || https://www.restancia.hu/blickfang/Levinas-ReflectionsHitlerism4.pdf", "otazky_dopl": "", "poznamka": "", "odkaz": "", "spatna_vazba": "https://docs.google.com/forms/d/e/1FAIpQLSdaE30dtBN9FmTiaC5bHpc5pwZcb1Bd9OIDosIeJdu0J5Kdlg/viewform"}, {"typ": "tutorial", "cislo": "8", "nazov": "Informácia a technológie", "vedie": "", "anotacia": "Tvoríme technológie podľa svojich potrieb, ale ako potom technológie pretvárajú nás? Floridiho pojem infosféry otvára otázku, ako digitálne prostredie mení naše vzťahy, sebaporozumenie a každodenné rozhodovanie. Budeme sa pýtať aj na to, aké hodnoty a mocenské vzťahy sú do technológií vložené.", "datum": "2027-03-26", "termin": "týždeň 22. – 26. 3. 2027", "texty": "Luciano Floridi: The Fourth Revolution: How the Infosphere Is Reshaping Human Reality. Oxford University Press, 2014, kap. 2 „Space: Infosphere“, s. 25 – 50. || https://helios.ntua.gr/2024-25/pluginfile.php/263298/mod_folder/content/0/The%20Fourth%20Revolution_%20How%20the%20Infosphere%20Is%20Reshaping%20Human%20Reality.pdf?forcedownload=1", "otazky": "Ako by ste definovali technológiu?\nČo je to infosféra?\nV čom spočívajú najväčšie hrozby spojené s technológiami?\nKtoré myšlienky z textov vás najviac oslovili a prečo ich považujete za podnetné?", "doplnkove": "Luciano Floridi: The Fourth Revolution, kap. 2 „Space: Infosphere“ (zvyšok kapitoly po s. 50). || https://helios.ntua.gr/2024-25/pluginfile.php/263298/mod_folder/content/0/The%20Fourth%20Revolution_%20How%20the%20Infosphere%20Is%20Reshaping%20Human%20Reality.pdf?forcedownload=1\nLangdon Winner: Do Artifacts Have Politics? Daedalus, roč. 109, č. 1, 1980, s. 121 – 136. || https://courses.ischool.berkeley.edu/i203/s13/wp-content/uploads/2013/01/winner_artifacts_politics.pdf\nByung-Chul Han: The Burnout Society. Prel. Erik Butler. Stanford University Press, 2015.", "otazky_dopl": "", "poznamka": "", "odkaz": "", "spatna_vazba": "https://docs.google.com/forms/d/e/1FAIpQLSds_BcmPvBqKsHIjU3c_OguKe2a75MNZ_tNTcEhrpl2W65Wng/viewform"}, {"typ": "tutorial", "cislo": "9", "nazov": "Čo je osoba", "vedie": "", "anotacia": "Čo robí z človeka osobu a od čoho závisí jej morálne postavenie? Pri porovnaní Singera a Steinovej preskúmame vzťah medzi schopnosťami človeka, jeho telesnosťou a vnútorným životom. Má naša odpoveď dôsledky aj pre to, komu priznávame ochranu a dôstojnosť?", "datum": "2027-04-09", "termin": "týždeň 5. – 9. 4. 2027", "texty": "Peter Singer: Čo je nesprávne na zabíjaní? In: Spisy o etickom žití. Prel. Izabela Viskupová. Bratislava: Vydavateľstvo Spolku slovenských spisovateľov, 2008, s. 128 – 133 (výňatok z knihy Praktická etika). || https://drive.google.com/drive/folders/1XhXNSomy26twcPrQlkYRwfDNAmgblRHH\nEdita Steinová: Ľudská osoba: filozofická antropológia. Prel. Milan Krankus. Bratislava: Vydavateľstvo Európa, 2017, s. 28 – 38.", "otazky": "Aké významy pojmov „človek“ a „ľudský“ Singer rozlišuje? Ako ich analyzuje?\nAko Singer definuje osobu? Z ktorých autorov vychádza?\nČo je druhizmus (speciesizmus)? Aké námietky možno vzniesť proti uprednostňovaniu vlastného druhu?\nAko by Edita Steinová na základe svojej analýzy odpovedala na názor, že človeka možno úplne vysvetliť biologickými procesmi?", "doplnkove": "Karol Wojtyła: Láska a zodpovednosť, s. 27 – 33 a 39 – 43.\nMax Scheler: Místo člověka v kosmu. || https://www.scribd.com/document/803658106/Scheler-Max-Misto-%C4%8Dlov%C4%9Bka-v-kosmu", "otazky_dopl": "", "poznamka": "", "odkaz": "", "spatna_vazba": "https://docs.google.com/forms/d/e/1FAIpQLSeV4PAFngZYuynFAWocCSy6_4wLPZEpwA67sidKbkTkwk_SaQ/viewform"}, {"typ": "seminar", "cislo": "3", "nazov": "Osoba v bioetike", "vedie": "Mária Kolesárová", "anotacia": "Na základe čoho rozhodujeme, aká ochrana patrí ľudskému embryu? Budeme skúmať, ako spolu súvisia biologické poznatky, pojem osoby a morálne hodnotenie začiatku ľudského života. Kde sa končí opis vývinu a kde sa začína etický argument?", "datum": "2027-04-23", "termin": "týždeň 19. – 23. 4. 2027", "texty": "Centrum bioetiky Katolíckej univerzity Sacro Cuore: Identita a štatút ľudského embrya. Medicina e Morale, dodatok č. 6, 1996. || https://drive.google.com/drive/folders/1a4WzZRMPdlM8H20U2sf2wzd6os3fQW3a", "otazky": "", "doplnkove": "", "otazky_dopl": "", "poznamka": "", "odkaz": "", "spatna_vazba": "https://docs.google.com/forms/d/e/1FAIpQLScnH82pFEZEE7lirBGso9gD9p1VTeSkBz7z4zM9ahRpM69qzQ/viewform"}, {"typ": "tutorial", "cislo": "10", "nazov": "Umelá inteligencia", "vedie": "", "anotacia": "Čo by musel počítač dokázať, aby sme o ňom mohli povedať, že skutočne myslí? S Turingom a Searlom preskúmame, či presvedčivé správanie a spracovanie symbolov postačujú na porozumenie. Aký vzťah má inteligencia k vedomiu a vlastnej skúsenosti?", "datum": "2027-05-07", "termin": "týždeň 3. – 7. 5. 2027", "texty": "John R. Searle: Minds, Brains, and Programs. Behavioral and Brain Sciences, roč. 3, č. 3, 1980, s. 417 – 424. Čítať po časť II „The Robot Reply“ vrátane. || https://dai.fmph.uniba.sk/~retova/CSCTR/materials/CSCTR_09sup_searle_1980.pdf", "otazky": "Prečo podľa Searla samotná syntax nestačí na vznik sémantiky, teda významu?\nPrečo podľa Searla nemožno myslenie stotožniť so samotným vykonávaním výpočtov? Súhlasíte s jeho argumentom?\nOpíšte argument čínskej izby a vysvetlite jeho záver.", "doplnkove": "Alan M. Turing: Computing Machinery and Intelligence. Mind, roč. 59, č. 236, 1950, s. 433 – 460. Výber: časti 1 – 2 („The Imitation Game“, „Critique of the New Problem“), časť 6 body 1, 4 a 6 („Contrary Views on the Main Question“), časť 7 („Learning Machines“). || https://ebiquity.umbc.edu/_file_directory_/papers/1389.pdf\nJaroslav Varchola – Jakub Betinský: Limity umelej inteligencie. 1. časť „Filozofická analýza“ a 1. sekcia 2. časti „Fyzikálny argument“. || https://drive.google.com/drive/folders/1azyWFNYIMdrunHpXAThy51X_hNvlmQzZ?usp=drive_link", "otazky_dopl": "K textu Limity umelej inteligencie (dobrovoľné): Čo znamená, že je niečo ontologicky subjektívne? Uveďte príklad.", "poznamka": "", "odkaz": "", "spatna_vazba": "https://docs.google.com/forms/d/e/1FAIpQLSc-bEgmb3asmZEKGzeiXRzNNRLuMp8XzRFZJh9d5i0LOG5tCg/viewform"}, {"typ": "udalost", "cislo": "", "nazov": "Záverečná party", "vedie": "", "anotacia": "", "datum": "", "termin": "máj 2027", "texty": "", "otazky": "", "doplnkove": "", "otazky_dopl": "", "poznamka": "Spoločné ukončenie ročníka po poslednom tutoriáli.", "odkaz": "", "spatna_vazba": ""}, {"typ": "dokument", "cislo": "", "nazov": "Texty na rok 2026/2027", "vedie": "", "anotacia": "", "datum": "", "termin": "", "texty": "", "otazky": "", "doplnkove": "", "otazky_dopl": "", "poznamka": "Spoločný priečinok na Google Drive so zdrojmi ku všetkým tutoriálom a seminárom.", "odkaz": "https://drive.google.com/drive/folders/12wCSe8sbeksgZl1uR-FUzf6HfWzABFJq", "spatna_vazba": ""}, {"typ": "dokument", "cislo": "", "nazov": "Príprava a tutoriál", "vedie": "", "anotacia": "", "datum": "", "termin": "", "texty": "", "otazky": "", "doplnkove": "", "otazky_dopl": "", "poznamka": "Ako písať prípravu, ako prebieha stretnutie a kontakty na tútorov.", "odkaz": "https://docs.google.com/document/d/1LUZvrZE11KncbNYELH11bqs1wktsv5Mc2_xBNRTYO_Y/edit", "spatna_vazba": ""}, {"typ": "dokument", "cislo": "", "nazov": "House rules", "vedie": "", "anotacia": "", "datum": "", "termin": "", "texty": "", "otazky": "", "doplnkove": "", "otazky_dopl": "", "poznamka": "Pravidlá fungovania a vzájomného rešpektu v Agore.", "odkaz": "https://docs.google.com/document/d/1rldgPoZy6k_-BmPMvBv7eMaVOiUWTu8nVXIogi629Bs/edit", "spatna_vazba": ""}, {"typ": "dokument", "cislo": "", "nazov": "Skriptá 2026/2027", "vedie": "", "anotacia": "", "datum": "", "termin": "", "texty": "", "otazky": "", "doplnkove": "", "otazky_dopl": "", "poznamka": "Hlavné texty na tutoriály. Vytlačené skriptá sú súčasťou programu.", "odkaz": "", "spatna_vazba": ""}, {"typ": "nastavenie", "cislo": "", "nazov": "prihlasovanie", "vedie": "", "anotacia": "", "datum": "", "termin": "", "texty": "", "otazky": "", "doplnkove": "", "otazky_dopl": "", "poznamka": "Odkaz na tabuľku na prihlasovanie na termíny tutoriálov.", "odkaz": "https://docs.google.com/spreadsheets/d/1VLGbisn6lC5BFcB9ZxBPLA9XI1B0FhucCRyzBm_MVHY/edit", "spatna_vazba": ""}]</script>
+<script type="application/json" id="portal-config">{"settings":{"passwordHash":"16zct30rm4h","signupUrl":"https://docs.google.com/spreadsheets/d/1VLGbisn6lC5BFcB9ZxBPLA9XI1B0FhucCRyzBm_MVHY/edit","snapshot":"2. 10. 2026","sheetCsvUrl":""},"header":{"meta":"Ročník 2026/2027 · Svoradov, Bratislava"},"lock":{"eyebrow":"Portál účastníka","title":"Idey menia svet.","titleEm":"Otázky menia nás.","lead":"Tu nájdeš všetko, čo počas ročníka potrebuješ: kde sa práve nachádzame, čo sa číta na ďalší tutoriál a kde sú dokumenty. Heslo dostali účastníci od svojho tútora.","inside":[{"b":"Os ročníka","text":"10 tutoriálov a 3 semináre v poradí, s vyznačením, kde sme."},{"b":"Sylaby","text":"Hlavné a doplnkové texty aj otázky ku každej téme."},{"b":"Dokumenty","text":"Texty na Drive, príprava na tutoriál, House rules."}]},"signup":{"title":"Zápis na tutoriály","text":"Vyber si termín v tabuľke. Na jeden termín najviac 6 ľudí, kto prv príde, ten ide.","button":"Prihlásiť sa na tutoriál"},"contacts":{"title":"Kam poslať prípravu","note":"Prípravu pošli e-mailom svojmu tútorovi najneskôr 24 hodín pred tutoriálom.","people":[{"name":"Andrej Sňahničan","mail":"snahnican.andrej@gmail.com"},{"name":"Ján Pastorek","mail":"jpastorek5@gmail.com"},{"name":"Michal Fronc","mail":"froncmichal@gmail.com"},{"name":"Samuel Prílepok","mail":"samuel.prilepok@gmail.com"},{"name":"Mária Kolesárová","mail":"maria.kolesarova@fmed.uniba.sk"}]},"phases":[{"b":"Úvod · 10 – 15 min","text":"Otvorenie témy a prvé dojmy z textu."},{"b":"Jadro diskusie · 45 – 50 min","text":"Analýza textu, sokratovské otázky, protiargumenty."},{"b":"Záver · 15 min","text":"Zhrnutie tutoriálu: s čím odchádzam?"}],"rules":[{"title":"Príprava","items":["Krátka písomná príprava, najviac 300 slov.","Pošli ju tútorovi najneskôr 24 hodín pred tutoriálom ([e-maily tútorov](#tutori)).","Súvislé odpovede na 3 – 5 otázok k textu, nie odrážky.","Bez použitia AI. Ide o vlastné myslenie, nie o dokonalosť.","Čítaj z vytlačených skrípt a rob si poznámky do textu."]},{"title":"Prihlasovanie na termíny","items":["Termíny a časové bloky zverejníme najneskôr týždeň vopred v [tabuľke na prihlasovanie](https://docs.google.com/spreadsheets/d/1VLGbisn6lC5BFcB9ZxBPLA9XI1B0FhucCRyzBm_MVHY/edit).","Na jeden blok sa prihlási najviac 6 účastníkov.","Platí „kto prv príde, ten ide“. Ak je blok plný, vymeň sa so spolužiakom.","Ak nemôžeš prísť, daj čo najskôr vedieť tútorovi."]},{"title":"Na mieste","items":["Internát Svoradov: salónik Antona Neuwirtha alebo miestnosť Eugena Filkorna.","Na vrátnici povedz, že ideš na stretnutie Študentskej Agory.","Prichádzame načas a priestor vraciame do pôvodného stavu.","Kritizujeme myšlienky, nie ľudí."]}],"footer":{"tagline":"Idey menia svet.","taglineEm":"Otázky menia nás."},"timeline":[{"typ":"udalost","nazov":"Uzávierka prihlášok","datum":"2026-10-04","termin":"nedeľa 4. októbra 2026","poznamka":"Po uzávierke prebehne finálny výber účastníkov."},{"typ":"udalost","nazov":"Welcome Party","datum":"2026-10-12","termin":"pondelok 12. 10. 2026 od 17:30, Svoradov","poznamka":"Slávnostné otvorenie ročníka pre všetkých prijatých účastníkov."},{"typ":"tutorial","cislo":"1","nazov":"Cieľ života","datum":"2026-10-23","termin":"týždeň 19. – 23. 10. 2026","anotacia":"Čo znamená žiť dobrý život a podľa čoho spoznáme, že sa nám darí ako ľuďom? Aristotelovo uvažovanie o blaženosti (eudaimonii) otvára otázku, ako spolu súvisia cnosť, potešenie a vonkajšie dobrá. Stačilo by nám cítiť sa šťastní, keby náš život nebol skutočný?","texty":["Aristoteles: Etika Nikomachova. Bratislava: Kalligram, 2011, s. 27 – 32 a 36 – 60. [Otvoriť](https://drive.google.com/file/d/1UVpydAD3eS1EvNyD56a-y9hveFutOS7l/view?usp=sharing)"],"otazky":["Ako Aristoteles dospieva k svojej definícii blaženosti? Súhlasíte s jeho argumentom? Prečo?","Súhlasíte s Aristotelom, že na dosiahnutie blaženosti sú potrebné aj vonkajšie dobrá? Aké miesto majú v živote cnostného človeka?","Aký je podľa Aristotela vzťah medzi cnosťou a blaženosťou?","Čo vás na danom texte najviac oslovilo? S čím nesúhlasíte?"],"doplnkove":["Richard Kraut: Aristotle’s Ethics. Stanford Encyclopedia of Philosophy, časť 2 „The Human Good and the Function Argument“. [Otvoriť](https://plato.stanford.edu/entries/aristotle-ethics/#HumaGoodFuncArgu)","Robert Nozick: The Experience Machine. In: Anarchy, State, and Utopia, 1974, s. 42 – 45. [Otvoriť](https://gned.ca/readings/Reading01Nozick%20.pdf)","J. L. Ackrill: Aristotle on Eudaimonia. Proceedings of the British Academy, roč. 60, 1974, s. 339 – 359. [Otvoriť](https://pdfcoffee.com/ackrill-jl-aristotle-on-eudaimoniapdf-5-pdf-free.html)"],"spatnaVazba":"https://docs.google.com/forms/d/e/1FAIpQLSd14PuUpwdu22vNAwDmC2Ohp2Or5WwhFFar3ej_X79xt5oO_g/viewform"},{"typ":"tutorial","cislo":"2","nazov":"Veda a myslenie","datum":"2026-11-06","termin":"týždeň 2. – 6. 11. 2026","anotacia":"Prečo niektoré vysvetlenia objasňujú svet lepšie než iné? Na základe Deutschovho textu preskúmame, akú úlohu majú vo vede domnienky, kritika a ochota opraviť vlastný omyl. Môže byť poznanie spoľahlivé, aj keď nie je neomylné?","texty":["David Deutsch: The Reach of Explanations. In: The Beginning of Infinity, 2011, kap. 1 (33 strán PDF). [Otvoriť](https://iacmr.org/wp-content/uploads/sites/26/2026/05/02-David-Deutsch-2011_The-Beginning-of-Infinity_Chapter-1.pdf)"],"otazky":["Čím sa podľa Deutscha odlišuje dobré vysvetlenie od zlého?","Čo je úlohou vedy a čo ňou nie je?","Môžu byť mýtické vysvetlenia dobré?"],"doplnkove":["Paul Feyerabend: How to Defend Society Against Science. Radical Philosophy, č. 11, 1975, s. 3 – 8. [Otvoriť](https://www.radicalphilosophy.com/article/how-to-defend-society-against-science)","Alister E. McGrath: A Theory of Everything (That Matters), 2019, kap. 2 „The Old World: Newton’s Clockwork Universe“, s. 17 – 34. [Otvoriť](https://drive.google.com/drive/folders/1sqbdJLr677CGncrLMHaqA_L_AdkcZp_G)","Brian Hepburn – Hanne Andersen: Scientific Method. Stanford Encyclopedia of Philosophy. [Otvoriť](https://plato.stanford.edu/entries/scientific-method/)","Karl R. Popper: The Logic of Scientific Discovery, časť I „Introduction to the Logic of Science“, s. 3 – 34. [Otvoriť](https://philotextes.info/spip/IMG/pdf/popper-logic-scientific-discovery.pdf)","Edmund L. Gettier: Is Justified True Belief Knowledge? Analysis, roč. 23, č. 6, 1963, s. 121 – 123. [Otvoriť](https://courses.physics.illinois.edu/phys419/sp2021/Gettier.pdf)"],"otazkyDopl":["Prečo podľa Gettiera nestačí definovať poznanie ako „zdôvodnené pravdivé presvedčenie“ (justified true belief)?","V čom sa doplnkové texty zhodujú s Deutschovým pohľadom na úlohu vedy a v čom sa od neho líšia?","Ako môže predstava o neomylnosti vedy brániť vedeckému pokroku? Pri odpovedi vychádzajte z McGrathovho textu.","Aký je vzťah medzi pojmami „atóm“, „elektrón“, „elektrický prúd“ a „hmotnosť“ a skutočnosťami, ktoré opisujú?"],"spatnaVazba":"https://docs.google.com/forms/d/e/1FAIpQLSeuD9QnqNU3m72j6QPXYjceHUCkJHCbKigjtOELUKsvkYCM1A/viewform"},{"typ":"tutorial","cislo":"3","nazov":"Ťarcha existencie","datum":"2026-11-20","termin":"týždeň 16. – 20. 11. 2026","anotacia":"Ocitli sme sa na svete bez toho, aby sme si vybrali jeho podmienky, no musíme sa rozhodovať, ako budeme žiť. Sartre a Kierkegaard otvárajú otázku, čo znamená stať sa sebou samým a niesť za svoj život zodpovednosť. Aké miesto v tom majú sloboda, zúfalstvo a vzťah k nadprirodzenu?","texty":["Jean-Paul Sartre: Existencializmus je humanizmus. Prel. Ján Švantner. Bratislava: Slovenský spisovateľ, 1997, s. 9 – 29 (po časť „Voľba a angažovanosť“) a s. 38 – 57 (od časti „Existencializmus je optimistické učenie“). [Otvoriť](https://drive.google.com/drive/folders/1mqzx_MvLkLU60Gh-yN0gCoVywMkDYFcv)","Søren Kierkegaard: Choroba na smrť. Prel. Peter Šajda. Bratislava: Premedia, 2018, s. 13 – 35. [Otvoriť](https://drive.google.com/drive/folders/1mqzx_MvLkLU60Gh-yN0gCoVywMkDYFcv)"],"otazky":["Čo znamená Sartrovo tvrdenie, že „existencia predchádza esenciu“?","Sartre hovorí, že človek je „odsúdený na slobodu“. Čo tým myslí?","Ako Kierkegaard definuje ľudské „ja“? Čo znamená, že „ja“ je „vzťah, ktorý sa vzťahuje sám k sebe“?","Prečo Kierkegaard tvrdí, že zúfalstvo je všeobecne rozšírený ľudský stav, ktorý si človek nemusí uvedomovať?","V čom sa Sartrovo a Kierkegaardovo chápanie ľudskej existencie najvýraznejšie líši?"],"doplnkove":["Choroba na smrť, 1. časť (podcast, YouTube). [Otvoriť](https://youtu.be/w1iTkpxuuyI)","Sv. Augustín: Vyznania, kniha IV, kap. 4 – 14."],"spatnaVazba":"https://docs.google.com/forms/d/e/1FAIpQLScx8B2UNkyN60pK7HYt2h61Rd6F5tqWwPE8ZJ9G-Hdhz8g13g/viewform"},{"typ":"seminar","cislo":"1","nazov":"Filozofia mysle","vedie":"Jakub Betinský","datum":"2026-12-04","termin":"týždeň 30. 11. – 4. 12. 2026","anotacia":"Ako rozumieme vlastným myšlienkam a úmyslom a ako ich rozpoznávame u druhých? Téma filozofie mysle nás privedie k otázke, ako vnútorný život súvisí s ľudským konaním.","texty":["G. E. M. Anscombe: Events in the Mind. In: Metaphysics and the Philosophy of Mind (Collected Philosophical Papers, zv. 2). Oxford: Basil Blackwell, 1981, s. 57 – 63. [Otvoriť](https://drive.google.com/drive/folders/1a4WzZRMPdlM8H20U2sf2wzd6os3fQW3a)"],"spatnaVazba":"https://docs.google.com/forms/d/e/1FAIpQLSfwr_73CnHfEWALiBTK_fwcawqdP2Rq8PyXm0Vn2FjKUNmNyw/viewform"},{"typ":"tutorial","cislo":"4","nazov":"Realita a pravda","datum":"2026-12-18","termin":"týždeň 14. – 18. 12. 2026","anotacia":"Je realita nezávislá od nás a môžeme ju poznať takú, aká je? Budeme skúmať, ako naše vnímanie a jazyk ovplyvňujú obraz sveta a či presné pomenovanie pomáha preklenúť rozdiel medzi tým, čo prežívame, a tým, čo skutočne je.","texty":["Jordan B. Peterson: Pravidlo 10 – Vyjadrujte sa presne. In: 12 pravidiel pre život: Liek na chaos. Bratislava: Tatran, 2018, s. 249 – 268. [Otvoriť](https://drive.google.com/open?id=1HrF23dkOl8ixLrR4aXMXHnEiEXbGifcv&usp=drive_copy)"],"otazky":["Dokážeme vidieť svet taký, aký je? Prečo?","Prečo sa podľa Petersona svet „rúca“, keď veci nedokážeme jasne pomenovať?"],"doplnkove":["Platón: Allegory of the Cave. In: The Republic, kniha VII. [Otvoriť](https://users.rowan.edu/~clowney/Aesthetics/scans/Plato/PlatoCave.pdf)","Bertrand Russell: The Problems of Philosophy, kap. 2 – 3. [Otvoriť](http://www.public-library.uk/pdfs/8/893.pdf)","Friedrich Nietzsche: On Truth and Lies in a Nonmoral Sense (1873). In: The Nietzsche Reader. Malden: Blackwell, 2006, s. 114 – 123. [Otvoriť](https://dn790002.ca.archive.org/0/items/NietzscheTruthLiesInANonmoralSense1873/Nietzsche%20-%20Truth%20%26%20Lies%20in%20a%20Nonmoral%20Sense%20%281873%29.pdf)"],"spatnaVazba":"https://docs.google.com/forms/d/e/1FAIpQLSf15ZkhONOhMtCNnJ3vaErpYWdrqzmD7uJ9UTNzJDBNuGeJdA/viewform"},{"typ":"tutorial","cislo":"5","nazov":"Utrpenie","datum":"2027-01-29","termin":"týždeň 25. – 29. 1. 2027","anotacia":"Môže si život zachovať zmysel aj v utrpení, ktoré nedokážeme odstrániť? Franklova skúsenosť z koncentračných táborov otvára otázku, akú slobodu má človek voči okolnostiam, ktoré si nezvolil. Budeme rozlišovať medzi hľadaním zmyslu napriek utrpeniu a pripisovaním hodnoty utrpeniu samému.","texty":["Viktor E. Frankl: Hľadanie zmyslu života. Bratislava: Eastone Books, 2011, s. 3 – 80. [Otvoriť](https://drive.google.com/file/d/1xWdbtcbly54blYx8tLcHIr7S7uRG7Ow1/view?usp=drive_link)"],"otazky":["Frankl hovorí, že aj v koncentračnom tábore zostávala človeku „posledná sloboda“ – zvoliť si postoj k okolnostiam, ktoré nemôže zmeniť. Súhlasíte, že táto sloboda zostáva človeku za každých okolností?","Frankl tvrdí, že zmysel treba vo svete objavovať: v čine, v láske alebo v postoji k nevyhnutnému utrpeniu. Akú úlohu má postoj k utrpeniu v situácii, keď človek nemôže zmeniť svoje okolnosti?","Je podľa vás Franklovo chápanie zmyslu v utrpení v napätí so snahou utrpenie zmierňovať a odstraňovať, alebo sa dajú tieto postoje zladiť?","Čo vás na príbehu najviac oslovilo a prečo?"],"doplnkove":["Fiodor Michajlovič Dostojevskij: The Grand Inquisitor. In: Bratia Karamazovovci, kniha V, kap. 5. [Otvoriť](https://drive.google.com/file/d/1eXwlwSIiVlVp7tHYcfOtgZgTpYc_hyyt/view?usp=sharing)","Film: Život je krásny (La vita è bella, r. Roberto Benigni, 1997)."],"spatnaVazba":"https://docs.google.com/forms/d/e/1FAIpQLSdDLPXPFJ2JYtbKsAHLmQVkYXvLBeG1yYi_P3xOxbb49YTgRA/viewform"},{"typ":"seminar","cislo":"2","nazov":"Existencia Boha","vedie":"Marián Janík","datum":"2027-02-12","termin":"týždeň 8. – 12. 2. 2027","anotacia":"Dá sa otázka Božej existencie skúmať rozumovými argumentmi? Pri čítaní Tomáša Akvinského sa zameriame na to, čo znamená vysvetliť existenciu sveta a chápať ho ako stvorený. Čo takéto argumenty môžu ukázať a kde sú ich hranice?","texty":["Tomáš Akvinský: výber textov o Božej existencii a stvorení z diel Summa theologiae, Summa contra gentiles, Compendium theologiae, De potentia a De substantiis separatis. [Otvoriť](https://drive.google.com/drive/folders/1a4WzZRMPdlM8H20U2sf2wzd6os3fQW3a)"],"spatnaVazba":"https://docs.google.com/forms/d/e/1FAIpQLSf-YWsHMvbMCb3aWhY6n18DMS5xgETBkdyQ3JmXpuhqhuLeXA/viewform"},{"typ":"tutorial","cislo":"6","nazov":"Vedomie a skúsenosť","datum":"2027-02-26","termin":"týždeň 22. – 26. 2. 2027","anotacia":"Môžeme vedieť všetko o fungovaní mozgu, a predsa nevedieť, aké je niečo vedome prežívať? Myšlienkový experiment s Mary nás privedie k rozdielu medzi poznaním fyzikálnych faktov a vlastnou skúsenosťou. Je tento rozdiel hranicou nášho poznania, alebo nám niečo hovorí aj o povahe skutočnosti?","texty":["Frank Jackson: What Mary Didn’t Know. The Journal of Philosophy, roč. 83, č. 5, 1986, s. 291 – 295. [Otvoriť](https://courses.physics.illinois.edu/phys419/sp2021/Jackson1986_WhatMaryDidntKnow.pdf)"],"otazky":["Opíšte, čo sa podľa Jacksona Mary naučila, keď po prvý raz uvidela farby.","Prečo je podľa Jacksona vedomá skúsenosť problémom pre čisto fyzikálne vysvetlenie človeka?","Je vedomá skúsenosť dostatočným argumentom proti fyzikalizmu (materializmu)? Zdôvodnite svoju odpoveď."],"doplnkove":["Frank Jackson: Epiphenomenal Qualia. The Philosophical Quarterly, roč. 32, č. 127, 1982, s. 127 – 136. [Otvoriť](http://thatmarcusfamily.org/philosophy/Course_Websites/Contemporary/Readings/Jackson.pdf)","Frank Jackson: Postscript on Qualia. In: There’s Something About Mary. Cambridge, MA: MIT Press, 2004, kap. 19. [Otvoriť](https://beisecker.faculty.unlv.edu/Courses/PHIL-352/Dave%20-%20Consciousness%20PDFs/Jackson%20-%20Epiphenomenal%20Qualia/Jackson-Postscript_on_Qualia.PDF)","David J. Chalmers: Facing Up to the Problem of Consciousness. Journal of Consciousness Studies, roč. 2, č. 3, 1995, s. 200 – 219. [Otvoriť](https://prsinstitute.org/downloads/related/philosophy/consciousness/FacingUptotheProblemofConsciousness.pdf)","Patricia Smith Churchland: The Hornswoggle Problem. Journal of Consciousness Studies, roč. 3, č. 5 – 6, 1996, s. 402 – 408. [Otvoriť](https://joelvelasco.net/teaching/2300/hornswoggleprob.pdf)","Mary’s Room (video, 5 min). [Otvoriť](https://bit.ly/37gbsBa)","Thomas Nagel: What Is It Like to Be a Bat? The Philosophical Review, roč. 83, č. 4, 1974, s. 435 – 450. [Otvoriť](https://www.sas.upenn.edu/~cavitch/pdf-library/Nagel_Bat.pdf)","Martine Nida-Rümelin – Donnchadh O Conaill: Qualia: The Knowledge Argument. Stanford Encyclopedia of Philosophy, iba časť 2 „Basic Idea“. [Otvoriť](https://plato.stanford.edu/archives/sum2026/entries/qualia-knowledge/#BasiIdea)"],"otazkyDopl":["Aký zásadný rozdiel je medzi závermi Nagela a Jacksona?","Čo navrhuje Chalmers ako možnú cestu k riešeniu ťažkého problému vedomia?","Je námietka Patricie Churchlandovej dostatočná na odmietnutie Chalmersovho ťažkého problému vedomia?"],"spatnaVazba":"https://docs.google.com/forms/d/e/1FAIpQLScexdUTpFGE4iliKbAPuJv40DqtbT7XDvG1Pj8LEO8eikC2bA/viewform"},{"typ":"tutorial","cislo":"7","nazov":"Sloboda","datum":"2027-03-12","termin":"týždeň 8. – 12. 3. 2027","anotacia":"Znamená sloboda iba možnosť robiť si, čo chceme? Arendtovej text nás pozýva uvažovať o slobode, ktorá sa prejavuje v konaní s druhými a v možnosti začať niečo nové. Aké podmienky musí mať spoločný svet, aby sa v ňom táto sloboda mohla uskutočniť?","texty":["Hannah Arendt: What Is Freedom? In: Between Past and Future. New York: Viking Press, 1961, s. 143 – 171. [Otvoriť](https://drive.google.com/file/d/1kKF2Hrh7OR-xGVVZSZkT_k27_93NycrR/view?usp=drive_link)"],"otazky":["Prečo Arendtová odmieta chápať slobodu predovšetkým ako slobodnú vôľu alebo „vnútornú slobodu“ a prečo ju namiesto toho spája s konaním medzi ľuďmi?","Prečo podľa Arendtovej nestačí byť oslobodený od nátlaku, aby bol človek skutočne slobodný? Akú úlohu pri slobode zohrávajú druhí ľudia a verejný priestor?","Čo Arendtová myslí tvrdením, že podstatou slobody je schopnosť „začať niečo nové“? Prečo slobodné konanie prirovnáva k zázraku?","Čo si o jej chápaní slobody myslíte vy? Súhlasíte s ním?"],"doplnkove":["Jan Sokol: Trojí model svobody. In: Etika, život, instituce. Praha: Vyšehrad, 2014, s. 47 – 57. [Otvoriť](https://drive.google.com/drive/folders/13RNVBWMpJ1upgFWdZC2blGkp0U21uz5i)","Hannah Arendtová: Sloboda byť slobodný. Bratislava: Premedia, 2025, 56 s. [Otvoriť](https://www.martinus.sk/3159341-sloboda-byt-slobodny/kniha)","Isaiah Berlin: Two Concepts of Liberty. In: Four Essays on Liberty. Oxford University Press, 1969, s. 118 – 172. [Otvoriť](https://cactus.utahtech.edu/green/B_Readings/I_Berlin%20Two%20Concpets%20of%20Liberty.pdf)","Emmanuel Levinas: Reflections on the Philosophy of Hitlerism. Critical Inquiry, roč. 17, č. 1, 1990, s. 63 – 71. [Otvoriť](https://www.restancia.hu/blickfang/Levinas-ReflectionsHitlerism4.pdf)"],"spatnaVazba":"https://docs.google.com/forms/d/e/1FAIpQLSdaE30dtBN9FmTiaC5bHpc5pwZcb1Bd9OIDosIeJdu0J5Kdlg/viewform"},{"typ":"tutorial","cislo":"8","nazov":"Informácia a technológie","datum":"2027-03-26","termin":"týždeň 22. – 26. 3. 2027","anotacia":"Tvoríme technológie podľa svojich potrieb, ale ako potom technológie pretvárajú nás? Floridiho pojem infosféry otvára otázku, ako digitálne prostredie mení naše vzťahy, sebaporozumenie a každodenné rozhodovanie. Budeme sa pýtať aj na to, aké hodnoty a mocenské vzťahy sú do technológií vložené.","texty":["Luciano Floridi: The Fourth Revolution: How the Infosphere Is Reshaping Human Reality. Oxford University Press, 2014, kap. 2 „Space: Infosphere“, s. 25 – 50. [Otvoriť](https://helios.ntua.gr/2024-25/pluginfile.php/263298/mod_folder/content/0/The%20Fourth%20Revolution_%20How%20the%20Infosphere%20Is%20Reshaping%20Human%20Reality.pdf?forcedownload=1)"],"otazky":["Ako by ste definovali technológiu?","Čo je to infosféra?","V čom spočívajú najväčšie hrozby spojené s technológiami?","Ktoré myšlienky z textov vás najviac oslovili a prečo ich považujete za podnetné?"],"doplnkove":["Luciano Floridi: The Fourth Revolution, kap. 2 „Space: Infosphere“ (zvyšok kapitoly po s. 50). [Otvoriť](https://helios.ntua.gr/2024-25/pluginfile.php/263298/mod_folder/content/0/The%20Fourth%20Revolution_%20How%20the%20Infosphere%20Is%20Reshaping%20Human%20Reality.pdf?forcedownload=1)","Langdon Winner: Do Artifacts Have Politics? Daedalus, roč. 109, č. 1, 1980, s. 121 – 136. [Otvoriť](https://courses.ischool.berkeley.edu/i203/s13/wp-content/uploads/2013/01/winner_artifacts_politics.pdf)","Byung-Chul Han: The Burnout Society. Prel. Erik Butler. Stanford University Press, 2015."],"spatnaVazba":"https://docs.google.com/forms/d/e/1FAIpQLSds_BcmPvBqKsHIjU3c_OguKe2a75MNZ_tNTcEhrpl2W65Wng/viewform"},{"typ":"tutorial","cislo":"9","nazov":"Čo je osoba","datum":"2027-04-09","termin":"týždeň 5. – 9. 4. 2027","anotacia":"Čo robí z človeka osobu a od čoho závisí jej morálne postavenie? Pri porovnaní Singera a Steinovej preskúmame vzťah medzi schopnosťami človeka, jeho telesnosťou a vnútorným životom. Má naša odpoveď dôsledky aj pre to, komu priznávame ochranu a dôstojnosť?","texty":["Peter Singer: Čo je nesprávne na zabíjaní? In: Spisy o etickom žití. Prel. Izabela Viskupová. Bratislava: Vydavateľstvo Spolku slovenských spisovateľov, 2008, s. 128 – 133 (výňatok z knihy Praktická etika). [Otvoriť](https://drive.google.com/drive/folders/1XhXNSomy26twcPrQlkYRwfDNAmgblRHH)","Edita Steinová: Ľudská osoba: filozofická antropológia. Prel. Milan Krankus. Bratislava: Vydavateľstvo Európa, 2017, s. 28 – 38."],"otazky":["Aké významy pojmov „človek“ a „ľudský“ Singer rozlišuje? Ako ich analyzuje?","Ako Singer definuje osobu? Z ktorých autorov vychádza?","Čo je druhizmus (speciesizmus)? Aké námietky možno vzniesť proti uprednostňovaniu vlastného druhu?","Ako by Edita Steinová na základe svojej analýzy odpovedala na názor, že človeka možno úplne vysvetliť biologickými procesmi?"],"doplnkove":["Karol Wojtyła: Láska a zodpovednosť, s. 27 – 33 a 39 – 43.","Max Scheler: Místo člověka v kosmu. [Otvoriť](https://www.scribd.com/document/803658106/Scheler-Max-Misto-%C4%8Dlov%C4%9Bka-v-kosmu)"],"spatnaVazba":"https://docs.google.com/forms/d/e/1FAIpQLSeV4PAFngZYuynFAWocCSy6_4wLPZEpwA67sidKbkTkwk_SaQ/viewform"},{"typ":"seminar","cislo":"3","nazov":"Osoba v bioetike","vedie":"Mária Kolesárová","datum":"2027-04-23","termin":"týždeň 19. – 23. 4. 2027","anotacia":"Na základe čoho rozhodujeme, aká ochrana patrí ľudskému embryu? Budeme skúmať, ako spolu súvisia biologické poznatky, pojem osoby a morálne hodnotenie začiatku ľudského života. Kde sa končí opis vývinu a kde sa začína etický argument?","texty":["Centrum bioetiky Katolíckej univerzity Sacro Cuore: Identita a štatút ľudského embrya. Medicina e Morale, dodatok č. 6, 1996. [Otvoriť](https://drive.google.com/drive/folders/1a4WzZRMPdlM8H20U2sf2wzd6os3fQW3a)"],"spatnaVazba":"https://docs.google.com/forms/d/e/1FAIpQLScnH82pFEZEE7lirBGso9gD9p1VTeSkBz7z4zM9ahRpM69qzQ/viewform"},{"typ":"tutorial","cislo":"10","nazov":"Umelá inteligencia","datum":"2027-05-07","termin":"týždeň 3. – 7. 5. 2027","anotacia":"Čo by musel počítač dokázať, aby sme o ňom mohli povedať, že skutočne myslí? S Turingom a Searlom preskúmame, či presvedčivé správanie a spracovanie symbolov postačujú na porozumenie. Aký vzťah má inteligencia k vedomiu a vlastnej skúsenosti?","texty":["John R. Searle: Minds, Brains, and Programs. Behavioral and Brain Sciences, roč. 3, č. 3, 1980, s. 417 – 424. Čítať po časť II „The Robot Reply“ vrátane. [Otvoriť](https://dai.fmph.uniba.sk/~retova/CSCTR/materials/CSCTR_09sup_searle_1980.pdf)"],"otazky":["Prečo podľa Searla samotná syntax nestačí na vznik sémantiky, teda významu?","Prečo podľa Searla nemožno myslenie stotožniť so samotným vykonávaním výpočtov? Súhlasíte s jeho argumentom?","Opíšte argument čínskej izby a vysvetlite jeho záver."],"doplnkove":["Alan M. Turing: Computing Machinery and Intelligence. Mind, roč. 59, č. 236, 1950, s. 433 – 460. Výber: časti 1 – 2 („The Imitation Game“, „Critique of the New Problem“), časť 6 body 1, 4 a 6 („Contrary Views on the Main Question“), časť 7 („Learning Machines“). [Otvoriť](https://ebiquity.umbc.edu/_file_directory_/papers/1389.pdf)","Jaroslav Varchola – Jakub Betinský: Limity umelej inteligencie. 1. časť „Filozofická analýza“ a 1. sekcia 2. časti „Fyzikálny argument“. [Otvoriť](https://drive.google.com/drive/folders/1azyWFNYIMdrunHpXAThy51X_hNvlmQzZ?usp=drive_link)"],"otazkyDopl":["K textu Limity umelej inteligencie (dobrovoľné): Čo znamená, že je niečo ontologicky subjektívne? Uveďte príklad."],"spatnaVazba":"https://docs.google.com/forms/d/e/1FAIpQLSc-bEgmb3asmZEKGzeiXRzNNRLuMp8XzRFZJh9d5i0LOG5tCg/viewform"},{"typ":"udalost","nazov":"Záverečná party","termin":"máj 2027","poznamka":"Spoločné ukončenie ročníka po poslednom tutoriáli."}],"documents":[{"nazov":"Texty na rok 2026/2027","poznamka":"Spoločný priečinok na Google Drive so zdrojmi ku všetkým tutoriálom a seminárom.","odkaz":"https://drive.google.com/drive/folders/12wCSe8sbeksgZl1uR-FUzf6HfWzABFJq"},{"nazov":"Príprava a tutoriál","poznamka":"Ako písať prípravu, ako prebieha stretnutie a kontakty na tútorov.","odkaz":"https://docs.google.com/document/d/1LUZvrZE11KncbNYELH11bqs1wktsv5Mc2_xBNRTYO_Y/edit"},{"nazov":"House rules","poznamka":"Pravidlá fungovania a vzájomného rešpektu v Agore.","odkaz":"https://docs.google.com/document/d/1rldgPoZy6k_-BmPMvBv7eMaVOiUWTu8nVXIogi629Bs/edit"},{"nazov":"Skriptá 2026/2027","poznamka":"Hlavné texty na tutoriály. Vytlačené skriptá sú súčasťou programu."}]}</script>
 <script>
 (function(){
-  // ---- Nastavenia ---------------------------------------------------------
-  var CONFIG = {
-    passHash: "16zct30rm4h",          // odtlačok hesla; heslo samotné v stránke nie je
-    sheetCsvUrl: "",               // pri hostingu na vlastnom webe: odkaz na CSV export tabuľky, stránka si potom dáta načíta sama
-    snapshot: "2. 10. 2026"       // kedy bol obsah naposledy prevzatý z tabuľky
-  };
+  var CFG = {};
+  try { CFG = JSON.parse(document.getElementById("portal-config").textContent); } catch(e){}
+  var S = CFG.settings || {};
   var KEY = "agora-portal-unlocked";
-
   function $(id){ return document.getElementById(id); }
-  function esc(s){ return String(s == null ? "" : s).replace(/[&<>"']/g, function(c){ return {"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]; }); }
-  function lines(s){ return String(s || "").split(/\n+/).map(function(x){ return x.trim(); }).filter(Boolean); }
-  function safeUrl(u){ u = String(u || "").trim(); return /^https?:\/\//i.test(u) ? u : ""; }
 
-  function hash(str){ // cyrb53
-    var h1 = 0xdeadbeef, h2 = 0x41c6ce57;
-    for (var i = 0, ch; i < str.length; i++){ ch = str.charCodeAt(i); h1 = Math.imul(h1 ^ ch, 2654435761); h2 = Math.imul(h2 ^ ch, 1597334677); }
-    h1 = Math.imul(h1 ^ (h1 >>> 16), 2246822507); h1 ^= Math.imul(h2 ^ (h2 >>> 13), 3266489909);
-    h2 = Math.imul(h2 ^ (h2 >>> 16), 2246822507); h2 ^= Math.imul(h1 ^ (h1 >>> 13), 3266489909);
-    return (4294967296 * (2097151 & h2) + (h1 >>> 0)).toString(36);
+  function esc(s){ return String(s==null?"":s).replace(/[&<>"']/g,function(c){return {"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c];}); }
+  function arr(v){ return Array.isArray(v) ? v.filter(Boolean) : String(v||"").split(/\n+/).map(function(s){return s.trim();}).filter(Boolean); }
+
+  // Minimal, safe inline markdown: escape first, then links / bold / italic / code.
+  function mdInline(s){
+    s = esc(s);
+    s = s.replace(/`([^`]+)`/g, "<code>$1</code>");
+    s = s.replace(/\[([^\]]+)\]\(([^)\s]+)\)/g, function(m, t, u){
+      if (/^(https?:\/\/|mailto:|#)/i.test(u)){
+        var ext = /^https?:/i.test(u);
+        return '<a class="link" href="' + u + '"' + (ext ? ' target="_blank" rel="noopener"' : "") + ">" + t + "</a>";
+      }
+      return t;
+    });
+    s = s.replace(/\*\*([^*]+)\*\*/g, "<strong>$1</strong>");
+    s = s.replace(/(^|[^*])\*([^*\s][^*]*?)\*/g, "$1<em>$2</em>");
+    s = s.replace(/\b_([^_]+)_\b/g, "<em>$1</em>");
+    return s;
+  }
+  function mdBlock(s, cls){
+    return arr(s).map(function(p){ return "<p" + (cls?' class="'+cls+'"':"") + ">" + mdInline(p) + "</p>"; }).join("");
+  }
+  function li(items, tag){ return "<" + tag + ">" + items.map(function(t){ return "<li>" + mdInline(t) + "</li>"; }).join("") + "</" + tag + ">"; }
+  function safeUrl(u){ u = String(u||"").trim(); return /^https?:\/\//i.test(u) ? u : ""; }
+
+  function hash(str){
+    var h1=0xdeadbeef,h2=0x41c6ce57;
+    for(var i=0,ch;i<str.length;i++){ch=str.charCodeAt(i);h1=Math.imul(h1^ch,2654435761);h2=Math.imul(h2^ch,1597334677);}
+    h1=Math.imul(h1^(h1>>>16),2246822507);h1^=Math.imul(h2^(h2>>>13),3266489909);
+    h2=Math.imul(h2^(h2>>>16),2246822507);h2^=Math.imul(h1^(h1>>>13),3266489909);
+    return (4294967296*(2097151&h2)+(h1>>>0)).toString(36);
   }
 
   function parseCsv(text){
-    var rows = [], row = [], cur = "", q = false;
-    for (var i = 0; i < text.length; i++){
-      var c = text[i];
-      if (q){ if (c === '"'){ if (text[i+1] === '"'){ cur += '"'; i++; } else q = false; } else cur += c; }
-      else if (c === '"') q = true;
-      else if (c === ","){ row.push(cur); cur = ""; }
-      else if (c === "\n"){ row.push(cur); rows.push(row); row = []; cur = ""; }
-      else if (c !== "\r") cur += c;
+    var rows=[],row=[],cur="",q=false;
+    for(var i=0;i<text.length;i++){var c=text[i];
+      if(q){if(c==='"'){if(text[i+1]==='"'){cur+='"';i++;}else q=false;}else cur+=c;}
+      else if(c==='"')q=true;
+      else if(c===","){row.push(cur);cur="";}
+      else if(c==="\n"){row.push(cur);rows.push(row);row=[];cur="";}
+      else if(c!=="\r")cur+=c;
     }
-    if (cur !== "" || row.length){ row.push(cur); rows.push(row); }
-    var head = (rows.shift() || []).map(function(h){ return h.trim().toLowerCase(); });
-    return rows.filter(function(r){ return r.some(function(x){ return x.trim(); }); }).map(function(r){
-      var o = {}; head.forEach(function(h, i){ o[h] = (r[i] || "").trim(); }); return o;
-    });
+    if(cur!==""||row.length){row.push(cur);rows.push(row);}
+    var head=(rows.shift()||[]).map(function(h){return h.trim().toLowerCase();});
+    return rows.filter(function(r){return r.some(function(x){return x.trim();});}).map(function(r){
+      var o={};head.forEach(function(h,i){o[h]=(r[i]||"").trim();});return o;});
   }
-
   function parseDate(s){
-    var m = /^(\d{4})-(\d{2})-(\d{2})$/.exec(String(s || "").trim()) || null;
-    if (m) return new Date(+m[1], +m[2] - 1, +m[3]);
-    m = /^(\d{1,2})\.\s*(\d{1,2})\.\s*(\d{4})$/.exec(String(s || "").trim());
-    return m ? new Date(+m[3], +m[2] - 1, +m[1]) : null;
+    var m=/^(\d{4})-(\d{2})-(\d{2})$/.exec(String(s||"").trim());
+    if(m)return new Date(+m[1],+m[2]-1,+m[3]);
+    m=/^(\d{1,2})\.\s*(\d{1,2})\.\s*(\d{4})$/.exec(String(s||"").trim());
+    return m?new Date(+m[3],+m[2]-1,+m[1]):null;
   }
-  function fmtDate(d){ try { return d.toLocaleDateString("sk-SK", {weekday:"long", day:"numeric", month:"long", year:"numeric"}); } catch(e){ return d.toDateString(); } }
-  function whenOf(it){ var d = parseDate(it.datum); return it.termin || (d ? fmtDate(d) : ""); }
-  function kind(it){ return it.typ === "tutorial" ? "Tutoriál " + it.cislo : it.typ === "seminar" ? "Seminár" + (it.cislo ? " " + it.cislo : "") : "Udalosť"; }
-  function lead(it){ var m = /^[\s\S]*?[.?!](?=\s|$)/.exec(String(it.anotacia || "").trim()); return m ? m[0] : ""; }
-  function src(line){
-    var p = line.split("||"), u = safeUrl(p[1]);
-    return '<li>' + esc(p[0].trim()) + (u ? ' <a class="link" href="' + esc(u) + '" target="_blank" rel="noopener">Otvoriť</a>' : '') + '</li>';
+  function fmtDate(d){try{return d.toLocaleDateString("sk-SK",{weekday:"long",day:"numeric",month:"long",year:"numeric"});}catch(e){return d.toDateString();}}
+  function whenOf(it){var d=parseDate(it.datum);return it.termin||(d?fmtDate(d):"");}
+  function kind(it){return it.typ==="tutorial"?"Tutoriál "+it.cislo:it.typ==="seminar"?"Seminár"+(it.cislo?" "+it.cislo:""):"Udalosť";}
+  function lead(it){var m=/^[\s\S]*?[.?!](?=\s|$)/.exec(String(it.anotacia||"").trim());return m?m[0]:"";}
+
+  function fromCsv(r){
+    return {
+      typ:r.typ, cislo:r.cislo, nazov:r.nazov, vedie:r.vedie, anotacia:r.anotacia,
+      datum:r.datum, termin:r.termin, poznamka:r.poznamka, odkaz:r.odkaz,
+      spatnaVazba:r.spatna_vazba || r.spatnavazba,
+      texty:arr(r.texty), otazky:arr(r.otazky), doplnkove:arr(r.doplnkove), otazkyDopl:arr(r.otazky_dopl||r.otazkydopl)
+    };
   }
-  function list(tag, arr, fn){ return '<' + tag + '>' + arr.map(fn || function(t){ return '<li>' + esc(t) + '</li>'; }).join("") + '</' + tag + '>'; }
 
-  function render(rows){
-    var today = new Date(); today.setHours(0,0,0,0);
-    var items = rows.filter(function(r){ return /^(tutorial|seminar|udalost)$/.test(r.typ); });
-    var docs = rows.filter(function(r){ return r.typ === "dokument"; });
-    var signup = "";
-    rows.forEach(function(r){ if (r.typ === "nastavenie" && r.nazov === "prihlasovanie") signup = safeUrl(r.odkaz); });
-    if (signup){ $("signupbtn").href = signup; $("signuplink").href = signup; $("signupbar").hidden = false; }
+  function render(items, documents){
+    var today=new Date();today.setHours(0,0,0,0);
+    var signup=safeUrl(S.signupUrl);
+    if(signup){$("signupbtn").href=signup;var sl=$("signuplink");if(sl)sl.href=signup;$("signupbar").hidden=false;}
 
-    // stav: položka s dátumom v minulosti je hotová; prvá nehotová je „teraz“
-    var lastPast = -1, nowIdx = -1;
-    items.forEach(function(it, i){ var d = parseDate(it.datum); if (d && d < today) lastPast = i; });
-    items.forEach(function(it, i){
-      it._done = i <= lastPast;
-      if (!it._done && nowIdx < 0) nowIdx = i;
-    });
+    var lastPast=-1,nowIdx=-1;
+    items.forEach(function(it,i){var d=parseDate(it.datum);if(d&&d<today)lastPast=i;});
+    items.forEach(function(it,i){it._done=i<=lastPast;if(!it._done&&nowIdx<0)nowIdx=i;});
 
-    var tuts = items.filter(function(i){ return i.typ === "tutorial"; });
-    var doneT = tuts.filter(function(i){ return i._done; }).length;
-    var cur = items[nowIdx], next = items[nowIdx + 1];
+    var tuts=items.filter(function(i){return i.typ==="tutorial";});
+    var doneT=tuts.filter(function(i){return i._done;}).length;
+    var cur=items[nowIdx],next=items[nowIdx+1];
 
-    // --- teraz
-    var h = "";
-    if (cur){
-      var texts = lines(cur.texty), w = whenOf(cur), link = safeUrl(cur.odkaz) || (cur.typ === "tutorial" ? signup : "");
-      h += '<p class="eyebrow">' + esc(cur.typ === "udalost" ? "Najbližšie nás čaká" : "Práve čítame · " + kind(cur)) + '</p>';
-      h += '<h2>' + esc(cur.nazov) + '</h2>';
-      if (lead(cur)) h += '<p class="q">' + esc(lead(cur)) + '</p>';
-      h += '<p class="when">' + esc(w || "Termín upresníme") + '</p>';
-      if (texts.length) h += list("ul", texts, src);
-      if (cur.vedie) h += '<p class="sub">Vedie ' + esc(cur.vedie) + '.</p>';
-      if (cur.typ === "tutorial") h += '<p class="sub">Prípravu pošli svojmu tútorovi najneskôr 24 hodín vopred · <a href="#tutori" style="color:inherit;font-weight:700">e-maily tútorov</a></p>';
-      if (cur.poznamka) h += '<p class="sub">' + esc(cur.poznamka) + '</p>';
-      if (cur.typ === "tutorial" || cur.typ === "seminar"){
-        h += '<div class="actions">';
-        if (cur.typ === "tutorial"){
-          if (link) h += '<a class="btn" href="' + esc(link) + '" target="_blank" rel="noopener">Prihlásiť sa na termín</a>';
-          else h += '<span class="sub">Termíny a časové bloky zverejníme najneskôr týždeň vopred.</span>';
+    var h="";
+    if(cur){
+      var texts=arr(cur.texty),w=whenOf(cur),link=safeUrl(cur.odkaz)||(cur.typ==="tutorial"?signup:"");
+      h+='<p class="eyebrow">'+esc(cur.typ==="udalost"?"Najbližšie nás čaká":"Práve čítame · "+kind(cur))+"</p>";
+      h+="<h2>"+esc(cur.nazov)+"</h2>";
+      if(lead(cur))h+='<p class="q">'+mdInline(lead(cur))+"</p>";
+      h+='<p class="when">'+esc(w||"Termín upresníme")+"</p>";
+      if(texts.length)h+=li(texts,"ul");
+      if(cur.vedie)h+='<p class="sub">Vedie '+esc(cur.vedie)+".</p>";
+      if(cur.typ==="tutorial")h+='<p class="sub">Prípravu pošli svojmu tútorovi najneskôr 24 hodín vopred · <a href="#tutori" style="color:inherit;font-weight:700">e-maily tútorov</a></p>';
+      if(cur.poznamka)h+='<div class="sub">'+mdBlock(cur.poznamka)+"</div>";
+      if(cur.typ==="tutorial"||cur.typ==="seminar"){
+        h+='<div class="actions">';
+        if(cur.typ==="tutorial"){
+          if(link)h+='<a class="btn" href="'+esc(link)+'" target="_blank" rel="noopener">Prihlásiť sa na termín</a>';
+          else h+='<span class="sub">Termíny a časové bloky zverejníme najneskôr týždeň vopred.</span>';
         }
-        var fbNow = safeUrl(cur.spatna_vazba);
-        if (fbNow) h += '<a class="btn2" href="' + esc(fbNow) + '" target="_blank" rel="noopener">Spätná väzba po stretnutí</a>';
-        h += '</div>';
+        var fbNow=safeUrl(cur.spatnaVazba);
+        if(fbNow)h+='<a class="btn2" href="'+esc(fbNow)+'" target="_blank" rel="noopener">Spätná väzba po stretnutí</a>';
+        h+="</div>";
       }
-      var prev = null;
-      for (var j = nowIdx - 1; j >= 0; j--){ if (items[j].typ !== "udalost"){ prev = items[j]; break; } }
-      var fbPrev = prev && safeUrl(prev.spatna_vazba);
-      if (fbPrev) h += '<div class="fb"><span class="sub">Ako sa ti páčil ' + esc(kind(prev).toLowerCase() + ' · ' + prev.nazov) + '?</span><a class="btn2" href="' + esc(fbPrev) + '" target="_blank" rel="noopener">Daj nám spätnú väzbu</a></div>';
-    } else {
-      h += '<p class="eyebrow">Ročník 2026/2027</p><h2>Ročník je za nami</h2><p class="sub">Všetky tutoriály a semináre prebehli. Ďakujeme za spoločné premýšľanie.</p>';
+      var prev=null;
+      for(var j=nowIdx-1;j>=0;j--){if(items[j].typ!=="udalost"){prev=items[j];break;}}
+      var fbPrev=prev&&safeUrl(prev.spatnaVazba);
+      if(fbPrev)h+='<div class="fb"><span class="sub">Ako sa ti páčil '+esc(kind(prev).toLowerCase()+" · "+prev.nazov)+'?</span><a class="btn2" href="'+esc(fbPrev)+'" target="_blank" rel="noopener">Daj nám spätnú väzbu</a></div>';
+    }else{
+      h+='<p class="eyebrow">Ročník 2026/2027</p><h2>Ročník je za nami</h2><p class="sub">Všetky tutoriály a semináre prebehli. Ďakujeme za spoločné premýšľanie.</p>';
     }
-    $("now").innerHTML = h;
+    $("now").innerHTML=h;
 
-    var s = '<div><span class="k">Potom</span>';
-    s += next ? '<span class="v">' + esc(next.nazov) + '</span><span class="s">' + esc(kind(next) + (whenOf(next) ? " · " + whenOf(next) : "")) + '</span>'
-              : '<span class="v">Koniec ročníka</span>';
-    s += '</div><div><span class="k">Tutoriály</span><span class="v">' + doneT + ' z ' + tuts.length + ' za nami</span><span class="bar" role="img" aria-label="' + doneT + ' z ' + tuts.length + ' tutoriálov prebehlo">';
-    tuts.forEach(function(t){ s += '<i' + (t._done ? ' class="on"' : '') + '></i>'; });
-    s += '</span></div>';
-    $("strip").innerHTML = s;
+    var s='<div><span class="k">Potom</span>';
+    s+=next?'<span class="v">'+esc(next.nazov)+'</span><span class="s">'+esc(kind(next)+(whenOf(next)?" · "+whenOf(next):""))+"</span>":'<span class="v">Koniec ročníka</span>';
+    s+='</div><div><span class="k">Tutoriály</span><span class="v">'+doneT+" z "+tuts.length+' za nami</span><span class="bar" role="img" aria-label="'+doneT+" z "+tuts.length+' tutoriálov prebehlo">';
+    tuts.forEach(function(t){s+="<i"+(t._done?' class="on"':"")+"></i>";});
+    s+="</span></div>";
+    $("strip").innerHTML=s;
 
-    // --- os ročníka
-    $("tl").innerHTML = items.map(function(it, i){
-      var isNow = i === nowIdx, w = whenOf(it), texts = lines(it.texty), extra = lines(it.doplnkove), qs = lines(it.otazky), qs2 = lines(it.otazky_dopl);
-      var link = safeUrl(it.odkaz);
-      var o = '<li class="' + (it._done ? "is-done" : isNow ? "is-now" : "") + '"><div class="row">';
-      o += it.typ === "tutorial" ? '<span class="num">' + esc(it.cislo) + '</span>' : '<span class="num small">' + (it.typ === "seminar" ? "Sem." : "•") + '</span>';
-      o += '<div class="main"><h3>' + esc(it.nazov) + '</h3>';
-      if (lead(it)) o += '<p class="q">' + esc(lead(it)) + '</p>';
-      o += '<div class="tags">';
-      if (isNow) o += '<span class="chip now-chip">Teraz</span>';
-      else if (it._done) o += '<span class="chip done-chip">Prebehlo</span>';
-      o += '<span>' + esc(it.typ === "udalost" ? (w || "termín upresníme") : kind(it) + (it.vedie ? " · " + it.vedie : "") + " · " + (w || "termín upresníme")) + '</span></div>';
-      if (it.typ === "udalost" && it.poznamka) o += '<p class="note">' + esc(it.poznamka) + '</p>';
-      o += '</div>';
-      if (it.typ !== "udalost" && (texts.length || extra.length || qs.length || it.anotacia || it.poznamka || link)){
-        var fb = safeUrl(it.spatna_vazba);
-        o += '<div class="acts">';
-        if (fb) o += '<a class="link fbl" href="' + esc(fb) + '" target="_blank" rel="noopener">Spätná väzba</a>';
-        o += '<details' + (isNow ? " open" : "") + '><summary>Texty a otázky</summary><div class="srcs">';
-        if (it.anotacia) o += '<p class="anot">' + esc(it.anotacia) + '</p>';
-        if (texts.length) o += '<div><h4>' + (texts.length > 1 ? "Hlavné texty" : "Hlavný text") + '</h4>' + list("ul", texts, src) + '</div>';
-        if (qs.length) o += '<div><h4>Otázky k ' + (texts.length > 1 ? "hlavným textom" : "hlavnému textu") + '</h4>' + list("ol", qs) + '</div>';
-        if (extra.length) o += '<div><h4>Doplnkové zdroje</h4>' + list("ul", extra, src) + '</div>';
-        if (qs2.length) o += '<div><h4>Otázky k doplnkovým zdrojom</h4>' + list("ol", qs2) + '</div>';
-        if (it.poznamka) o += '<p class="note">' + esc(it.poznamka) + '</p>';
-        if (link) o += '<p><a class="link" href="' + esc(link) + '" target="_blank" rel="noopener">Otvoriť podklady</a></p>';
-        o += '</div></details></div>';
+    $("tl").innerHTML=items.map(function(it,i){
+      var isNow=i===nowIdx,w=whenOf(it),texts=arr(it.texty),extra=arr(it.doplnkove),qs=arr(it.otazky),qs2=arr(it.otazkyDopl);
+      var link=safeUrl(it.odkaz);
+      var o='<li class="'+(it._done?"is-done":isNow?"is-now":"")+'"><div class="row">';
+      o+=it.typ==="tutorial"?'<span class="num">'+esc(it.cislo)+"</span>":'<span class="num small">'+(it.typ==="seminar"?"Sem.":"•")+"</span>";
+      o+='<div class="main"><h3>'+esc(it.nazov)+"</h3>";
+      if(lead(it))o+='<p class="q">'+mdInline(lead(it))+"</p>";
+      o+='<div class="tags">';
+      if(isNow)o+='<span class="chip now-chip">Teraz</span>';
+      else if(it._done)o+='<span class="chip done-chip">Prebehlo</span>';
+      o+="<span>"+esc(it.typ==="udalost"?(w||"termín upresníme"):kind(it)+(it.vedie?" · "+it.vedie:"")+" · "+(w||"termín upresníme"))+"</span></div>";
+      if(it.typ==="udalost"&&it.poznamka)o+='<div class="note">'+mdBlock(it.poznamka)+"</div>";
+      o+="</div>";
+      if(it.typ!=="udalost"&&(texts.length||extra.length||qs.length||it.anotacia||it.poznamka||link)){
+        var fb=safeUrl(it.spatnaVazba);
+        o+='<div class="acts">';
+        if(fb)o+='<a class="link fbl" href="'+esc(fb)+'" target="_blank" rel="noopener">Spätná väzba</a>';
+        o+="<details"+(isNow?" open":"")+'><summary>Texty a otázky</summary><div class="srcs">';
+        if(it.anotacia)o+=mdBlock(it.anotacia,"anot");
+        if(texts.length)o+="<div><h4>"+(texts.length>1?"Hlavné texty":"Hlavný text")+"</h4>"+li(texts,"ul")+"</div>";
+        if(qs.length)o+="<div><h4>Otázky k "+(texts.length>1?"hlavným textom":"hlavnému textu")+"</h4>"+li(qs,"ol")+"</div>";
+        if(extra.length)o+="<div><h4>Doplnkové zdroje</h4>"+li(extra,"ul")+"</div>";
+        if(qs2.length)o+="<div><h4>Otázky k doplnkovým zdrojom</h4>"+li(qs2,"ol")+"</div>";
+        if(it.poznamka)o+='<div class="note">'+mdBlock(it.poznamka)+"</div>";
+        if(link)o+="<p>"+mdInline("[Otvoriť podklady]("+link+")")+"</p>";
+        o+="</div></details></div>";
       }
-      return o + '</div></li>';
+      return o+"</div></li>";
     }).join("");
 
-    // --- dokumenty
-    $("docs").innerHTML = docs.map(function(d){
-      var u = safeUrl(d.odkaz);
-      return '<li><div class="d"><b>' + esc(d.nazov) + '</b><span>' + esc(d.poznamka) + '</span></div>' +
-        (u ? '<a class="link" href="' + esc(u) + '" target="_blank" rel="noopener">Otvoriť</a>' : '') + '</li>';
+    $("docs").innerHTML=(documents||[]).map(function(d){
+      var u=safeUrl(d.odkaz);
+      return '<li><div class="d"><b>'+esc(d.nazov)+"</b>"+(d.poznamka?"<span>"+mdInline(d.poznamka)+"</span>":"")+"</div>"+(u?'<a class="link" href="'+esc(u)+'" target="_blank" rel="noopener">Otvoriť</a>':"")+"</li>";
     }).join("");
 
-    $("stamp").textContent = "Obsah aktualizovaný " + CONFIG.snapshot;
+    $("stamp").textContent="Obsah aktualizovaný "+(S.snapshot||"");
+  }
+
+  function renderStatic(){
+    var L=CFG.lock||{}, H=CFG.header||{}, SG=CFG.signup||{}, C=CFG.contacts||{}, F=CFG.footer||{};
+    if(H.meta)$("meta").textContent=H.meta;
+    var lk="";
+    if(L.eyebrow)lk+='<p class="eyebrow">'+esc(L.eyebrow)+"</p>";
+    lk+="<h1>"+esc(L.title||"")+(L.titleEm?" <em>"+esc(L.titleEm)+"</em>":"")+"</h1>";
+    if(L.lead)lk+='<div class="lead">'+mdBlock(L.lead)+"</div>";
+    lk+='<form id="gate" class="gate" novalidate><label for="pw">Heslo ročníka<input id="pw" type="password" autocomplete="current-password" autocapitalize="none" spellcheck="false"></label><button class="btn" type="submit">Vstúpiť</button></form>';
+    lk+='<p id="err" class="err" role="alert"></p><p class="note">Tento prehliadač si heslo zapamätá na 30 dní.</p>';
+    if(L.inside&&L.inside.length){
+      lk+='<ul class="inside">'+L.inside.map(function(x){return "<li><b>"+esc(x.b)+"</b>"+mdInline(x.text||"")+"</li>";}).join("")+"</ul>";
+    }
+    $("applock").innerHTML=lk;
+    if(SG.title)$("signuptitle").textContent=SG.title;
+    if(SG.text)$("signuptext").textContent=SG.text;
+    if(SG.button)$("signupbtn").textContent=SG.button;
+    var ph=CFG.phases||[];
+    if(ph.length)$("plist").innerHTML=ph.map(function(p){return "<li><b>"+esc(p.b)+"</b><span>"+mdInline(p.text||"")+"</span></li>";}).join("");
+    var rl=CFG.rules||[];
+    $("rules").innerHTML=rl.map(function(col){return "<div><h3>"+esc(col.title)+"</h3>"+li(col.items||[],"ul")+"</div>";}).join("");
+    if(C.title)$("ctitle").textContent=C.title;
+    if(C.note)$("cnote").textContent=C.note;
+    $("clist").innerHTML=(C.people||[]).map(function(p){return '<li><b>'+esc(p.name)+'</b><span class="mail">'+esc(p.mail)+'</span><button class="copy" type="button" data-mail="'+esc(p.mail)+'">Kopírovať</button></li>';}).join("");
+    if(F.tagline)$("ftag").innerHTML=esc(F.tagline)+(F.taglineEm?" <span>"+esc(F.taglineEm)+"</span>":"");
   }
 
   function load(){
-    var embedded = [];
-    try { embedded = JSON.parse($("data").textContent); } catch(e){}
-    render(embedded);
-    if (CONFIG.sheetCsvUrl){
-      fetch(CONFIG.sheetCsvUrl).then(function(r){ if (!r.ok) throw 0; return r.text(); })
-        .then(function(t){ var rows = parseCsv(t); if (rows.length){ CONFIG.snapshot = "práve teraz z tabuľky"; render(rows); } })
-        .catch(function(){ /* ostáva vložená kópia */ });
+    var items=(CFG.timeline||[]).slice();
+    var documents=(CFG.documents||[]).slice();
+    render(items, documents);
+    if(safeUrl(S.sheetCsvUrl)){
+      fetch(S.sheetCsvUrl).then(function(r){if(!r.ok)throw 0;return r.text();}).then(function(t){
+        var rows=parseCsv(t);
+        var its=rows.filter(function(r){return /^(tutorial|seminar|udalost)$/.test(r.typ);}).map(fromCsv);
+        var docs=rows.filter(function(r){return r.typ==="dokument";}).map(function(r){return {nazov:r.nazov,poznamka:r.poznamka,odkaz:r.odkaz};});
+        if(its.length){ S.snapshot="práve teraz z tabuľky"; render(its, docs.length?docs:documents); }
+      }).catch(function(){});
     }
   }
 
-  function open(){ $("lock").hidden = true; $("app").hidden = false; load(); }
-  var DAYS = 30, MS = DAYS * 864e5;
-  function save(){ try { localStorage.setItem(KEY, JSON.stringify({h: CONFIG.passHash, t: Date.now()})); } catch(e){} }
+  function open(){ $("applock").hidden=true; $("app").hidden=false; load(); }
+  var DAYS=30,MS=DAYS*864e5;
+  function save(){try{localStorage.setItem(KEY,JSON.stringify({h:S.passwordHash,t:Date.now()}));}catch(e){}}
   function remembered(){
-    try {
-      var raw = localStorage.getItem(KEY); if (!raw) return false;
-      if (raw === CONFIG.passHash){ save(); return true; }   // staršie uloženie: prevedie sa na 30-dňové
-      var o = JSON.parse(raw);
-      if (o && o.h === CONFIG.passHash && Date.now() - o.t < MS) return true;
-      localStorage.removeItem(KEY); return false;
-    } catch(e){ return false; }
+    try{var raw=localStorage.getItem(KEY);if(!raw)return false;
+      if(raw===S.passwordHash){save();return true;}
+      var o=JSON.parse(raw);
+      if(o&&o.h===S.passwordHash&&Date.now()-o.t<MS)return true;
+      localStorage.removeItem(KEY);return false;
+    }catch(e){return false;}
   }
 
-  $("gate").addEventListener("submit", function(e){
+  renderStatic();
+  $("gate").addEventListener("submit",function(e){
     e.preventDefault();
-    var v = $("pw").value.trim().toLowerCase();
-    if (!v){ $("err").textContent = "Zadaj heslo ročníka."; return; }
-    if (hash(v) === CONFIG.passHash){
-      save();
-      $("err").textContent = ""; open();
-    } else {
-      $("err").textContent = "Toto heslo nesedí. Skús to znova alebo sa opýtaj svojho tútora.";
-      $("pw").select();
-    }
+    var v=$("pw").value.trim().toLowerCase();
+    if(!v){$("err").textContent="Zadaj heslo ročníka.";return;}
+    if(hash(v)===S.passwordHash){save();$("err").textContent="";open();}
+    else{$("err").textContent="Toto heslo nesedí. Skús to znova alebo sa opýtaj svojho tútora.";$("pw").select();}
   });
-  $("out").addEventListener("click", function(){
-    try { localStorage.removeItem(KEY); } catch(e){}
-    $("app").hidden = true; $("lock").hidden = false; $("pw").value = ""; window.scrollTo(0, 0);
+  $("out").addEventListener("click",function(){
+    try{localStorage.removeItem(KEY);}catch(e){}
+    $("app").hidden=true;$("applock").hidden=false;$("pw").value="";window.scrollTo(0,0);
   });
-
-  document.addEventListener("click", function(e){
-    var b = e.target.closest && e.target.closest(".copy"); if (!b) return;
-    var m = b.getAttribute("data-mail");
-    function done(){ b.textContent = "Skopírované"; setTimeout(function(){ b.textContent = "Kopírovať"; }, 1500); }
-    function fallback(){ var s = b.previousElementSibling; var r = document.createRange(); r.selectNodeContents(s); var sel = getSelection(); sel.removeAllRanges(); sel.addRange(r); b.textContent = "Označené, stlač Ctrl+C"; }
-    try { navigator.clipboard.writeText(m).then(done, fallback); } catch(err){ fallback(); }
+  document.addEventListener("click",function(e){
+    var b=e.target.closest&&e.target.closest(".copy");if(!b)return;
+    var m=b.getAttribute("data-mail");
+    function done(){b.textContent="Skopírované";setTimeout(function(){b.textContent="Kopírovať";},1500);}
+    function fallback(){var s=b.previousElementSibling;var r=document.createRange();r.selectNodeContents(s);var sel=getSelection();sel.removeAllRanges();sel.addRange(r);b.textContent="Označené, stlač Ctrl+C";}
+    try{navigator.clipboard.writeText(m).then(done,fallback);}catch(err){fallback();}
   });
-
-  if (remembered()) open();
+  if(remembered())open();
 })();
-</script>
 
+</script>
 </body></html>

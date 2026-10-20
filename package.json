@@ -28,6 +28,7 @@
   },
   "scripts": {
     "dev": "next dev",
+    "prebuild": "node scripts/build-portal.mjs",
     "build": "next build",
     "start": "next start",
     "lint": "eslint",
