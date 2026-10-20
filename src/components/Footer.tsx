@@ -30,13 +30,21 @@ export function Footer() {
 
         <nav>
           <ul className="flex flex-wrap justify-center gap-6 text-sm font-light">
-            {data.links.map((link) => (
-              <li key={link.href}>
-                <a href={link.href} className="hover:text-agora-yellow transition-colors">
-                  {link.label}
-                </a>
-              </li>
-            ))}
+            {data.links.map((link) => {
+              const isExternal = link.href.startsWith("http");
+              return (
+                <li key={link.href}>
+                  <a
+                    href={link.href}
+                    target={isExternal ? "_blank" : undefined}
+                    rel={isExternal ? "noopener noreferrer" : undefined}
+                    className="hover:text-agora-yellow transition-colors"
+                  >
+                    {link.label}
+                  </a>
+                </li>
+              );
+            })}
           </ul>
         </nav>
 

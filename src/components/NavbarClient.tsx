@@ -32,17 +32,27 @@ export function NavbarClient({ data }: { data: NavData }) {
       <div className="flex items-center gap-4 md:gap-8">
         <nav className="hidden md:block">
           <ul className="flex gap-8 text-sm font-light tracking-wide">
-            {data.links.map((link) => (
-              <li key={link.href}>
-                <a href={link.href} className="hover:text-agora-yellow transition-colors">
-                  {link.label}
-                </a>
-              </li>
-            ))}
+            {data.links.map((link) => {
+              const isExternal = link.href.startsWith("http");
+              return (
+                <li key={link.href}>
+                  <a
+                    href={link.href}
+                    target={isExternal ? "_blank" : undefined}
+                    rel={isExternal ? "noopener noreferrer" : undefined}
+                    className="hover:text-agora-yellow transition-colors"
+                  >
+                    {link.label}
+                  </a>
+                </li>
+              );
+            })}
           </ul>
         </nav>
         <a
           href={data.cta.href}
+          target={data.cta.href.startsWith("http") ? "_blank" : undefined}
+          rel={data.cta.href.startsWith("http") ? "noopener noreferrer" : undefined}
           className="hidden sm:inline-block bg-agora-yellow text-agora-blue font-semibold text-sm px-6 py-2.5 rounded hover:bg-yellow-400 transition-colors"
         >
           {data.cta.label}
@@ -62,20 +72,27 @@ export function NavbarClient({ data }: { data: NavData }) {
         <div className="md:hidden absolute top-full left-0 right-0 bg-agora-blue border-t border-white/10 shadow-xl z-40">
           <nav className="px-6 py-6">
             <ul className="flex flex-col gap-5 text-base font-light tracking-wide">
-              {data.links.map((link) => (
-                <li key={link.href}>
-                  <a
-                    href={link.href}
-                    onClick={() => setOpen(false)}
-                    className="block hover:text-agora-yellow transition-colors"
-                  >
-                    {link.label}
-                  </a>
-                </li>
-              ))}
+              {data.links.map((link) => {
+                const isExternal = link.href.startsWith("http");
+                return (
+                  <li key={link.href}>
+                    <a
+                      href={link.href}
+                      target={isExternal ? "_blank" : undefined}
+                      rel={isExternal ? "noopener noreferrer" : undefined}
+                      onClick={() => setOpen(false)}
+                      className="block hover:text-agora-yellow transition-colors"
+                    >
+                      {link.label}
+                    </a>
+                  </li>
+                );
+              })}
               <li>
                 <a
                   href={data.cta.href}
+                  target={data.cta.href.startsWith("http") ? "_blank" : undefined}
+                  rel={data.cta.href.startsWith("http") ? "noopener noreferrer" : undefined}
                   onClick={() => setOpen(false)}
                   className="inline-block bg-agora-yellow text-agora-blue font-semibold text-sm px-6 py-2.5 rounded hover:bg-yellow-400 transition-colors"
                 >

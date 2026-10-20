@@ -12,6 +12,8 @@ links:
     href: "#tim"
   - label: FAQ
     href: "#faq"
+  - label: Portál
+    href: "/portal/"
   - label: Prihlásenie
     href: "#prihlasenie"
 social:
