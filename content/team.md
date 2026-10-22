@@ -34,7 +34,7 @@ people:
     role: Akademický tím
     image: /images/jakub.png
     accentColor: orange
-  - name: Ing.Mgr. Marian Janík, PhD.
+  - name: Ing.Mgr. Marián Janík, PhD.
     role: Akademický tím
     image: /images/marian.jpg
     accentColor: blue 
