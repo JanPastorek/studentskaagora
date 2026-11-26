@@ -2,7 +2,7 @@ import { MapPin, Users, BookOpen, Euro, GraduationCap } from "lucide-react";
 import { loadContent, type StatsData } from "@/lib/content";
 import { Reveal } from "./Reveal";
 
-const ICONS = [MapPin, Users, BookOpen, GraduationCap, BookOpen];
+const ICONS = [MapPin, Users, BookOpen, GraduationCap, NotebookPen];
 
 const RING_STYLE: Record<string, string> = {
   blue:   "border-agora-blue   text-agora-blue",
