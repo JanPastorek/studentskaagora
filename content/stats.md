@@ -12,4 +12,7 @@ stats:
   - heading: Ročné školné
     price: "179 €"
     iconColor: blue
+  - heading: Čo dostaneš?
+    text: "Vytlačené skriptá, prístup k portálu a doplnkovú literatúru"
+    iconColor: orange
 ---
