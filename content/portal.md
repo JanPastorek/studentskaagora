@@ -204,8 +204,8 @@ timeline:
     cislo: '1'
     nazov: Filozofia mysle
     vedie: Jakub Betinský
-    datum: '2026-12-04'
-    termin: týždeň 30. 11. – 4. 12. 2026
+    datum: '2026-12-03'
+    termin: 3. 12. 2026 o 17:30
     anotacia: >-
       Ako rozumieme vlastným myšlienkam a úmyslom a ako ich rozpoznávame u druhých? Téma filozofie
       mysle nás privedie k otázke, ako vnútorný život súvisí s ľudským konaním.
